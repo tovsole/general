@@ -71,7 +71,7 @@ public class myFrame extends JFrame{
 				HtmlCraft htm = new HtmlCraft();
 				try 
 				{
-				   //htm.getHTMLbyStations("http://uz.gov.ua/passengers/timetable/?station=739%2C47125%2C22080%2C47140%2C47175%2C22298%2C22000%2C47190%2C3723&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BA");
+				   //htm.getHtmlbyStation("http://uz.gov.ua/passengers/timetable/?station=739%2C47125%2C22080%2C47140%2C47175%2C22298%2C22000%2C47190%2C3723&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BA");
 					htm.getTrainList();	
 				}
 				catch (Exception e1)

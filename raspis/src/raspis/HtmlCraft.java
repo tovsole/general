@@ -9,12 +9,13 @@ import java.util.*;
 
 import org.jsoup.*;
 import org.jsoup.nodes.*;
-import org.jsoup.select.Elements;
+import org.jsoup.select.*;
 
 
 	public class HtmlCraft {
-	    public List<String> raspByStationLinkList = new ArrayList<>();
+	    public List<String> linkList = new ArrayList<>();
 	    public List<String> trainLinkList = new ArrayList<>();
+	    public List<Train>  trainList = new ArrayList<>();
 		
 		
 		public void getHtmlbyStation(String urlName) throws Exception
@@ -44,33 +45,48 @@ import org.jsoup.select.Elements;
 		}
 			
 	}
-		
+
 				
 		public void getTrainList() throws Exception
 		{
-			try  
-			{
-			 raspByStationLinkList = Files.readAllLines(Paths.get("links.txt"));
+			final URL baseUrl = new URL("http://www.uz.gov.ua/passengers/timetable/");
 			
-			}
-			catch (Exception e) {e.printStackTrace(); }
+			linkList = Files.readAllLines(Paths.get("links.txt"));
 			
-			for (String ii : raspByStationLinkList)
+			for (String ii : linkList)  // for every link (station) from file
 			{
 				try
 				{
-				  //System.out.println(ii.toString());
 				  Document doc = Jsoup.connect(ii.toString()).get();
-				  //System.out.println(doc.title());
 				  
-				  Elements table = doc.getElementsByTag("td");
+				  Element table= doc.getElementById("cpn-timetable");
+
+				  Element tbody = table.select("tbody").first();
 				  				  
-				  //Elements links = doc.select("a[href]");
-				  for (Element tab : table) 
-				    //{
-					 System.out.println (tab.text());
-				     System.out.println ("---------------------"); 
-				    //}
+ 				  Elements tr_elements = tbody.getElementsByTag("tr");
+				  for (Element tr : tr_elements ) // for every row
+				  {
+					 Train tmpTrain = new Train();
+					 					 
+					 Element href = tr.select("a").first();
+					 URL routeUrl = new URL(baseUrl,href.attr("href"));
+					 
+					 tmpTrain.setTrainRouteLink(routeUrl);
+					 //System.out.println(routeUrl);
+					 
+					 Elements td_elements = tr.getElementsByTag("td");
+					 for (Element td : td_elements)
+					 {
+						 System.out.print(td.text()+"|");
+						 
+					 }
+					 
+					 trainList.add(tmpTrain);
+					 
+					 System.out.println("");
+					 System.out.println ("---------------------------------------");
+				 }
+				   
 				}
 				catch(Exception e) {e.printStackTrace();}
 			}
