@@ -20,8 +20,6 @@ import org.jsoup.select.*;
 		
 		public void getHtmlbyStation(String urlName) throws Exception
 		{
-		try
-		 {	
 			URL url1 = new URL(urlName) ;
 			//URLConnection conn = new URLConnection(url1);
 			Scanner in = new Scanner(url1.openStream());
@@ -37,13 +35,8 @@ import org.jsoup.select.*;
 			System.out.println(utf_page);
 			//Document lll = Jsoup.parse(utf_page);
 			in.close();
-		 }	
-		
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-			
+	
+					
 	}
 
 				
