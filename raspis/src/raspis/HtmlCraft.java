@@ -14,7 +14,7 @@ import org.jsoup.select.*;
 
 	public class HtmlCraft {
 	    public List<String> linkList = new ArrayList<>();
-	    public List<String> trainLinkList = new ArrayList<>();
+	    //public List<String> trainLinkList = new ArrayList<>();
 	    public List<Train>  trainList = new ArrayList<>();
 		
 		
@@ -56,32 +56,44 @@ import org.jsoup.select.*;
 
 				  Element tbody = table.select("tbody").first();
 				  				  
- 				  Elements tr_elements = tbody.getElementsByTag("tr");
-				  for (Element tr : tr_elements ) // for every row
+ 				  ArrayList<Element> tr_elements = tbody.getElementsByTag("tr");
+				  for (int i=0; i<tr_elements.size(); i++ ) // for every row
 				  {
-					 Train tmpTrain = new Train();
+					 //Train tmpTrain = new Train();
+					 trainList.add(new Train());
 					 					 
-					 Element href = tr.select("a").first();
+					 Element href = tr_elements.get(i).select("a").first();
 					 URL routeUrl = new URL(baseUrl,href.attr("href"));
 					 
-					 tmpTrain.setTrainRouteLink(routeUrl);
-					 //System.out.println(routeUrl);
-					 
-					 Elements td_elements = tr.getElementsByTag("td");
-					 for (Element td : td_elements)
+					 trainList.get(i).setTrainRouteLink(routeUrl);
+					 					 
+					 ArrayList<Element> td_elements = tr_elements.get(i).getElementsByTag("td");
+					 for (int j=0; j<td_elements.size(); j++ ) // for every column
 					 {
-						 System.out.print(td.text()+"|");
-						 
-					 }
+						 if 	 (j==0) 
+							 			 trainList.get(i).setTrainNum(td_elements.get(j).text());
+						 else if (j==1) 
+							 			 trainList.get(i).setTrainTitle(td_elements.get(j).text());
+						 else if (j==2) 
+							 			 trainList.get(i).setTrainRaspis(td_elements.get(j).text());
+						 else if (j==3) 
+							 			 trainList.get(i).setTrainArr(td_elements.get(j).text());
+						 else if (j==4) 
+							 			trainList.get(i).setTrainDep(td_elements.get(j).text());
+						 else if (j==5) 
+					 					trainList.get(i).setTrainDur(td_elements.get(j).text());
+					 }	 						 
 					 
-					 trainList.add(tmpTrain);
 					 
-					 System.out.println("");
-					 System.out.println ("---------------------------------------");
+					 //trainList.add(tmpTrain);
+					 
+					System.out.println ("---------------------------------------");
+					System.out.println (trainList.get(i).getTrainNum() +" | "+ trainList.get(i).getTrainTitle()  +" | "+ trainList.get(i).getTrainRaspis()   +" | "+  trainList.get(i).getTrainArr()  +" | "+trainList.get(i).getTrainDep()  +" | "+ trainList.get(i).getTrainDur()  +" | "+ trainList.get(i).getTrainRouteLink());
 				 }
 				   
 				}
-				catch(Exception e) {e.printStackTrace();}
+				catch(Exception e) 
+					{e.printStackTrace();}
 			}
 			
 		}

@@ -38,6 +38,28 @@ public class Train {
 		this.trainDur=trainDur;
 	}
 	
+
+	public URL getTrainRouteLink(){
+		return this.trainRouteLink;
+	}
+	public String getTrainNum(){
+		return this.trainNum;
+	}
+	public String getTrainTitle(){
+		return this.trainTitle;
+	}
+	public String getTrainRaspis(){
+		return this.trainRaspis;
+	}
+	public String getTrainDep(){
+		return this.trainDep;
+	}
+	public String getTrainArr(){
+		return this.trainArr;
+	}
+	public String getTrainDur(){
+		return this.trainDur;
+	}
 	
 	public void saveToDb() 
 	{
