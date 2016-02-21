@@ -1,1 +1,7 @@
 http://www.uz.gov.ua/passengers/timetable/?station=739%2C47125%2C22080%2C47140%2C47175%2C22298%2C22000%2C47190%2C3723&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BAhttp://www.uz.gov.ua/passengers/timetable/?station=739%2C47125%2C22080%2C47140%2C47175%2C22298%2C22000%2C47190%2C3723&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BA
+http://uz.gov.ua/passengers/timetable/?station=47548%2C23092%2C23081%2C23215%2C36921%2C23200&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BA
+http://uz.gov.ua/passengers/timetable/?station=22700%2C22701&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BA
+http://uz.gov.ua/passengers/timetable/?station=23600%2C23629&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BA
+http://uz.gov.ua/passengers/timetable/?station=22100%2C22446%2C22410&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BA
+http://uz.gov.ua/passengers/timetable/?station=22300&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BA
+http://uz.gov.ua/passengers/timetable/?station=23000&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BA

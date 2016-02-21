@@ -8,6 +8,7 @@ import java.awt.event.*;
 public class myFrame extends JFrame{
     private int width=500;
     private int height=400;
+	public HtmlCraft htmlCraftObj;
     
 	public myFrame() 
 	{
@@ -17,7 +18,7 @@ public class myFrame extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		
-		this.setTitle("Получаем расписание");
+		this.setTitle("РїРѕР»СѓС‡Р°РµРј СЂР°СЃРїРёСЃР°РЅРёРµ");
 		this.setResizable(true);
 		//--
 		Toolkit kit = Toolkit.getDefaultToolkit();
@@ -36,12 +37,15 @@ public class myFrame extends JFrame{
 		
 		JButton btn1 = new JButton("Get rasp");
 		JButton btn2 = new JButton("Exit");
+		JButton btn3 = new JButton("Print train List");
 		
 		btn1.addActionListener(new HtmlAction());
 		btn2.addActionListener(new ExitAction());
+		btn3.addActionListener(new PrintTrainsAction());
 				
 		panel1.add(btn1);
 		panel1.add(btn2);
+		panel1.add(btn3);
 				
 	}
 	
@@ -69,10 +73,10 @@ public class myFrame extends JFrame{
 			if      (i==0)  
 			{ 
 				HtmlCraft htm = new HtmlCraft();
-				try 
+				try
 				{
-				   //htm.getHtmlbyStation("http://uz.gov.ua/passengers/timetable/?station=739%2C47125%2C22080%2C47140%2C47175%2C22298%2C22000%2C47190%2C3723&by_station=%D0%9F%D0%BE%D1%88%D1%83%D0%BA");
-					htm.getTrainList();	
+					htm.getTrainList();
+					//myFrame.htmlCraftObj = htm;
 				}
 				catch (Exception e1)
 				{
@@ -81,5 +85,11 @@ public class myFrame extends JFrame{
 			}	  			
 		}
 	}
+	public class PrintTrainsAction implements ActionListener{
+		public void actionPerformed (ActionEvent e){
+			//
+		}
 
+
+	}
 }

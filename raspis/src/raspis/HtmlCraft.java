@@ -14,7 +14,6 @@ import org.jsoup.select.*;
 
 	public class HtmlCraft {
 	    public List<String> linkList = new ArrayList<>();
-	    //public List<String> trainLinkList = new ArrayList<>();
 	    public List<Train>  trainList = new ArrayList<>();
 		
 		
@@ -45,7 +44,7 @@ import org.jsoup.select.*;
 			final URL baseUrl = new URL("http://www.uz.gov.ua/passengers/timetable/");
 			
 			linkList = Files.readAllLines(Paths.get("links.txt"));
-			
+
 			for (String ii : linkList)  // for every link (station) from file
 			{
 				try
@@ -59,43 +58,59 @@ import org.jsoup.select.*;
  				  ArrayList<Element> tr_elements = tbody.getElementsByTag("tr");
 				  for (int i=0; i<tr_elements.size(); i++ ) // for every row
 				  {
-					 //Train tmpTrain = new Train();
-					 trainList.add(new Train());
-					 					 
+					 Train tmpTrain = new Train();
+
 					 Element href = tr_elements.get(i).select("a").first();
 					 URL routeUrl = new URL(baseUrl,href.attr("href"));
-					 
-					 trainList.get(i).setTrainRouteLink(routeUrl);
+
+					 tmpTrain.setTrainRouteLink(routeUrl);
 					 					 
 					 ArrayList<Element> td_elements = tr_elements.get(i).getElementsByTag("td");
 					 for (int j=0; j<td_elements.size(); j++ ) // for every column
 					 {
-						 if 	 (j==0) 
-							 			 trainList.get(i).setTrainNum(td_elements.get(j).text());
-						 else if (j==1) 
-							 			 trainList.get(i).setTrainTitle(td_elements.get(j).text());
-						 else if (j==2) 
-							 			 trainList.get(i).setTrainRaspis(td_elements.get(j).text());
-						 else if (j==3) 
-							 			 trainList.get(i).setTrainArr(td_elements.get(j).text());
-						 else if (j==4) 
-							 			trainList.get(i).setTrainDep(td_elements.get(j).text());
-						 else if (j==5) 
-					 					trainList.get(i).setTrainDur(td_elements.get(j).text());
-					 }	 						 
+						 switch(j) {
+							 case 0:
+								 tmpTrain.setTrainNum(td_elements.get(j).text());
+							 case 1:
+								 tmpTrain.setTrainTitle(td_elements.get(j).text());
+							 case 2:
+								 tmpTrain.setTrainRaspis(td_elements.get(j).text());
+							 case 3:
+								 tmpTrain.setTrainArr(td_elements.get(j).text());
+							 case 4:
+								 tmpTrain.setTrainDep(td_elements.get(j).text());
+							 case 5:
+								 tmpTrain.setTrainDur(td_elements.get(j).text());
+						 }
+					 }
+
+					 trainList.add(tmpTrain);
 					 
-					 
-					 //trainList.add(tmpTrain);
-					 
-					System.out.println ("---------------------------------------");
-					System.out.println (trainList.get(i).getTrainNum() +" | "+ trainList.get(i).getTrainTitle()  +" | "+ trainList.get(i).getTrainRaspis()   +" | "+  trainList.get(i).getTrainArr()  +" | "+trainList.get(i).getTrainDep()  +" | "+ trainList.get(i).getTrainDur()  +" | "+ trainList.get(i).getTrainRouteLink());
-				 }
+				  }
 				   
 				}
 				catch(Exception e) 
 					{e.printStackTrace();}
 			}
-			
+			//printTrainList();
+			delDupTrains();
+		}
+
+		public void printTrainList(){
+
+
+			for (Train ii: trainList) {
+				System.out.println("---------------------------------------------------");
+				System.out.println(ii.getTrainNum() + " | " + ii.getTrainTitle() + " | " + ii.getTrainRaspis() + " | " + ii.getTrainArr() + " | " + ii.getTrainDep() + " | " + ii.getTrainDur() + " | " + ii.getTrainRouteLink());
+			}
+		}
+
+
+		public void delDupTrains() {
+			System.out.println("ArrayList - "+trainList.size());
+
+			Set<Train> trainSet = new HashSet<>(trainList);
+			System.out.println("Set - "+trainSet.size());
 		}
 	}
 
