@@ -13,7 +13,8 @@ public class main {
 	  EventQueue.invokeLater( new Runnable()
 	   {		
 		  public void run()
-			{	  
+			{
+
 				myFrame frame1 = new myFrame();
 					
 				

@@ -1,6 +1,11 @@
 package raspis;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Train {
@@ -18,7 +23,11 @@ public class Train {
 	private String trainArr;
 	private String trainDur;
 	private List<RouteItem> trainRoute;
-	
+
+	public void setTrainId(String trainId){
+		this.trainId = trainId;
+	}
+
 	public void setTrainRouteLink(URL trainRouteLink){
 		this.trainRouteLink = trainRouteLink;
 	}
@@ -46,7 +55,11 @@ public class Train {
 	public void setTrainDur(String trainDur){
 		this.trainDur=trainDur;
 	}
-	
+
+
+	public String getTrainId(){
+		return this.trainId;
+	}
 
 	public URL getTrainRouteLink(){
 		return this.trainRouteLink;
@@ -76,9 +89,14 @@ public class Train {
 		return this.trainDur;
 	}
 
-	public String getTrainIdFromLink(){
-		return "AAA";
+	public String parseTrainIdFromRouteLink(){
+		String str = new String(trainRouteLink.toString());
+		return ( str.substring(str.indexOf("=")+1,str.lastIndexOf("&")));
 	}
+	public void addTrainRouteItem (RouteItem routeItem){
+		this.trainRoute.add(routeItem);
+	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -90,18 +108,51 @@ public class Train {
 
 		Train other = (Train) obj;
 
-		//return false;
 		return this.trainRouteLink.equals(other.trainRouteLink);
 	}
 
 	@Override
 	public int hashCode() {
-		return this.trainRouteLink.hashCode();
+
+			return this.trainRouteLink.hashCode();
 	}
 
 
-	public void parseRoutPage(){
-		///
+	public String toString(){
+		return (getTrainId()+"|"+getTrainNum()+" | "+getTrainTitle()+" | "+getTrainRaspis()+" | "+getTrainArr()+" | "+getTrainDep()+" | "+getTrainDur()+" | "+getTrainRouteLink());
+	}
+
+	public void parseRoute() throws Exception {
+
+		Document doc = Jsoup.connect(getTrainRouteLink().toString()).get();
+
+		Element table = doc.getElementById("cpn-timetable");
+
+		Element tbody = table.select("tbody").last();
+
+		ArrayList<Element> tr_elements = tbody.getElementsByTag("tr");
+		for (int item = 0; item < tr_elements.size(); item++) // for every row
+		{
+			RouteItem routeItem = new RouteItem();
+
+			Element href = tr_elements.get(item).select("a").first();
+			routeItem.setStationId(routeItem.parseStationId(href.attr("href")));
+
+			ArrayList<Element> td_elements = tr_elements.get(item).getElementsByTag("td");
+			for (int j = 0; j < td_elements.size(); j++) // for every column
+			{
+				switch (j) {
+					case 0:
+						routeItem.setStationName(td_elements.get(j).text());
+					case 1:
+						routeItem.setArrTime(td_elements.get(j).text());
+					case 2:
+						routeItem.setDepTime(td_elements.get(j).text());
+				}
+			}
+
+			this.addTrainRouteItem(routeItem);
+		}
 	}
 
 	public void saveToDb()

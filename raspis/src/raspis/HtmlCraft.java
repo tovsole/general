@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 //import java.io.*;
 import java.util.*;
 
+import com.sun.xml.internal.bind.v2.runtime.reflect.ListTransducedAccessorImpl;
 import org.jsoup.*;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
@@ -32,8 +33,7 @@ import org.jsoup.select.*;
 			
 			String utf_page = new String(page.getBytes(),"UTF-8");
 			System.out.println(utf_page);
-			//Document lll = Jsoup.parse(utf_page);
-			in.close();
+						in.close();
 	
 					
 	}
@@ -41,67 +41,66 @@ import org.jsoup.select.*;
 				
 		public void getTrainList() throws Exception
 		{
-			final URL baseUrl = new URL("http://www.uz.gov.ua/passengers/timetable/");
-			
+
 			linkList = Files.readAllLines(Paths.get("links.txt"));
 
-			for (String ii : linkList)  // for every link (station) from file
+			for (String link : linkList)  // for every link (station) from file
 			{
-				try
-				{
-				  Document doc = Jsoup.connect(ii.toString()).get();
-				  
-				  Element table= doc.getElementById("cpn-timetable");
-
-				  Element tbody = table.select("tbody").first();
-				  				  
- 				  ArrayList<Element> tr_elements = tbody.getElementsByTag("tr");
-				  for (int i=0; i<tr_elements.size(); i++ ) // for every row
-				  {
-					 Train tmpTrain = new Train();
-
-					 Element href = tr_elements.get(i).select("a").first();
-					 URL routeUrl = new URL(baseUrl,href.attr("href"));
-
-					 tmpTrain.setTrainRouteLink(routeUrl);
-					 					 
-					 ArrayList<Element> td_elements = tr_elements.get(i).getElementsByTag("td");
-					 for (int j=0; j<td_elements.size(); j++ ) // for every column
-					 {
-						 switch(j) {
-							 case 0:
-								 tmpTrain.setTrainNum(td_elements.get(j).text());
-							 case 1:
-								 tmpTrain.setTrainTitle(td_elements.get(j).text());
-							 case 2:
-								 tmpTrain.setTrainRaspis(td_elements.get(j).text());
-							 case 3:
-								 tmpTrain.setTrainArr(td_elements.get(j).text());
-							 case 4:
-								 tmpTrain.setTrainDep(td_elements.get(j).text());
-							 case 5:
-								 tmpTrain.setTrainDur(td_elements.get(j).text());
-						 }
-					 }
-
-					 trainList.add(tmpTrain);
-					 
-				  }
-				   
-				}
-				catch(Exception e) 
-					{e.printStackTrace();}
+				trainList.addAll(parseStationPage(link));
 			}
-			//printTrainList();
+
 			delDupTrains();
+			//sortTrainListO();
+			printTrainList();
+		}
+
+		public List<Train> parseStationPage(String pageLink) throws Exception {
+			final URL baseUrl = new URL("http://www.uz.gov.ua/passengers/timetable/");
+			List<Train> resultTrains = new ArrayList<>();
+
+			Document doc = Jsoup.connect(pageLink).get();
+
+			Element table = doc.getElementById("cpn-timetable");
+
+			Element tbody = table.select("tbody").first();
+
+			ArrayList<Element> tr_elements = tbody.getElementsByTag("tr");
+			for (int i = 0; i < tr_elements.size(); i++) // for every row
+			{
+				Train tmpTrain = new Train();
+
+				Element href = tr_elements.get(i).select("a").first();
+				URL routeUrl = new URL(baseUrl, href.attr("href"));
+
+				tmpTrain.setTrainRouteLink(routeUrl);
+				tmpTrain.setTrainId(tmpTrain.parseTrainIdFromRouteLink());
+
+				ArrayList<Element> td_elements = tr_elements.get(i).getElementsByTag("td");
+				for (int j = 0; j < td_elements.size(); j++) // for every column
+				{
+					switch (j) {
+						case 0: tmpTrain.setTrainNum(td_elements.get(j).text());
+						case 1: tmpTrain.setTrainTitle(td_elements.get(j).text());
+						case 2: tmpTrain.setTrainRaspis(td_elements.get(j).text());
+						case 3:	tmpTrain.setTrainArr(td_elements.get(j).text());
+						case 4:	tmpTrain.setTrainDep(td_elements.get(j).text());
+						case 5:	tmpTrain.setTrainDur(td_elements.get(j).text());
+					}
+				}
+
+				resultTrains.add(tmpTrain);
+
+			}
+
+			return resultTrains;
 		}
 
 		public void printTrainList(){
 
 
-			for (Train ii: trainList) {
-				System.out.println("---------------------------------------------------");
-				System.out.println(ii.getTrainNum() + " | " + ii.getTrainTitle() + " | " + ii.getTrainRaspis() + " | " + ii.getTrainArr() + " | " + ii.getTrainDep() + " | " + ii.getTrainDur() + " | " + ii.getTrainRouteLink());
+			for (Train train: trainList) {
+				System.out.println("---------------------------------------------------------------------------------------------");
+				System.out.println(train.toString());
 			}
 		}
 
@@ -109,8 +108,11 @@ import org.jsoup.select.*;
 		public void delDupTrains() {
 			System.out.println("ArrayList - "+trainList.size());
 
-			Set<Train> trainSet = new HashSet<>(trainList);
-			System.out.println("Set - "+trainSet.size());
+			Set<Train> trainSet = new LinkedHashSet<>(trainList);
+			System.out.println("LinkedHashSet - "+trainSet.size());
+			trainList.clear();
+			trainList.addAll(trainSet);
+			System.out.println("ArrayList NEW - "+trainList.size());
 		}
 	}
 
