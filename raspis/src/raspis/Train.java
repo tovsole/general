@@ -10,10 +10,6 @@ import java.util.List;
 
 public class Train {
 
-	public Train() {
-		super();
-	}
-
 	private URL trainRouteLink  ;
 	private String trainId;
 	private String trainNum ;
@@ -22,8 +18,36 @@ public class Train {
 	private String trainDep;
 	private String trainArr;
 	private String trainDur;
-	private List<RouteItem> trainRoute;
+	private List<RouteItem> trainRoute = new ArrayList<>();
 
+	//------------------------
+
+	// Constructor creates Train from a single row of  raspis table (set of <TD> elements)
+	public Train(Element row) throws Exception{
+		super();
+
+		final URL baseUrl = new URL("http://www.uz.gov.ua/passengers/timetable/");
+
+		Element href = row.select("a").first();
+		URL routeUrl = new URL(baseUrl, href.attr("href"));
+
+		setTrainRouteLink(routeUrl);
+		setTrainId(parseTrainIdFromRouteLink());
+
+		ArrayList<Element> columns = row.getElementsByTag("td");
+			for (int j = 0; j < columns.size(); j++) // for every column
+			{
+				switch (j) {
+					case 0: setTrainNum(columns.get(j).text());
+					case 1: setTrainTitle(columns.get(j).text());
+					case 2: setTrainRaspis(columns.get(j).text());
+					case 3:	setTrainArr(columns.get(j).text());
+					case 4:	setTrainDep(columns.get(j).text());
+					case 5:	setTrainDur(columns.get(j).text());
+				}
+			}
+		parseRoute();
+	}
 	public void setTrainId(String trainId){
 		this.trainId = trainId;
 	}
@@ -113,7 +137,6 @@ public class Train {
 
 	@Override
 	public int hashCode() {
-
 			return this.trainRouteLink.hashCode();
 	}
 
@@ -123,31 +146,28 @@ public class Train {
 	}
 
 	public void parseRoute() throws Exception {
-
+        System.out.println("    >> Parsing train "+ getTrainNum());
 		Document doc = Jsoup.connect(getTrainRouteLink().toString()).get();
 
 		Element table = doc.getElementById("cpn-timetable");
 
 		Element tbody = table.select("tbody").last();
 
-		ArrayList<Element> tr_elements = tbody.getElementsByTag("tr");
-		for (int item = 0; item < tr_elements.size(); item++) // for every row
+		ArrayList<Element> rows = tbody.getElementsByTag("tr");
+		for (int item = 0; item < rows.size(); item++) // for every row
 		{
 			RouteItem routeItem = new RouteItem();
 
-			Element href = tr_elements.get(item).select("a").first();
+			Element href = rows.get(item).select("a").first();
 			routeItem.setStationId(routeItem.parseStationId(href.attr("href")));
 
-			ArrayList<Element> td_elements = tr_elements.get(item).getElementsByTag("td");
-			for (int j = 0; j < td_elements.size(); j++) // for every column
+			ArrayList<Element> columns = rows.get(item).getElementsByTag("td");
+			for (int j = 0; j < columns.size(); j++) // for every column
 			{
 				switch (j) {
-					case 0:
-						routeItem.setStationName(td_elements.get(j).text());
-					case 1:
-						routeItem.setArrTime(td_elements.get(j).text());
-					case 2:
-						routeItem.setDepTime(td_elements.get(j).text());
+					case 0: routeItem.setStationName(columns.get(j).text());
+					case 1:	routeItem.setArrTime(columns.get(j).text());
+					case 2: routeItem.setDepTime(columns.get(j).text());
 				}
 			}
 

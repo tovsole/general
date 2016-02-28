@@ -43,55 +43,35 @@ import org.jsoup.select.*;
 		{
 
 			linkList = Files.readAllLines(Paths.get("links.txt"));
+			System.out.println("Links have been read from file");
 
 			for (String link : linkList)  // for every link (station) from file
 			{
-				trainList.addAll(parseStationPage(link));
+				trainList.addAll(parsePage(link));
 			}
 
 			delDupTrains();
 			//sortTrainListO();
+			parseRoutes();
 			printTrainList();
+
 		}
 
-		public List<Train> parseStationPage(String pageLink) throws Exception {
-			final URL baseUrl = new URL("http://www.uz.gov.ua/passengers/timetable/");
+		public List<Train> parsePage(String pageLink) throws Exception {
+
 			List<Train> resultTrains = new ArrayList<>();
 
+			System.out.println("Starting parsing new page - "+pageLink);
+
 			Document doc = Jsoup.connect(pageLink).get();
-
 			Element table = doc.getElementById("cpn-timetable");
-
 			Element tbody = table.select("tbody").first();
+			ArrayList<Element> rows = tbody.getElementsByTag("tr");
 
-			ArrayList<Element> tr_elements = tbody.getElementsByTag("tr");
-			for (int i = 0; i < tr_elements.size(); i++) // for every row
+			for (Element row : rows) // for every row
 			{
-				Train tmpTrain = new Train();
-
-				Element href = tr_elements.get(i).select("a").first();
-				URL routeUrl = new URL(baseUrl, href.attr("href"));
-
-				tmpTrain.setTrainRouteLink(routeUrl);
-				tmpTrain.setTrainId(tmpTrain.parseTrainIdFromRouteLink());
-
-				ArrayList<Element> td_elements = tr_elements.get(i).getElementsByTag("td");
-				for (int j = 0; j < td_elements.size(); j++) // for every column
-				{
-					switch (j) {
-						case 0: tmpTrain.setTrainNum(td_elements.get(j).text());
-						case 1: tmpTrain.setTrainTitle(td_elements.get(j).text());
-						case 2: tmpTrain.setTrainRaspis(td_elements.get(j).text());
-						case 3:	tmpTrain.setTrainArr(td_elements.get(j).text());
-						case 4:	tmpTrain.setTrainDep(td_elements.get(j).text());
-						case 5:	tmpTrain.setTrainDur(td_elements.get(j).text());
-					}
-				}
-
-				resultTrains.add(tmpTrain);
-
+				resultTrains.add(new Train(row));
 			}
-
 			return resultTrains;
 		}
 
@@ -106,13 +86,18 @@ import org.jsoup.select.*;
 
 
 		public void delDupTrains() {
-			System.out.println("ArrayList - "+trainList.size());
-
 			Set<Train> trainSet = new LinkedHashSet<>(trainList);
-			System.out.println("LinkedHashSet - "+trainSet.size());
+			System.out.println("ArrayList - "+trainList.size()+" ----  LinkedHashSet - "+trainSet.size());
 			trainList.clear();
 			trainList.addAll(trainSet);
 			System.out.println("ArrayList NEW - "+trainList.size());
+		}
+
+		public void parseRoutes(){
+			for (Train train : trainList) {
+				train.parseRoute();
+			}
+
 		}
 	}
 
