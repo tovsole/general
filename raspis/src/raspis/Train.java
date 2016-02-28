@@ -18,10 +18,12 @@ public class Train {
 	private String trainDep;
 	private String trainArr;
 	private String trainDur;
-	private List<RouteItem> trainRoute = new ArrayList<>();
+	public List<RouteItem> trainRoute = new ArrayList<>();
 
 	//------------------------
-
+    public Train(){
+		super();
+	}
 	// Constructor creates Train from a single row of  raspis table (set of <TD> elements)
 	public Train(Element row) throws Exception{
 		super();
@@ -46,7 +48,6 @@ public class Train {
 					case 5:	setTrainDur(columns.get(j).text());
 				}
 			}
-		parseRoute();
 	}
 	public void setTrainId(String trainId){
 		this.trainId = trainId;
@@ -154,24 +155,9 @@ public class Train {
 		Element tbody = table.select("tbody").last();
 
 		ArrayList<Element> rows = tbody.getElementsByTag("tr");
-		for (int item = 0; item < rows.size(); item++) // for every row
+		for (Element row : rows) // for every row of route of train
 		{
-			RouteItem routeItem = new RouteItem();
-
-			Element href = rows.get(item).select("a").first();
-			routeItem.setStationId(routeItem.parseStationId(href.attr("href")));
-
-			ArrayList<Element> columns = rows.get(item).getElementsByTag("td");
-			for (int j = 0; j < columns.size(); j++) // for every column
-			{
-				switch (j) {
-					case 0: routeItem.setStationName(columns.get(j).text());
-					case 1:	routeItem.setArrTime(columns.get(j).text());
-					case 2: routeItem.setDepTime(columns.get(j).text());
-				}
-			}
-
-			this.addTrainRouteItem(routeItem);
+			this.addTrainRouteItem( new RouteItem(row));
 		}
 	}
 

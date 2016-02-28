@@ -1,5 +1,9 @@
 package raspis;
 
+import org.jsoup.nodes.Element;
+
+import java.util.ArrayList;
+
 /**
  * Created by Alex on 21.02.16.
  */
@@ -50,4 +54,24 @@ public class RouteItem {
         super();
     }
 
+    public RouteItem(Element row) {
+        super();
+
+        Element href = row.select("a").first();
+        setStationId(parseStationId(href.attr("href")));
+
+        ArrayList<Element> columns = row.getElementsByTag("td");
+        for (int j = 0; j < columns.size(); j++) // for every column of row of route
+        {
+            switch (j) {
+                case 0: setStationName(columns.get(j).text());
+                case 1:	setArrTime(columns.get(j).text());
+                case 2: setDepTime(columns.get(j).text());
+            }
+        }
+    }
+
+    public String toString(){
+        return (getStationId()+"|"+getStationName()+"|"+getArrTime()+"|"+getDepTime());
+    }
 }
