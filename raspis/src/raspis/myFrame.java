@@ -101,8 +101,10 @@ public class myFrame extends JFrame {
 		}
 
 		delDupTrains();
-		//sortTrainListO();
-		parseRoutes();
+
+		Collections.sort(trainList,Train.compareByTrainId);
+
+		//parseRoutes();
 		saveTrainListTofile();
 
 	}
@@ -140,6 +142,8 @@ public class myFrame extends JFrame {
 		}
 
 	}
+
+
 
 	public class ExitAction implements ActionListener
 	{

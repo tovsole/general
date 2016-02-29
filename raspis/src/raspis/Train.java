@@ -6,6 +6,7 @@ import org.jsoup.nodes.Element;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Train {
@@ -141,7 +142,7 @@ public class Train {
 			return this.trainRouteLink.hashCode();
 	}
 
-
+    @Override
 	public String toString(){
 		return (getTrainId()+"|"+getTrainNum()+" | "+getTrainTitle()+" | "+getTrainRaspis()+" | "+getTrainArr()+" | "+getTrainDep()+" | "+getTrainDur()+" | "+getTrainRouteLink());
 	}
@@ -160,6 +161,18 @@ public class Train {
 			this.addTrainRouteItem( new RouteItem(row));
 		}
 	}
+
+	public static Comparator<Train> compareByTrainId = new Comparator<Train>(){
+		public int compare (Train train1, Train train2) {
+			return Integer.parseInt(train1.getTrainId()) - Integer.parseInt(train2.getTrainId());
+		}
+	};
+
+	public static Comparator<Train> compareByTrainNum = new Comparator<Train>(){
+		public int compare (Train train1, Train train2) {
+			return train1.getTrainNum().compareTo(train2.getTrainNum());
+		}
+	};
 
 	public void saveToDb()
 	{

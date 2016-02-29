@@ -3,6 +3,7 @@ package raspis;
 import org.jsoup.nodes.Element;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * Created by Alex on 21.02.16.
@@ -74,4 +75,11 @@ public class RouteItem {
     public String toString(){
         return (getStationId()+"|"+getStationName()+"|"+getArrTime()+"|"+getDepTime());
     }
+
+    public static Comparator<RouteItem> compareByArrTime = new Comparator<RouteItem>(){
+        public int compare (RouteItem item1, RouteItem item2) {
+            return item1.getArrTime().compareTo(item2.getArrTime());
+        }
+    };
+
 }
