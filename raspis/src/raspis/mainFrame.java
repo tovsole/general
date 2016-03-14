@@ -9,7 +9,9 @@ import javax.swing.*;
 import java.awt.List;
 import java.awt.event.*;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -17,21 +19,23 @@ import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 
-public class myFrame extends JFrame {
+public class mainFrame extends JFrame {
 	private int width = 500;
 	private int height = 400;
 	private java.util.List<String> linkList = new ArrayList<>();
 	private java.util.List<Train> trainList = new ArrayList<>();
+	private Properties mainProps = new Properties();
+	private final String configFileName = "config.properties";
 
 
-	public myFrame() {
+	public mainFrame() {
 		super();
 		System.out.println("CLASSPATH = " + System.getProperty("java.class.path"));
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-		this.setTitle("получаем расписание");
+		this.setTitle("Грабалка расписания");
 		this.setResizable(true);
 		//--
 		Toolkit kit = Toolkit.getDefaultToolkit();
@@ -60,39 +64,25 @@ public class myFrame extends JFrame {
 		panel1.add(btn2);
 		panel1.add(btn3);
 
-	}
-
-	public void saveTrainListTofile() {
-		ArrayList<String> tmpList = new ArrayList<>();
-		for (Train train : trainList) {
-			tmpList.add(train.toString());
-		}
-
+		//Loading project properties
+		FileInputStream in = null;
 		try {
-			Files.write(Paths.get("C:/a.txt"), tmpList, Charset.defaultCharset());
-			System.out.println("Trains saved to file");
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
-
-		tmpList.clear();
-
-		for (Train train : trainList) {
-			for (RouteItem item : train.trainRoute) {
-				tmpList.add(train.getTrainId() + "|" + item.toString());
-			}
-		}
-		try {
-			Files.write(Paths.get("C:/b.txt"), tmpList, Charset.defaultCharset());
-		} catch (Exception e1) {
-			e1.printStackTrace();
+			in = new FileInputStream(configFileName);
+			mainProps.load(in);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (in != null)
+				try {
+					in.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 		}
 	}
-
 
 	public void getTrainList() throws Exception {
-
-		linkList = Files.readAllLines(Paths.get("links.txt"));
+		linkList = Files.readAllLines(Paths.get(mainProps.getProperty("linkFile")));
 		System.out.println("Links have been read from file");
 
 		for (String link : linkList)  // for every link (station) from file
@@ -108,6 +98,7 @@ public class myFrame extends JFrame {
 		saveTrainListTofile();
 
 	}
+
 
 	public java.util.List<Train> parsePage(String pageLink) throws Exception {
 
@@ -143,9 +134,37 @@ public class myFrame extends JFrame {
 
 	}
 
+	public void saveTrainListTofile() {
+		ArrayList<String> tmpList = new ArrayList<>();
+		final String trainFilePath = "data/trains.txt";
+		final String routeFilePath = "data/route.txt";
 
+		for (Train train : trainList) {
+			tmpList.add(train.toString());
+		}
 
-	public class ExitAction implements ActionListener
+		try {
+			Files.write(Paths.get(mainProps.getProperty("trainFilePath")), tmpList, Charset.defaultCharset());
+			System.out.println("Trains saved to file");
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+
+		tmpList.clear();
+
+		for (Train train : trainList) {
+			for (RouteItem item : train.trainRoute) {
+				tmpList.add(train.getTrainId() + "|" + item.toString());
+			}
+		}
+		try {
+			Files.write(Paths.get(mainProps.getProperty("routeFilePath")), tmpList, Charset.defaultCharset());
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+	}
+
+	private class ExitAction implements ActionListener
 	{
 		public void actionPerformed (ActionEvent e)
 		{
@@ -160,7 +179,7 @@ public class myFrame extends JFrame {
 		
 	}
 	
-	public class HtmlAction implements ActionListener 
+	private class HtmlAction implements ActionListener
 	{
 		public void actionPerformed (ActionEvent e)
 		{
@@ -177,8 +196,8 @@ public class myFrame extends JFrame {
 			}	  			
 		}
 	}
-	public class PrintTrainsAction implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
+	private class PrintTrainsAction implements ActionListener {
+		public void actionPerformed(ActionEvent event) {
 			saveTrainListTofile();
 		}
 

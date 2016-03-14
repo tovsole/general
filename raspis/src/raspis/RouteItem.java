@@ -65,9 +65,9 @@ public class RouteItem {
         for (int j = 0; j < columns.size(); j++) // for every column of row of route
         {
             switch (j) {
-                case 0: setStationName(columns.get(j).text());
-                case 1:	setArrTime(columns.get(j).text());
-                case 2: setDepTime(columns.get(j).text());
+                case 0: setStationName(columns.get(j).text()); break;
+                case 1:	setArrTime(columns.get(j).text()); break;
+                case 2: setDepTime(columns.get(j).text()); break;
             }
         }
     }

@@ -15,7 +15,7 @@ public class main {
 		  public void run()
 			{
 
-				myFrame frame1 = new myFrame();
+				mainFrame frame1 = new mainFrame();
 					
 				
 			}	

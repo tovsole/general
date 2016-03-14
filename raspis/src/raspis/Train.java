@@ -41,12 +41,12 @@ public class Train {
 			for (int j = 0; j < columns.size(); j++) // for every column
 			{
 				switch (j) {
-					case 0: setTrainNum(columns.get(j).text());
-					case 1: setTrainTitle(columns.get(j).text());
-					case 2: setTrainRaspis(columns.get(j).text());
-					case 3:	setTrainArr(columns.get(j).text());
-					case 4:	setTrainDep(columns.get(j).text());
-					case 5:	setTrainDur(columns.get(j).text());
+					case 0: setTrainNum(columns.get(j).text()); break;
+					case 1: setTrainTitle(columns.get(j).text()); break;
+					case 2: setTrainRaspis(columns.get(j).text());break;
+					case 3:	setTrainArr(columns.get(j).text());break;
+					case 4:	setTrainDep(columns.get(j).text());break;
+					case 5:	setTrainDur(columns.get(j).text());break;
 				}
 			}
 	}
