@@ -16,6 +16,9 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 
@@ -55,14 +58,17 @@ public class mainFrame extends JFrame {
 		JButton btn1 = new JButton("Get rasp");
 		JButton btn2 = new JButton("Exit");
 		JButton btn3 = new JButton("Print train List");
+		JButton btn4 = new JButton("Save to db");
 
 		btn1.addActionListener(new HtmlAction());
 		btn2.addActionListener(new ExitAction());
 		btn3.addActionListener(new PrintTrainsAction());
+		btn4.addActionListener(new SavetoDbAction());
 
 		panel1.add(btn1);
 		panel1.add(btn2);
 		panel1.add(btn3);
+		panel1.add(btn4);
 
 		//Loading project properties
 		FileInputStream in = null;
@@ -95,7 +101,7 @@ public class mainFrame extends JFrame {
 		Collections.sort(trainList,Train.compareByTrainId);
 
 		//parseRoutes();
-		saveTrainListTofile();
+		saveTrainListToFile();
 
 	}
 
@@ -134,10 +140,8 @@ public class mainFrame extends JFrame {
 
 	}
 
-	public void saveTrainListTofile() {
+	public void saveTrainListToFile() {
 		ArrayList<String> tmpList = new ArrayList<>();
-		final String trainFilePath = "data/trains.txt";
-		final String routeFilePath = "data/route.txt";
 
 		for (Train train : trainList) {
 			tmpList.add(train.toString());
@@ -198,8 +202,21 @@ public class mainFrame extends JFrame {
 	}
 	private class PrintTrainsAction implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
-			saveTrainListTofile();
+			saveTrainListToFile();
 		}
+
+	}
+
+	private class SavetoDbAction implements ActionListener
+	{
+		public void actionPerformed (ActionEvent e)
+		{
+			Database db = new Database();
+			Connection conn = db.getConnection("jbdc:oracle:thin:"+mainProps.getProperty("db"), mainProps.getProperty("user"), mainProps.getProperty("pass")) ;
+			db.saveTrainListToDb( trainList, conn);
+			System.out.println("Saving results to DB");
+		}
+
 
 	}
 }

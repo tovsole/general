@@ -11,22 +11,25 @@ import java.util.List;
 
 public class Train {
 
-	private URL trainRouteLink  ;
+	private URL trainRouteLink;
 	private String trainId;
-	private String trainNum ;
+	private String trainNum;
 	private String trainTitle;
 	private String trainRaspis;
 	private String trainDep;
 	private String trainArr;
 	private String trainDur;
+	private final String sqlInsert = "Insert into train_tab (id,    train_Id, train_Route_Link,train_Num,train_Title, train_Raspis, train_Dep, train_Arr, train_Dur)"+
+										" values (train_seq.nextval, '?', '?', '?','?','?','?', '?','?')" ;
 	public List<RouteItem> trainRoute = new ArrayList<>();
 
 	//------------------------
-    public Train(){
+	public Train() {
 		super();
 	}
+
 	// Constructor creates Train from a single row of  raspis table (set of <TD> elements)
-	public Train(Element row) throws Exception{
+	public Train(Element row) throws Exception {
 		super();
 
 		final URL baseUrl = new URL("http://www.uz.gov.ua/passengers/timetable/");
@@ -38,89 +41,117 @@ public class Train {
 		setTrainId(parseTrainIdFromRouteLink());
 
 		ArrayList<Element> columns = row.getElementsByTag("td");
-			for (int j = 0; j < columns.size(); j++) // for every column
-			{
-				switch (j) {
-					case 0: setTrainNum(columns.get(j).text()); break;
-					case 1: setTrainTitle(columns.get(j).text()); break;
-					case 2: setTrainRaspis(columns.get(j).text());break;
-					case 3:	setTrainArr(columns.get(j).text());break;
-					case 4:	setTrainDep(columns.get(j).text());break;
-					case 5:	setTrainDur(columns.get(j).text());break;
-				}
+		for (int j = 0; j < columns.size(); j++) // for every column
+		{
+			switch (j) {
+				case 0:
+					setTrainNum(columns.get(j).text());
+					break;
+				case 1:
+					setTrainTitle(columns.get(j).text());
+					break;
+				case 2:
+					setTrainRaspis(columns.get(j).text());
+					break;
+				case 3:
+					setTrainArr(columns.get(j).text());
+					break;
+				case 4:
+					setTrainDep(columns.get(j).text());
+					break;
+				case 5:
+					setTrainDur(columns.get(j).text());
+					break;
 			}
+		}
+
+
 	}
-	public void setTrainId(String trainId){
+
+	public void setTrainId(String trainId) {
 		this.trainId = trainId;
 	}
 
-	public void setTrainRouteLink(URL trainRouteLink){
+	public void setTrainRouteLink(URL trainRouteLink) {
 		this.trainRouteLink = trainRouteLink;
 	}
 
-	public void setTrainNum (String trainNum)
-	{
-		this.trainNum=trainNum;
+	public void setTrainNum(String trainNum) {
+		this.trainNum = trainNum;
 	}
 
-	public void setTrainTitle(String trainTitle){
+	public void setTrainTitle(String trainTitle) {
 		this.trainTitle = trainTitle;
 	}
 
-	public void setTrainRaspis(String trainRaspis){
+	public void setTrainRaspis(String trainRaspis) {
 		this.trainRaspis = trainRaspis;
 	}
 
-	public void setTrainDep(String trainDep){
-		this.trainDep=trainDep;
+	public void setTrainDep(String trainDep) {
+		this.trainDep = trainDep;
 	}
 
-	public void setTrainArr(String trainArr){
-		this.trainArr=trainArr;
+	public void setTrainArr(String trainArr) {
+		this.trainArr = trainArr;
 	}
-	public void setTrainDur(String trainDur){
-		this.trainDur=trainDur;
+
+	public void setTrainDur(String trainDur) {
+		this.trainDur = trainDur;
 	}
 
 
-	public String getTrainId(){
+	public String getTrainId() {
 		return this.trainId;
 	}
 
-	public URL getTrainRouteLink(){
+	public URL getTrainRouteLink() {
 		return this.trainRouteLink;
 	}
 
-	public String getTrainNum(){
+	public String getTrainNum() {
 		return this.trainNum;
 	}
 
-	public String getTrainTitle(){
+	public String getTrainTitle() {
 		return this.trainTitle;
 	}
 
-	public String getTrainRaspis(){
+	public String getTrainTitleSql (){
+		return this.trainTitle.replace("'","''");
+	}
+
+	public String getTrainRaspis() {
 		return this.trainRaspis;
 	}
 
-	public String getTrainDep(){
+	public String getTrainRaspisSql() {
+		return this.trainRaspis.replace("'","''");
+	}
+
+	public String getTrainDep() {
 		return this.trainDep;
 	}
 
-	public String getTrainArr(){
+	public String getTrainArr() {
 		return this.trainArr;
 	}
 
-	public String getTrainDur(){
+	public String getTrainDur() {
 		return this.trainDur;
 	}
 
-	public String parseTrainIdFromRouteLink(){
+	private String parseTrainIdFromRouteLink() {
 		String str = new String(trainRouteLink.toString());
-		return ( str.substring(str.indexOf("=")+1,str.lastIndexOf("&")));
+		return (str.substring(str.indexOf("=") + 1, str.lastIndexOf("&")));
 	}
-	public void addTrainRouteItem (RouteItem routeItem){
+
+	public void addTrainRouteItem(RouteItem routeItem) {
 		this.trainRoute.add(routeItem);
+	}
+
+	public String getSqlInsert() {
+		return sqlInsert;
 	}
 
 
@@ -130,7 +161,8 @@ public class Train {
 			return false;
 		}
 		if (!(obj instanceof Train)) {
-			return false;}
+			return false;
+		}
 
 		Train other = (Train) obj;
 
@@ -139,16 +171,16 @@ public class Train {
 
 	@Override
 	public int hashCode() {
-			return this.trainRouteLink.hashCode();
+		return this.trainRouteLink.hashCode();
 	}
 
-    @Override
-	public String toString(){
-		return (getTrainId()+"|"+getTrainNum()+" | "+getTrainTitle()+" | "+getTrainRaspis()+" | "+getTrainArr()+" | "+getTrainDep()+" | "+getTrainDur()+" | "+getTrainRouteLink());
+	@Override
+	public String toString() {
+		return (getTrainId() + "|" + getTrainNum() + " | " + getTrainTitle() + " | " + getTrainRaspis() + " | " + getTrainArr() + " | " + getTrainDep() + " | " + getTrainDur() + " | " + getTrainRouteLink());
 	}
 
 	public void parseRoute() throws Exception {
-        System.out.println("    >> Parsing train "+ getTrainNum());
+		System.out.println("    >> Parsing train " + getTrainNum());
 		Document doc = Jsoup.connect(getTrainRouteLink().toString()).get();
 
 		Element table = doc.getElementById("cpn-timetable");
@@ -158,32 +190,30 @@ public class Train {
 		ArrayList<Element> rows = tbody.getElementsByTag("tr");
 		for (Element row : rows) // for every row of route of train
 		{
-			this.addTrainRouteItem( new RouteItem(row));
+			this.addTrainRouteItem(new RouteItem(row));
 		}
 	}
 
-	public static Comparator<Train> compareByTrainId = new Comparator<Train>(){
-		public int compare (Train train1, Train train2) {
+	public static Comparator<Train> compareByTrainId = new Comparator<Train>() {
+		public int compare(Train train1, Train train2) {
 			return Integer.parseInt(train1.getTrainId()) - Integer.parseInt(train2.getTrainId());
 		}
 	};
 
-	public static Comparator<Train> compareByTrainNum = new Comparator<Train>(){
-		public int compare (Train train1, Train train2) {
+	public static Comparator<Train> compareByTrainNum = new Comparator<Train>() {
+		public int compare(Train train1, Train train2) {
 			return train1.getTrainNum().compareTo(train2.getTrainNum());
 		}
 	};
 
-	public void saveToDb()
-	{
+	public void saveToDb() {
 
 		System.out.println("��� ����� ���������� � ��");
 	}
-	
-	public void saveToFile() 
-	{
+
+	public void saveToFile() {
 
 		System.out.println("��� ����� ���������� � ����");
 	}
-	
 }
+

@@ -47,7 +47,7 @@ public class RouteItem {
         return this.depTime;
     }
 
-    public String parseStationId(String url) {
+    private String parseStationId(String url) {
         return url.substring(url.indexOf("=")+1,url.lastIndexOf("&"));
     }
 
