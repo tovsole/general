@@ -19,8 +19,8 @@ public class Train {
 	private String trainDep;
 	private String trainArr;
 	private String trainDur;
-	private final String sqlInsert = "Insert into train_tab (id,    train_Id, train_Route_Link,train_Num,train_Title, train_Raspis, train_Dep, train_Arr, train_Dur)"+
-										" values (train_seq.nextval, '?', '?', '?','?','?','?', '?','?')" ;
+	private static final String sqlInsert = "Insert into train_tab (id,    train_Id, train_Route_Link,train_Num,train_Title, train_Raspis, train_Dep, train_Arr, train_Dur)"+
+										" values (train_seq.nextval, ?, ?, ?,?,?,?, ?,?)" ;
 	public List<RouteItem> trainRoute = new ArrayList<>();
 
 	//------------------------
@@ -150,7 +150,7 @@ public class Train {
 		this.trainRoute.add(routeItem);
 	}
 
-	public String getSqlInsert() {
+	public static String getSqlInsert() {
 		return sqlInsert;
 	}
 
@@ -179,20 +179,6 @@ public class Train {
 		return (getTrainId() + "|" + getTrainNum() + " | " + getTrainTitle() + " | " + getTrainRaspis() + " | " + getTrainArr() + " | " + getTrainDep() + " | " + getTrainDur() + " | " + getTrainRouteLink());
 	}
 
-	public void parseRoute() throws Exception {
-		System.out.println("    >> Parsing train " + getTrainNum());
-		Document doc = Jsoup.connect(getTrainRouteLink().toString()).get();
-
-		Element table = doc.getElementById("cpn-timetable");
-
-		Element tbody = table.select("tbody").last();
-
-		ArrayList<Element> rows = tbody.getElementsByTag("tr");
-		for (Element row : rows) // for every row of route of train
-		{
-			this.addTrainRouteItem(new RouteItem(row));
-		}
-	}
 
 	public static Comparator<Train> compareByTrainId = new Comparator<Train>() {
 		public int compare(Train train1, Train train2) {

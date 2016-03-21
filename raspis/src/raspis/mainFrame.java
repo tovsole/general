@@ -1,32 +1,23 @@
 package raspis;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-
 import java.awt.*;
 import javax.swing.*;
-import java.awt.List;
 import java.awt.event.*;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+
 import java.util.*;
+import java.util.List;
 
 
 public class mainFrame extends JFrame {
 	private int width = 500;
 	private int height = 400;
-	private java.util.List<String> linkList = new ArrayList<>();
-	private java.util.List<Train> trainList = new ArrayList<>();
+	private List<String> linkList = new ArrayList<>();
+	private Set<Train> trainList = new HashSet<>();
 	private Properties mainProps = new Properties();
 	private final String configFileName = "config.properties";
 
@@ -90,60 +81,29 @@ public class mainFrame extends JFrame {
 	public void getTrainList() throws Exception {
 		linkList = Files.readAllLines(Paths.get(mainProps.getProperty("linkFile")));
 		System.out.println("Links have been read from file");
-
-		for (String link : linkList)  // for every link (station) from file
+		Parser prs = new Parser();
+		//for (int ii=1 ; ii< linkList.size();ii++)  // for every link (station) from file
+		for (int ii=1 ; ii< 2;ii++)  // for every link (station) from file
 		{
-			trainList.addAll(parsePage(link));
+			trainList.addAll(prs.parseStationPage(linkList.get(ii).toString()));
 		}
 
-		delDupTrains();
+		for (Train train : trainList){
+			prs.parseRoute(train);
+		}
 
-		Collections.sort(trainList,Train.compareByTrainId);
-
-		//parseRoutes();
 		saveTrainListToFile();
 
 	}
 
 
-	public java.util.List<Train> parsePage(String pageLink) throws Exception {
-
-		java.util.List<Train> resultTrains = new ArrayList<>();
-
-		System.out.println("Starting parsing new page - " + pageLink);
-
-		Document doc = Jsoup.connect(pageLink).get();
-		Element table = doc.getElementById("cpn-timetable");
-		Element tbody = table.select("tbody").first();
-		ArrayList<Element> rows = tbody.getElementsByTag("tr");
-
-		for (Element row : rows) // for every row of page
-		{
-			resultTrains.add(new Train(row));
-		}
-		return resultTrains;
-	}
-
-
-	public void delDupTrains() {
-		Set<Train> trainSet = new LinkedHashSet<>(trainList);
-		System.out.println("ArrayList - " + trainList.size() + " ----  LinkedHashSet - " + trainSet.size());
-		trainList.clear();
-		trainList.addAll(trainSet);
-		System.out.println("ArrayList NEW - " + trainList.size());
-	}
-
-	public void parseRoutes() throws Exception {
-		for (Train train : trainList) {
-			train.parseRoute();
-		}
-
-	}
-
 	public void saveTrainListToFile() {
 		ArrayList<String> tmpList = new ArrayList<>();
+		ArrayList<Train>  sortedTrainList = new ArrayList(trainList);
 
-		for (Train train : trainList) {
+		Collections.sort(sortedTrainList,Train.compareByTrainId);
+
+		for (Train train : sortedTrainList) {
 			tmpList.add(train.toString());
 		}
 
@@ -211,9 +171,9 @@ public class mainFrame extends JFrame {
 	{
 		public void actionPerformed (ActionEvent e)
 		{
-			Database db = new Database();
-			Connection conn = db.getConnection("jbdc:oracle:thin:"+mainProps.getProperty("db"), mainProps.getProperty("user"), mainProps.getProperty("pass")) ;
-			db.saveTrainListToDb( trainList, conn);
+			Database db = new Database("jbdc:oracle:thin:"+mainProps.getProperty("db"), mainProps.getProperty("user"), mainProps.getProperty("pass"));
+
+			db.saveTrainListToDb( trainList);
 			System.out.println("Saving results to DB");
 		}
 

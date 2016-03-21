@@ -1,11 +1,9 @@
 package raspis;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.List;
+import java.util.Set;
 
 import static java.lang.Class.*;
 
@@ -13,14 +11,16 @@ import static java.lang.Class.*;
  * Created by otovstiuk on 16.03.2016.
  */
 public class Database {
+    private Connection defConnection ;
 
-    public Database() {
+    public Database(String server, String user, String pass) {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             return;
         }
+        defConnection = getConnection(server, user,pass) ;
     }
 
     public Connection getConnection (String server , String user , String pass){
@@ -38,24 +38,32 @@ public class Database {
 
     }
 
-    public void saveTrainListToDb(List<Train> trainList, Connection conn)  {
-        private final String sqlInsertStr;
+    public void saveTrainListToDb(Set<Train> trainList)  {
 
+        PreparedStatement stmt = null;
         try {
+            stmt = defConnection.prepareStatement(Train.getSqlInsert());
             for (Train train : trainList) {
-                Statement stmt = conn.createStatement();
+                stmt.setString(1,train.getTrainId());
+                stmt.setString(2,train.getTrainRouteLink().toString());
+                stmt.setString(3,train.getTrainNum());
+                stmt.setString(4,train.getTrainTitleSql());
+                stmt.setString(5,train.getTrainRaspisSql());
+                stmt.setString(6,train.getTrainDep());
+                stmt.setString(7,train.getTrainArr() );
+                stmt.setString(8,train.getTrainDur());
                 //System.out.println(train.getSqlInsert());
-                //int i = stmt.executeUpdate(train.getSqlInsert());     // better way is to use prepared parameterized statement
+                int i = stmt.executeUpdate();
 
-                setSqlInsert("Insert into train_tab (id,train_Id, train_Route_Link,train_Num,train_Title, train_Raspis, train_Dep, train_Arr, train_Dur)" +
-                        " values (train_seq.nextval,'" + getTrainId() + "','"+getTrainRouteLink() + "','" + getTrainNum() + "','" + getTrainTitleSql() + "','" + getTrainRaspisSql() + "','" + getTrainDep() + "','" + getTrainArr() + "','" + getTrainDur() + "')");
 
-                stmt.close();  // ORA -1000 maximum numbers of cursors exceeded
+                //stmt.close();  // ORA -1000 maximum numbers of cursors exceeded
             }
-            conn.commit();
-            conn.close();
+            defConnection.commit();
+            //defConnection.close();
         }
-        catch (SQLException e) {  e.printStackTrace();
+        catch (SQLException e) {
+               // defConnection.rollback();
+                e.printStackTrace();
         }
 
     }
