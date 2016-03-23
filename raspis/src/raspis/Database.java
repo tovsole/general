@@ -54,12 +54,10 @@ public class Database {
                 stmt.setString(8,train.getTrainDur());
                 //System.out.println(train.getSqlInsert());
                 int i = stmt.executeUpdate();
-
-
-                //stmt.close();  // ORA -1000 maximum numbers of cursors exceeded
             }
             defConnection.commit();
-            //defConnection.close();
+            stmt.close();
+            defConnection.close();
         }
         catch (SQLException e) {
                // defConnection.rollback();

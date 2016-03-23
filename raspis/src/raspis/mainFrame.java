@@ -163,7 +163,10 @@ public class mainFrame extends JFrame {
 	private class PrintTrainsAction implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			saveTrainListToFile();
+
+			System.out.println("Saved");
 		}
+
 
 	}
 
