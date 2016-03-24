@@ -143,8 +143,8 @@
       <file leaf-file-name="ParserEmail.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/raspis/ParserEmail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30836236">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6045296">
+              <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1892#1893#0" expanded="true" />
@@ -728,8 +728,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/raspis/ParserEmail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30836236">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6045296">
+          <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1892#1893#0" expanded="true" />
