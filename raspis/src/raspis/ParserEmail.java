@@ -1,15 +1,15 @@
 package raspis;
 
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.google.gson.Gson;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
 import java.net.URL;
-import java.io.IOException;
 import java.net.URLEncoder;
+import java.nio.file.Paths;
 import java.security.SecureRandom;
 import java.security.Security;
 import java.security.cert.CertificateException;
@@ -90,6 +90,18 @@ public class ParserEmail {
         HttpsURLConnection.setDefaultHostnameVerifier(hv);
     }
 
+
+
+
+        public void getPage() throws Exception {
+            String request = "https://www.google.com/#q=" + "lenovo" + "&num=20";
+            System.out.println("Sending request..." + request);
+
+            WebClient webClient = new WebClient();
+            HtmlPage page = webClient.getPage(request);
+            page.save(new File("goog1.html"));
+
+        }
 
 
     private Set<String> getDataFromGoogle(String query) {

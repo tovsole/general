@@ -162,7 +162,14 @@ public class mainFrame extends JFrame {
 	}
 	private class PrintTrainsAction implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
-			saveTrainListToFile();
+			//saveTrainListToFile();
+			ParserEmail prs = new ParserEmail();
+			try {
+				prs.getPage();
+			}catch (Exception e1)
+			{
+				e1.printStackTrace();
+			}
 
 			System.out.println("Saved");
 		}
