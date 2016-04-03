@@ -1,8 +1,9 @@
 package raspis;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.google.gson.Gson;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -33,29 +34,8 @@ import javax.net.ssl.*;
 public class ParserEmail {
 
 
-    private final String DOMAIN_NAME_PATTERN  = "([a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]{2,6}";
-    private Pattern patternDomainName=Pattern.compile(DOMAIN_NAME_PATTERN);
-    private Matcher matcher;
 
-    public void parse(String query) {
 
-        Set<String> result = getDataFromGoogle(query);
-        for(String link : result){
-            System.out.println(link);
-        }
-        System.out.println(result.size());
-    }
-
-    public String getDomainName(String url){
-
-        String domainName = "";
-        matcher = patternDomainName.matcher(url);
-        if (matcher.find()) {
-            domainName = matcher.group(0).toLowerCase().trim();
-        }
-        return domainName;
-
-    }
 
     // trusting all certificate
     public void doTrustToCertificates() throws Exception {
@@ -97,9 +77,54 @@ public class ParserEmail {
             String request = "https://www.google.com/#q=" + "lenovo" + "&num=20";
             System.out.println("Sending request..." + request);
 
-            WebClient webClient = new WebClient();
+
+
+            WebClient webClient = new WebClient(BrowserVersion.INTERNET_EXPLORER_11);
+            System.out.println("new WebClient(BrowserVersion.FIREFOX_3_6);...");
+
+
+           // try {  doTrustToCertificates();    }
+            //catch (Exception e) {         e.printStackTrace();      }
+            //System.out.println("doTrustToCertificates...");
+
+            webClient.getOptions().setUseInsecureSSL(true);
             HtmlPage page = webClient.getPage(request);
+
+            System.out.println("webClient.getPage");
+
+
+            //List results = page.getByXPath("//ol[@id='rso']/li//span/h3[@class='r']");
+
+            //System.out.println(results.size());
+
+          //  for (String ii: results){
+           //   System.out.println(ii);
+           // }
+
             page.save(new File("goog1.html"));
+
+
+            //url = "http://www.google.com"
+            //page = webclient.getPage(url)
+            //query_input = page.getByXPath("//input[@name='q']")[0]
+            //query_input.text = q
+            //search_button = page.getByXPath("//input[@name='btnG']")[0]
+            //page = search_button.click()
+
+            //-------------
+            // results = page.getByXPath("//ol[@id='rso']/li//span/h3[@class='r']")
+
+            //c = 0
+            //for result in results:
+            //title = result.asText()
+            //href = result.getByXPath("./a")[0].getAttributes().getNamedItem("href").nodeValue
+            //print title, href
+            //c += 1
+
+            ///print c,"Results"
+
+            //if __name__ == '__main__':
+            //query("google web search api")
 
         }
 
@@ -138,10 +163,10 @@ public class ParserEmail {
             for (Element link : links) {
 
                 String temp = link.attr("href");
-                if(temp.startsWith("/url?q=")){
+                //if(temp.startsWith("/url?q=")){
                     //use regex to get domain name
-                    result.add(getDomainName(temp));
-                }
+                  //  result.add(getDomainName(temp));
+               // }
 
             }
 
@@ -153,14 +178,6 @@ public class ParserEmail {
     }
 
 
-    /**
-     * Encodes a string of arguments as a URL for a Google search query.
-     *
-     * @param args
-     *            The array of arguments to pass to Google's search engine.
-     *
-     * @return A URL for a Google search query based on the arguments.
-     */
     private static URL encodeGoogleQuery(final String[] args) {
         try {
             final StringBuilder localAddress = new StringBuilder();
@@ -182,48 +199,6 @@ public class ParserEmail {
         }
     }
 
-    public void parse2(String query) throws Exception {
 
-        for (int ii =1; ii<=7; ii++) {
-            URL url = new URL("http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" + URLEncoder.encode(query, "UTF-8") + "&rsz=8&start="+(ii*8));
 
-            Reader reader = new InputStreamReader(url.openStream(), "UTF-8");
-            GoogleResults results = new Gson().fromJson(reader, GoogleResults.class);
-
-            int total = results.getResponseData().getResults().size();
-            System.out.println("total: " + total);
-
-            // Show title and URL of each results
-            for (int i = 0; i <= total - 1; i++) {
-                System.out.println("Title: " + results.getResponseData().getResults().get(i).getTitle());
-                System.out.println("URL: " + results.getResponseData().getResults().get(i).getUrl() + "\n");
-
-            }
-        }
-    }
-
-    class GoogleResults{
-
-        private ResponseData responseData;
-        public ResponseData getResponseData() { return responseData; }
-        public void setResponseData(ResponseData responseData) { this.responseData = responseData; }
-        public String toString() { return "ResponseData[" + responseData + "]"; }
-
-        class ResponseData {
-            private List<Result> results;
-            public List<Result> getResults() { return results; }
-            public void setResults(List<Result> results) { this.results = results; }
-            public String toString() { return "Results[" + results + "]"; }
-        }
-
-        class Result {
-            private String url;
-            private String title;
-            public String getUrl() { return url; }
-            public String getTitle() { return title; }
-            public void setUrl(String url) { this.url = url; }
-            public void setTitle(String title) { this.title = title; }
-            public String toString() { return "Result[url:" + url +",title:" + title + "]"; }
-        }
-    }
 }
