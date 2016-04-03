@@ -10,10 +10,20 @@ import java.util.Comparator;
  */
 public class RouteItem {
 
+
+    private int numItem;
     private String stationID;
     private String stationName;
     private String arrTime;
     private String depTime;
+
+    public int getNumItem() {
+        return numItem;
+    }
+
+    public void setNumItem(int numItem) {
+        this.numItem = numItem;
+    }
 
     public void setStationId (String stationID){
         this.stationID=stationID;
@@ -55,9 +65,9 @@ public class RouteItem {
         super();
     }
 
-    public RouteItem(Element row) {
+    public RouteItem(Element row, int numRow) {
         super();
-
+        setNumItem(numRow);
         Element href = row.select("a").first();
         setStationId(parseStationId(href.attr("href")));
 
@@ -73,7 +83,7 @@ public class RouteItem {
     }
 
     public String toString(){
-        return (getStationId()+"|"+getStationName()+"|"+getArrTime()+"|"+getDepTime());
+        return (getNumItem()+"|"+getStationId()+"|"+getStationName()+"|"+getArrTime()+"|"+getDepTime());
     }
 
     public static Comparator<RouteItem> compareByArrTime = new Comparator<RouteItem>(){

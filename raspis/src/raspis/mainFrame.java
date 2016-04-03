@@ -118,7 +118,7 @@ public class mainFrame extends JFrame {
 
 		for (Train train : trainList) {
 			for (RouteItem item : train.trainRoute) {
-				tmpList.add(train.getTrainId() + "|" + item.toString());
+			tmpList.add(train.getTrainId() + "|"+ item.toString());
 			}
 		}
 		try {
@@ -162,15 +162,7 @@ public class mainFrame extends JFrame {
 	}
 	private class PrintTrainsAction implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
-			//saveTrainListToFile();
-			ParserEmail prs = new ParserEmail();
-			try {
-				prs.getPage();
-			}catch (Exception e1)
-			{
-				e1.printStackTrace();
-			}
-
+			saveTrainListToFile();
 			System.out.println("Saved");
 		}
 

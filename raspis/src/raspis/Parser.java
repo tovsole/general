@@ -37,7 +37,7 @@ public class Parser {
 
 
     public void parseRoute(Train tmpTrain) throws Exception {
-        System.out.println("    >> Parsing train " + tmpTrain.getTrainNum());
+        System.out.println("    >> Parsing train " + tmpTrain.getTrainNum("FULL"));
         Document doc = Jsoup.connect(tmpTrain.getTrainRouteLink().toString()).get();
 
         Element table = doc.getElementById("cpn-timetable");
@@ -45,9 +45,13 @@ public class Parser {
         Element tbody = table.select("tbody").last();
 
         ArrayList<Element> rows = tbody.getElementsByTag("tr");
-        for (Element row : rows) // for every row of route of train
+        //for (Element row : rows) // for every row of route of train
+        for (int ii=0; ii<rows.size(); ii++) // for every row of route of train
         {
-            tmpTrain.addTrainRouteItem(new RouteItem(row));
+            tmpTrain.addTrainRouteItem(new RouteItem(rows.get(ii),ii));
         }
+
+        tmpTrain.setFirstStation(tmpTrain.trainRoute.get(0).getStationId());
+        tmpTrain.setLastStation(tmpTrain.trainRoute.get(tmpTrain.trainRoute.size()-1).getStationId());
     }
 }

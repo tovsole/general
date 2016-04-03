@@ -15,12 +15,39 @@ public class Train {
 	private String trainNum;
 	private String trainTitle;
 	private String trainRaspis;
-	private String trainDep;
-	private String trainArr;
 	private String trainDur;
-	private static final String sqlInsert = "Insert into train_tab (id,    train_Id, train_Route_Link,train_Num,train_Title, train_Raspis, train_Dep, train_Arr, train_Dur)"+
-										" values (train_seq.nextval, ?, ?, ?,?,?,?, ?,?)" ;
+	private String firstStation;
+	private String lastStation;
+	private String firmName;
+	private static final String sqlInsert = "Insert into train_tab (id,    train_Id, train_Route_Link,train_Num,train_Title, train_Raspis, train_Dur)" +
+			" values (train_seq.nextval, ?, ?, ?,?,?,?)";
 	public List<RouteItem> trainRoute = new ArrayList<>();
+
+
+	public String getFirmName() {
+		return firmName;
+	}
+
+	public void setFirmName(String firmName) {
+		this.firmName = firmName;
+	}
+
+	public String getFirstStation() {
+		return firstStation;
+	}
+
+	public void setFirstStation(String firstStation) {
+		this.firstStation = firstStation;
+	}
+
+	public String getLastStation() {
+		return lastStation;
+	}
+
+	public void setLastStation(String lastStation) {
+		this.lastStation = lastStation;
+	}
+
 
 	//------------------------
 	public Train() {
@@ -53,17 +80,18 @@ public class Train {
 					setTrainRaspis(columns.get(j).text());
 					break;
 				case 3:
-					setTrainArr(columns.get(j).text());
+					//setTrainArr(columns.get(j).text());
 					break;
 				case 4:
-					setTrainDep(columns.get(j).text());
+					//setTrainDep(columns.get(j).text());
 					break;
 				case 5:
-					setTrainDur(columns.get(j).text());
+					//setTrainDur(columns.get(j).text());
+					setTrainDur("0");
 					break;
 			}
 		}
-
+		setFirmName(parseFirmName());
 
 	}
 
@@ -87,14 +115,6 @@ public class Train {
 		this.trainRaspis = trainRaspis;
 	}
 
-	public void setTrainDep(String trainDep) {
-		this.trainDep = trainDep;
-	}
-
-	public void setTrainArr(String trainArr) {
-		this.trainArr = trainArr;
-	}
-
 	public void setTrainDur(String trainDur) {
 		this.trainDur = trainDur;
 	}
@@ -108,16 +128,24 @@ public class Train {
 		return this.trainRouteLink;
 	}
 
-	public String getTrainNum() {
-		return this.trainNum;
+	public String getTrainNum(String type) {
+		String str = new String (trainNum);
+		if (type == "SHORT") {
+			if (str.indexOf("(") > 0) {
+				str= (str.substring(0, str.indexOf("(")));
+			}
+		} else {
+			str= this.trainNum;
+		}
+		return str;
 	}
 
 	public String getTrainTitle() {
 		return this.trainTitle;
 	}
 
-	public String getTrainTitleSql (){
-		return this.trainTitle.replace("'","''");
+	public String getTrainTitleSql() {
+		return this.trainTitle.replace("'", "''");
 	}
 
 	public String getTrainRaspis() {
@@ -125,15 +153,7 @@ public class Train {
 	}
 
 	public String getTrainRaspisSql() {
-		return this.trainRaspis.replace("'","''");
-	}
-
-	public String getTrainDep() {
-		return this.trainDep;
-	}
-
-	public String getTrainArr() {
-		return this.trainArr;
+		return this.trainRaspis.replace("'", "''");
 	}
 
 	public String getTrainDur() {
@@ -144,6 +164,16 @@ public class Train {
 		String str = new String(trainRouteLink.toString());
 		return (str.substring(str.indexOf("=") + 1, str.lastIndexOf("&")));
 	}
+
+	private String parseFirmName(){
+		String str = new String (getTrainNum("FULL"));
+
+		if (str.indexOf("(")>0) {
+			str= (str.substring(str.indexOf("(") + 1, str.lastIndexOf(")")));
+		}
+		return str;
+	}
+
 
 	public void addTrainRouteItem(RouteItem routeItem) {
 		this.trainRoute.add(routeItem);
@@ -175,7 +205,15 @@ public class Train {
 
 	@Override
 	public String toString() {
-		return (getTrainId() + "|" + getTrainNum() + " | " + getTrainTitle() + " | " + getTrainRaspis() + " | " + getTrainArr() + " | " + getTrainDep() + " | " + getTrainDur() + " | " + getTrainRouteLink());
+		return (getTrainId() + "|" +
+				getTrainNum("SHORT") + " | " +
+				getTrainTitle() + " | " +
+				getTrainRaspis() + " | " +
+				getFirstStation()+ " | " +
+				getLastStation()+ " | " +
+				getTrainDur() + " | " +
+				getFirmName() + " | " +
+				getTrainRouteLink());
 	}
 
 
@@ -187,18 +225,8 @@ public class Train {
 
 	public static Comparator<Train> compareByTrainNum = new Comparator<Train>() {
 		public int compare(Train train1, Train train2) {
-			return train1.getTrainNum().compareTo(train2.getTrainNum());
+			return train1.getTrainNum("SHORT").compareTo(train2.getTrainNum("SHORT"));
 		}
 	};
 
-	public void saveToDb() {
-
-		System.out.println("��� ����� ���������� � ��");
-	}
-
-	public void saveToFile() {
-
-		System.out.println("��� ����� ���������� � ����");
-	}
 }
-

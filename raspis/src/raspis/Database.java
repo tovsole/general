@@ -46,11 +46,11 @@ public class Database {
             for (Train train : trainList) {
                 stmt.setString(1,train.getTrainId());
                 stmt.setString(2,train.getTrainRouteLink().toString());
-                stmt.setString(3,train.getTrainNum());
+                stmt.setString(3,train.getTrainNum("SHORT"));
                 stmt.setString(4,train.getTrainTitleSql());
                 stmt.setString(5,train.getTrainRaspisSql());
-                stmt.setString(6,train.getTrainDep());
-                stmt.setString(7,train.getTrainArr() );
+                //stmt.setString(6,train.getTrainDep());
+                //stmt.setString(7,train.getTrainArr() );
                 stmt.setString(8,train.getTrainDur());
                 //System.out.println(train.getSqlInsert());
                 int i = stmt.executeUpdate();
