@@ -49,10 +49,12 @@ public class Database {
                 stmt.setString(3,train.getTrainNum("SHORT"));
                 stmt.setString(4,train.getTrainTitleSql());
                 stmt.setString(5,train.getTrainRaspisSql());
-                //stmt.setString(6,train.getTrainDep());
-                //stmt.setString(7,train.getTrainArr() );
+                stmt.setString(6,train.getFirstStation ());
+                stmt.setString(7,train.getLastStation() );
                 stmt.setString(8,train.getTrainDur());
-                //System.out.println(train.getSqlInsert());
+                stmt.setString(9,train.getFirmName());
+                stmt.setString(9,String.valueOf(train.getIsWagon()));
+
                 int i = stmt.executeUpdate();
             }
             defConnection.commit();

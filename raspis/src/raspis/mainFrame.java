@@ -82,14 +82,15 @@ public class mainFrame extends JFrame {
 		linkList = Files.readAllLines(Paths.get(mainProps.getProperty("linkFile")));
 		System.out.println("Links have been read from file");
 		Parser prs = new Parser();
+
 		//for (int ii=1 ; ii< linkList.size();ii++)  // for every link (station) from file
-		for (int ii=1 ; ii< 2;ii++)  // for every link (station) from file
+		for (int ii=0 ; ii< 2; ii++)  // for every link (station) from file
 		{
 			trainList.addAll(prs.parseStationPage(linkList.get(ii).toString()));
 		}
 
 		for (Train train : trainList){
-			prs.parseRoute(train);
+			prs.parseTrainRoute(train);
 		}
 
 		saveTrainListToFile();

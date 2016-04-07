@@ -19,10 +19,24 @@ public class Train {
 	private String firstStation;
 	private String lastStation;
 	private String firmName;
-	private static final String sqlInsert = "Insert into train_tab (id,    train_Id, train_Route_Link,train_Num,train_Title, train_Raspis, train_Dur)" +
-			" values (train_seq.nextval, ?, ?, ?,?,?,?)";
+	private boolean isWagon;
+
+	private static final String sqlInsert = "Insert into train_tab (id, train_Id, train_Route_Link,train_Num,train_Title, train_Raspis, st1, st2, train_Dur, firm_name,is_Wagon)" +
+			" values (train_seq.nextval, ?, ?, ?,?,?,?,?,?,?,?)";
+
+
 	public List<RouteItem> trainRoute = new ArrayList<>();
 
+
+	public boolean getIsWagon() {
+		return isWagon;
+	}
+
+	private void setIsWagon() {
+		if (getTrainNum("FULL").indexOf("безпересадковий") >0) {
+			this.isWagon = true;
+		}
+	}
 
 	public String getFirmName() {
 		return firmName;
@@ -87,11 +101,12 @@ public class Train {
 					break;
 				case 5:
 					//setTrainDur(columns.get(j).text());
-					setTrainDur("0");
+					//setTrainDur("0");
 					break;
 			}
 		}
 		setFirmName(parseFirmName());
+		setIsWagon();
 
 	}
 
@@ -119,6 +134,11 @@ public class Train {
 		this.trainDur = trainDur;
 	}
 
+	public void setTrainDur(Element row) {
+		ArrayList<Element> columns = row.getElementsByTag("td");
+		this.trainDur = columns.get(columns.size()-1).text();
+	}
+
 
 	public String getTrainId() {
 		return this.trainId;
@@ -132,8 +152,12 @@ public class Train {
 		String str = new String (trainNum);
 		if (type == "SHORT") {
 			if (str.indexOf("(") > 0) {
-				str= (str.substring(0, str.indexOf("(")));
+				str= str.substring(0, str.indexOf("("));
 			}
+			else if (str.indexOf("безпересадковий") >0) {
+				str = str.substring(0,str.indexOf("безпересадковий"));
+			}
+
 		} else {
 			str= this.trainNum;
 		}
@@ -170,6 +194,8 @@ public class Train {
 
 		if (str.indexOf("(")>0) {
 			str= (str.substring(str.indexOf("(") + 1, str.lastIndexOf(")")));
+		}else {
+		    str=" ";
 		}
 		return str;
 	}
@@ -213,6 +239,7 @@ public class Train {
 				getLastStation()+ " | " +
 				getTrainDur() + " | " +
 				getFirmName() + " | " +
+				getIsWagon() + " | " +
 				getTrainRouteLink());
 	}
 

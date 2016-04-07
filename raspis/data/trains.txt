@@ -1,170 +1,317 @@
-54|13 | Київ Ужгород | цілий рік щоденно | 22000 | 20095 | 0 | 13 | http://www.uz.gov.ua/passengers/timetable/?ntrain=54&by_id=1
-218|228 | Львів Одеса | 30/04, 3,7,9/05/2016 | 23200 | 23600 | 0 | 228 | http://www.uz.gov.ua/passengers/timetable/?ntrain=218&by_id=1
-266|228 | Одеса Львів | 29/04, 2,6,8/05/2016 | 23600 | 23200 | 0 | 228 | http://www.uz.gov.ua/passengers/timetable/?ntrain=266&by_id=1
-322|26 | Львів Одеса | цілий рік щоденно, крім 5-21/04/2016 | 23200 | 23600 | 0 | 26 | http://www.uz.gov.ua/passengers/timetable/?ntrain=322&by_id=1
-1151|804 | Львів Рівне | з 14/12/2015 щоденно, крім неділі | 23200 | 23400 | 0 | 804 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1151&by_id=1
-1168|811 | Ківерці Львів | цілий рік щоденно, крім середи і четверга | 23095 | 23200 | 0 | 811 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1168&by_id=1
-1202|829 | Львів Ужгород | цілий рік щоденно | 23200 | 20095 | 0 | 829 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1202&by_id=1
-1204|828 | Мукачево Львів | цілий рік щоденно | 23070 | 23200 | 0 | 828 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1204&by_id=1
-1206|806 | Рівне Львів | з 13/12/2015 щоденно, крім суботи | 23400 | 23200 | 0 | 806 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1206&by_id=1
-1211|827 | Львів Мукачево | цілий рік щоденно | 23200 | 23070 | 0 | 827 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1211&by_id=1
-1236|812 | Львів Ківерці | цілий рік щоденно, крім вівторка і середи | 23200 | 23095 | 0 | 812 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1236&by_id=1
-1280|704 | Львів Івано-Франківськ | з 13/12/2015 по п`ятницях, суботах та неділях | 23200 | 23000 | 0 | 704 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1280&by_id=1
-1328|219 | Івано-Франківськ Київ | 3,30/04, 3,7,9/05/2016 | 23000 | 22000 | 0 | 219 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1328&by_id=1
-1375|601 | Солотвино Львів | цілий рік щоденно | 23065 | 23200 | 0 | 601 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1375&by_id=1
-1436|702 | Чернівці Львів | з 12/01/2016 щоденно, крім четверга | 23500 | 23200 | 0 | 702 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1436&by_id=1
-1437|702 | Львів Чернівці | з 12/01/2016 щоденно, крім середи | 23200 | 23500 | 0 | 702 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1437&by_id=1
-1449|113 | Харків Мукачеве | з 24/01/2016 по парних, при двох непарних 28,30,31,2,4 | 22100 | 23070 | 0 | 113 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1449&by_id=1
-1451|115 | Харків Івано-Франківськ | з 25/01/2016 по непарних, при двох непарних 27,29,1 | 22100 | 23000 | 0 | 115 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1451&by_id=1
-1506|13 | Ужгород Київ | з 27/03/2016 щоденно | 20095 | 22000 | 0 | 13 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1506&by_id=1
-1509|235 | Харків Ужгород | 29/03-29/04, 13-27/05/2016 по вівторках та п`ятницях; 2,6,8,9/05/2016 | 22100 | 20095 | 0 | 235 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1509&by_id=1
-1517|212 | Львів Запоріжжя | 30/04, 4,10/05/2016 | 23200 | 22800 | 0 | 212 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1517&by_id=1
-1518|99 | Київ Ужгород | з 27/03/2016 щоденно | 22000 | 20095 | 0 | 99 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1518&by_id=1
-1528|235 | Ужгород Харків | 27/03-27/04, 15-29/05/2016 по середах та неділях; 30/04, 3,7,9,10/05/2016 | 20095 | 22100 | 0 | 235 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1528&by_id=1
-1529|136 | Чернівці Одеса | 27/03-11/05, 2/06-1/10/2016 щоденно (крім 5-20/04/2016); 12-30/05/2016 та з 2/10/2016 по парних, при двох непарних 28,30,2 | 23500 | 23600 | 0 | 136 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1529&by_id=1
-1535|74 | Львів Москва | з 27/03/2016 щоденно, крім 4-28/04/2016 | 23200 | 20007 | 0 | 74 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1535&by_id=1
-1538|136 | Одеса Чернівці | 27/03-10/05, 1/06-30/09/2016 щоденно (крім 5-20/04/2016); 11-29/05/2016 та з 1/10/2016 по непарних, при двох непарних 27,29,1 | 23600 | 23500 | 0 | 136 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1538&by_id=1
-1552|269 | Київ Івано-Франківськ | 1,28,29/04/2016 | 22000 | 23000 | 0 | 269 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1552&by_id=1
-1553|107  | Ужгород Одеса | 27-31/03/2016 щоденно | 20095 | 23600 | 0 | "ХАДЖИБЕЙ" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1553&by_id=1
-1554|109 | Херсон Львів | 28,30/03, 2,4/04, 22/04-2/06/2016 та з 20/09/2016 по парних , при двох непарних 28,30,2; 3/06-19/09/2016 щоденно | 23530 | 23200 | 0 | 109 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1554&by_id=1
-1558|606 | Львів Рахів | з 27/03/2016 щоденно | 23200 | 23270 | 0 | 606 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1558&by_id=1
-1559|120 | Львів Кривий Ріг, Запоріжжя | з 27/03/2016 щоденно, крім 8/04/2016 | 23200 | 22800 | 0 | 120 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1559&by_id=1
-1562|111  | Харків Львів | 27/03-3/04/2016 щоденно | 22100 | 23200 | 0 | "СЛОБОЖАНЩИНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1562&by_id=1
-1564|114 | Мукачеве Харків | з 27/03/2016 по непарних, при двох непарних 29,31,1,3,5 | 23070 | 22100 | 0 | 114 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1564&by_id=1
-1572|41 | Дніпропетровськ Трускавець | з 27/03/2016 щоденно (крім 5-20/04/2016) | 22700 | 23240 | 0 | 41 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1572&by_id=1
-1580|668 | Чернівці Ковель | з 27/03/2016 по непарних, при двох непарних 27,29,1 | 23500 | 23020 | 0 | 668 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1580&by_id=1
-1589|212 | Запоріжжя Львів | 29/04, 3,9/05/2016 | 22800 | 23200 | 0 | 212 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1589&by_id=1
-1599|70 | Маріуполь Львів | з 27/03/2016 щоденно, крім 4-20/04/2016 | 24400 | 23200 | 0 | 70 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1599&by_id=1
-1611|108  | Одеса Ужгород | з 27/03/2016 щоденно, крім 5-20/04/2016 | 23600 | 20095 | 0 | "ХАДЖИБЕЙ" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1611&by_id=1
-1612|86 | Новоолексіївка Львів | 28/03-30/10/2016 по парних (крім 6-20/04/2016), при двох непарних 28,30,2,4 | 22790 | 23200 | 0 | 86 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1612&by_id=1
-1618|70 | Львів Маріуполь | з 28/03/2016 щоденно, крім 5-21/04/2016 | 23200 | 24400 | 0 | 70 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1618&by_id=1
-1621|92  | Львів Київ | 27/03-29/10/2016 щоденно | 23200 | 22000 | 0 | "ЛЬВІВ" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1621&by_id=1
-1622|81  | Ужгород Київ | з 27/03/2016 щоденно, крім 5-21/04/2016 | 20095 | 22000 | 0 | "ДЕСНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1622&by_id=1
-1625|192 | Львів Київ | 29,30/04, 3,7,9/05/2016 | 23200 | 22000 | 0 | 192 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1625&by_id=1
-1630|371 | Могилів Львів | 27/03-9/12/2016 по непарних (крім 5,13/04/2016), при двох непарних 29,1,3 | 21150 | 23200 | 0 | 371 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1630&by_id=1
-1634|207 | Київ Ужгород | 28,29,30/04, 6/05/2016 | 22000 | 20095 | 0 | 207 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1634&by_id=1
-1635|142 | Львів Київ | з 30/10/2016 щоденно | 23200 | 22000 | 0 | 142 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1635&by_id=1
-1640|207 | Ужгород Київ | 29,30/04, 3,9/05/2016 | 20095 | 22000 | 0 | 207 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1640&by_id=1
-1650|81  | Київ Ужгород | з 27/03/2016 щоденно, крім 5-21/04/2016 | 22000 | 20095 | 0 | "ДЕСНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1650&by_id=1
-1666|231 | Івано-Франківськ Новоолексіївка | 4/06-14/09/2016 по парних, при двох непарних 30,1,4 | 23000 | 22790 | 0 | 231 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1666&by_id=1
-1667|110 | Львів Херсон | 27/03-1/06/2016 та з 19/09/2016 по непарних, при двох непарних 27,29,1; 2/06-18/09/2016 щоденно | 23200 | 23530 | 0 | 110 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1667&by_id=1
-1674|191 | Київ Львів | 29,30/04, 3,7,9/05/2016 | 22000 | 23200 | 0 | 191 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1674&by_id=1
-1679|73 | Москва Львів | з 27/03/2016 щоденно, крім 4-20/04/2016 | 20007 | 23200 | 0 | 73 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1679&by_id=1
-1680|269 | Івано-Франківськ Київ | 29,30/04/2016 | 23000 | 22000 | 0 | 269 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1680&by_id=1
-1685|99 | Ужгород Київ | з 27/03/2016 щоденно | 20095 | 22000 | 0 | 99 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1685&by_id=1
-1693|96  | Львів Черкаси | 27/03, 3/04, 1/05, 23/04-27/05/2016 та з 3/09/2016 по 3,7,11,15,19,23,27 числах кожного місяця; 3/06-31/08/2016 по непарних, при двох непарних 29,31,3 | 23200 | 23340 | 0 | "ТЯСМИН" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1693&by_id=1
-1698|112  | Львів Харків | 27/03-3/04/2016 щоденно | 23200 | 22100 | 0 | "СЛОБОЖАНЩИНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1698&by_id=1
-1702|43 | Київ Івано-Франківськ | з 27/03/2016 щоденно | 22000 | 23000 | 0 | 43 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1702&by_id=1
-1709|372 | Львів Могилів | 30/03-10/12/2016 по парних (крім 4,12/04/2016), при двох непарних 30,2,4 | 23200 | 21150 | 0 | 372 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1709&by_id=1
-1722|91  | Київ Львів | 27/03-29/10/2016 щоденно | 22000 | 23200 | 0 | "ЛЬВІВ" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1722&by_id=1
-1723|141 | Київ Львів | з 30/10/2016 щоденно | 22000 | 23200 | 0 | 141 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1723&by_id=1
-1725|86 | Львів Новоолексіївка | 27/03-29/10/2016 по непарних (крім 5-21/04/2016), при двох непарних 27,29,1,3 | 23200 | 22790 | 0 | 86 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1725&by_id=1
-1729|232 | Новоолексіївка Івано-Франківськ | 3/06-13/09/2016 по непарних, при двох непарних 29,31,3 | 22790 | 23000 | 0 | 232 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1729&by_id=1
-1733|49  | Київ Трускавець | з 27/03/2016 щоденно, крім 5-21/04/2016 | 22000 | 23240 | 0 | "КОБЗАР" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1733&by_id=1
-1735|50  | Трускавець Київ | з 27/03/2016 щоденно, крім 5-21/04/2016 | 23240 | 22000 | 0 | "КОБЗАР" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1735&by_id=1
-1736|115 | Івано-Франківськ Харків | з 28/03/2016 по парних, при двох непарних 28,30,2 | 23000 | 22100 | 0 | 115 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1736&by_id=1
-1741|43 | Івано-Франківськ Київ | з 27/03/2016 щоденно | 23000 | 22000 | 0 | 43 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1741&by_id=1
-1758|120 | Запоріжжя, Кривий Ріг Львів | з 27/03/2016 щоденно, крім 5-20/04/2016 | 22800 | 23200 | 0 | 120 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1758&by_id=1
-1767|42 | Трускавець Дніпропетровськ | з 27/03/2016 щоденно (крім 6-21/04/2016) | 23240 | 22700 | 0 | 42 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1767&by_id=1
-1768|703 | Івано-Франківськ Львів | з 27/03/2016 по п`ятницях, суботах та неділях | 23000 | 23200 | 0 | 703 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1768&by_id=1
-1781|26 | Одеса Львів | з 27/03/2016 щоденно, крім 5-21/04/2016 | 23600 | 23200 | 0 | 26 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1781&by_id=1
-1787|745  | Київ Львів | 28,29/04, 2,3,6,8,9/05/2016 | 22000 | 23200 | 0 | ІНТЕРСІТІ+ | http://www.uz.gov.ua/passengers/timetable/?ntrain=1787&by_id=1
-1789|746  | Львів Київ | 28,29/04, 2,3,6,8,9/05/2016 | 23200 | 22000 | 0 | ІНТЕРСІТІ+ | http://www.uz.gov.ua/passengers/timetable/?ntrain=1789&by_id=1
-1827|73 безпересадковий вагон | Москва Івано-Франківськ | з 27/03/2016 щоденно, крім 4-20/04/2016 | 20007 | 23000 | 0 | 73 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1827&by_id=1
-1828|607 безпересадковий вагон | Івано-Франківськ Москва | з 27/03/2016 щоденно, крім 4-28/04/2016 | 23000 | 20007 | 0 | 607 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1828&by_id=1
-1829|73 безпересадковий вагон | Москва Чернівці | з 27/03/2016 щоденно, крім 4-20/04/2016 | 20007 | 23500 | 0 | 73 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1829&by_id=1
-1830|608 безпересадковий вагон | Чернівці Москва | з 27/03/2016 щоденно, крім 4-28/04/2016 | 23500 | 20007 | 0 | 608 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1830&by_id=1
-1837|771 безпересадковий вагон | Київ Прага | 27/03-8/12/2016 щоденно, крім 5-21/04/2016 | 22000 | 2120 | 0 | 771 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1837&by_id=1
-1839|771 безпересадковий вагон | Київ Братислава | 27/03-7/12/2016 щоденно, крім четвергів і п"ятниць та 5-21/04/2016, 27/08/2016 | 22000 | 2176 | 0 | 771 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1839&by_id=1
-1840|801 безпересадковий вагон | Братислава Київ | 29/03-9/12/2016 щоденно, крім субот і неділь та 5-21/04/2016, 29/08/2016 | 2176 | 22000 | 0 | 801 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1840&by_id=1
-1841|443 безпересадковий вагон | Прага Київ | 26/03-10/12/2016 щоденно, крім 5-21/04/2016 | 2120 | 22000 | 0 | 443 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1841&by_id=1
-1844|81 безпересадковий вагон | Київ Будапешт | 27/03-8/12/2016 щоденно, крім 5-21/04/2016 | 22000 | 8030 | 0 | 81 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1844&by_id=1
-1845|34 безпересадковий вагон | Будапешт Київ | 27/03-10/12/2016 щоденно, крім 5-21/04/2016 | 8030 | 22000 | 0 | 34 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1845&by_id=1
-1862|372 | Львів Могилів | 28/03, 4,12/04/2016 | 23200 | 21150 | 0 | 372 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1862&by_id=1
-1863|371 | Могилів Львів | 29/03, 5,13/04/2016 | 21150 | 23200 | 0 | 371 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1863&by_id=1
-1880|35 | Львів Вроцлав | 13/03-9/06/2016: березень, червень - по непарних; квітень, травень - по парних | 23200 | 2160 | 0 | 35 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1880&by_id=1
-1881|6300 | Вроцлав Львів | 14/03-11/04/2016: березень - по парних; квітень - по непарних | 2160 | 23200 | 0 | 6300 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1881&by_id=1
-1882|1326 безпересадковий вагон | Варшава Львів | 14/03-11/04/2016 (крім 26/03/2016): березень - по парних; квітень - по непарних | 2189 | 23200 | 0 | 1326 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1882&by_id=1
-1883|6300 | Вроцлав Львів | 13/04-15/05/2016 по непарних | 2160 | 23200 | 0 | 6300 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1883&by_id=1
-1884|6300 | Вроцлав Львів | 17/05-10/06/2016: травень - по непарних; червень - по парних | 2160 | 23200 | 0 | 6300 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1884&by_id=1
-1885|1326 безпересадковий вагон | Варшава Львів | 13/04-10/06/2016: квітень, травень - по непарних; червень - по парних | 2189 | 23200 | 0 | 1326 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1885&by_id=1
-1903|804 | Рівне Львів | з 28/03/2016 щоденно, крім неділі | 23400 | 23200 | 0 | 804 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1903&by_id=1
-1915|806 | Львів Рівне | з 27/03/2016 щоденно, крім суботи | 23200 | 23400 | 0 | 806 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1915&by_id=1
-1936|51 безпересадковий вагон | Львів Варшава | 12/03-10/06/2016: березень, червень - по парних; квітень, травень - по непарних | 23200 | 2189 | 0 | 51 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1936&by_id=1
-1937|1326 безпересадковий вагон | Варшава Львів | 13/03-12/04/2016: березень - по непарних; квітень - по парних | 2189 | 23200 | 0 | 1326 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1937&by_id=1
-1940|6300 | Вроцлав Львів | 13/03-12/04/2016: березень - по непарних; квітень - по парних | 2160 | 23200 | 0 | 6300 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1940&by_id=1
-1941|1326 безпересадковий вагон | Варшава Львів | 14/04-11/06/2016: квітень, травень - по парних; червень - по непарних | 2189 | 23200 | 0 | 1326 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=1941&by_id=1
-1942|6300 | Вроцлав Львів | 14/04-14/05/2016: квітень, травень - по парних | 2160 | 23200 | 0 | 6300 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1942&by_id=1
-1948|142 | Львів Київ | 27/03-29/10/2016 щоденно | 23200 | 22000 | 0 | 142 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1948&by_id=1
-1949|141 | Київ Львів | 27/03-29/10/2016 щоденно | 22000 | 23200 | 0 | 141 | http://www.uz.gov.ua/passengers/timetable/?ntrain=1949&by_id=1
-1954|744  | Львів Київ, Дарниця | з 27/03/2016 щоденно | 23200 | 22080 | 0 | ІНТЕРСІТІ+ | http://www.uz.gov.ua/passengers/timetable/?ntrain=1954&by_id=1
-1972|111  | Харків Львів | 21/04-29/10/2016 щоденно | 22100 | 23200 | 0 | "СЛОБОЖАНЩИНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1972&by_id=1
-1973|112  | Львів Харків | 4-7/04, 9/04-29/10/2016 щоденно | 23200 | 22100 | 0 | "СЛОБОЖАНЩИНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=1973&by_id=1
-2002|95  | Черкаси Львів | 2,30/04, 22/04-26/05/2016 та з 2/09/2016 по 2,6,10,14,18,22,26 числах кожного місяця; 2/06-30/08/2016 по парних, при двох непарних 28,30,2 | 23340 | 23200 | 0 | "ТЯСМИН" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2002&by_id=1
-2003|219 | Київ Івано-Франківськ | 29/04, 2,6,8/05/2016 | 22000 | 23000 | 0 | 219 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2003&by_id=1
-2008|606 | Рахів Львів | з 27/03/2016 щоденно | 23270 | 23200 | 0 | 606 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2008&by_id=1
-2025|74 | Львів Москва | 4,22,23,24,25,26,27,28/04/2016 | 23200 | 20007 | 0 | 74 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2025&by_id=1
-2044|108  | Одеса Чоп | 5-20/04/2016 щоденно | 23600 | 20115 | 0 | "ХАДЖИБЕЙ" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2044&by_id=1
-2045|107  | Чоп Одеса | 8-21/04/2016 щоденно | 20115 | 23600 | 0 | "ХАДЖИБЕЙ" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2045&by_id=1
-2046|107  | Чоп Одеса | 5,6,7/04/2016 | 20115 | 23600 | 0 | "ХАДЖИБЕЙ" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2046&by_id=1
-2047|96  | Львів Черкаси | 7,11,15,19/04/2016 | 23200 | 23340 | 0 | "ТЯСМИН" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2047&by_id=1
-2048|95  | Черкаси Львів | 6,10,14,18/04/2016 | 23340 | 23200 | 0 | "ТЯСМИН" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2048&by_id=1
-2049|26 | Львів Одеса | 5-21/04/2016 щоденно | 23200 | 23600 | 0 | 26 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2049&by_id=1
-2050|26 | Одеса Львів | 5-21/04/2016 щоденно | 23600 | 23200 | 0 | 26 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2050&by_id=1
-2051|81  | Київ Ужгород | 5-21/04/2016 щоденно | 22000 | 20095 | 0 | "ДЕСНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2051&by_id=1
-2052|81  | Ужгород Київ | 5-21/04/2016 щоденно | 20095 | 22000 | 0 | "ДЕСНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2052&by_id=1
-2053|81 безпересадковий вагон | Київ Будапешт | 5-21/04/2016 щоденно | 22000 | 8030 | 0 | 81 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2053&by_id=1
-2054|771 безпересадковий вагон | Київ Братислава | 5-21/04/2016 щоденно | 22000 | 2176 | 0 | 771 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2054&by_id=1
-2056|34 безпересадковий вагон | Будапешт Київ | 5-21/04/2016 щоденно | 8030 | 22000 | 0 | 34 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2056&by_id=1
-2057|771 безпересадковий вагон | Київ Прага | 5-21/04/2016 щоденно | 22000 | 2120 | 0 | 771 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2057&by_id=1
-2058|443 безпересадковий вагон | Прага Київ | 5-21/04/2016 щоденно | 2120 | 22000 | 0 | 443 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2058&by_id=1
-2059|801 безпересадковий вагон | Братислава Київ | 5-21/04/2016 щоденно | 2176 | 22000 | 0 | 801 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2059&by_id=1
-2060|74 | Львів Москва | 5-21/04/2016 щоденно | 23200 | 20007 | 0 | 74 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2060&by_id=1
-2061|608 безпересадковий вагон | Чернівці Москва | 4,22,23,24,25,26,27,28/04/2016 | 23500 | 20007 | 0 | 608 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2061&by_id=1
-2062|607 безпересадковий вагон | Івано-Франківськ Москва | 4,22,23,24,25,26,27,28/04/2016 | 23000 | 20007 | 0 | 607 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2062&by_id=1
-2063|608 безпересадковий вагон | Чернівці Москва | 5-21/04/2016 щоденно | 23500 | 20007 | 0 | 608 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2063&by_id=1
-2064|607 безпересадковий вагон | Івано-Франківськ Москва | 5-21/04/2016 щоденно | 23000 | 20007 | 0 | 607 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2064&by_id=1
-2065|73 | Москва Львів | 4-20/04/2016 щоденно | 20007 | 23200 | 0 | 73 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2065&by_id=1
-2066|73 безпересадковий вагон | Москва Івано-Франківськ | 4-20/04/2016 щоденно | 20007 | 23000 | 0 | 73 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2066&by_id=1
-2067|73 безпересадковий вагон | Москва Чернівці | 4-20/04/2016 щоденно | 20007 | 23500 | 0 | 73 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=2067&by_id=1
-2068|50  | Трускавець Київ | 5-21/04/2016 щоденно | 23240 | 22000 | 0 | "КОБЗАР" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2068&by_id=1
-2069|49  | Київ Трускавець | 5-21/04/2016 щоденно | 22000 | 23240 | 0 | "КОБЗАР" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2069&by_id=1
-2070|357  | Київ Рахів | 5-21/04/2016 щоденно | 22000 | 23270 | 0 | "ГУЦУЛЬЩИНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2070&by_id=1
-2071|358  | Рахів Київ | 5-21/04/2016 щоденно | 23270 | 22000 | 0 | "ГУЦУЛЬЩИНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2071&by_id=1
-2072|143 | Івано-Франківськ Київ | цілий рік щоденно, крім 5-21/04/2016 | 23000 | 22000 | 0 | 143 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2072&by_id=1
-2073|143 | Київ Івано-Франківськ | цілий рік щоденно, крім 5-20/04/2016 | 22000 | 23000 | 0 | 143 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2073&by_id=1
-2074|111  | Харків Львів | 4,5/04/2016 | 22100 | 23200 | 0 | "СЛОБОЖАНЩИНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2074&by_id=1
-2075|112  | Львів Харків | 8/04/2016 | 23200 | 22100 | 0 | "СЛОБОЖАНЩИНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2075&by_id=1
-2076|120 | Запоріжжя, Кривий Ріг Львів | 5-20/04/2016 щоденно | 22800 | 23200 | 0 | 120 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2076&by_id=1
-2077|120 | Львів Кривий Ріг, Запоріжжя | 8/04/2016 | 23200 | 22800 | 0 | 120 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2077&by_id=1
-2078|70 | Львів Маріуполь | 8-21/04/2016 щоденно | 23200 | 24400 | 0 | 70 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2078&by_id=1
-2079|70 | Маріуполь Львів | 4-20/04/2016 щоденно | 24400 | 23200 | 0 | 70 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2079&by_id=1
-2080|86 | Львів Новоолексіївка | 5-21/04/2016 по непарних | 23200 | 22790 | 0 | 86 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2080&by_id=1
-2081|86 | Новоолексіївка Львів | 6-20/04/2016 по парних | 22790 | 23200 | 0 | 86 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2081&by_id=1
-2096|70 | Львів Маріуполь | 5,6,7/04/2016 | 23200 | 24400 | 0 | 70 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2096&by_id=1
-2097|42 | Львів Дніпропетровськ | 6-21/04/2016 щоденно | 23200 | 22700 | 0 | 42 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2097&by_id=1
-2104|136 | Одеса Чернівці | 5,6/04/2016 | 23600 | 23500 | 0 | 136 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2104&by_id=1
-2105|136 | Одеса Чернівці | 7-20/04/2016 щоденно | 23600 | 23500 | 0 | 136 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2105&by_id=1
-2106|136 | Чернівці Одеса | 5-20/04/2016 щоденно | 23500 | 23600 | 0 | 136 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2106&by_id=1
-2107|41 | Дніпропетровськ Львів | 5/04/2016 | 22700 | 23200 | 0 | 41 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2107&by_id=1
-2108|41 | Дніпропетровськ Львів | 6-20/04/2016 щоденно | 22700 | 23200 | 0 | 41 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2108&by_id=1
-2109|111  | Харків Львів | 6-20/04/2016 щоденно | 22100 | 23200 | 0 | "СЛОБОЖАНЩИНА" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2109&by_id=1
-2119|829 | Ужгород Львів | з 27/03/2016 щоденно | 20095 | 23200 | 0 | 829 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2119&by_id=1
-2122|231 | Івано-Франківськ Дніпропетровськ | 30/04, 3,7,9/05/2016 | 23000 | 22700 | 0 | 231 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2122&by_id=1
-2123|232 | Дніпропетровськ Івано-Франківськ | 29/04, 2,6,8/05/2016 | 22700 | 23000 | 0 | 232 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2123&by_id=1
-2125|109 | Херсон Львів | 6-20/04/2016 по парних | 23530 | 23200 | 0 | 109 | http://www.uz.gov.ua/passengers/timetable/?ntrain=2125&by_id=1
-2126|107  | Ужгород Одеса | з 1/04/2016 щоденно, крім 5-21/04/2016 | 20095 | 23600 | 0 | "ХАДЖИБЕЙ" | http://www.uz.gov.ua/passengers/timetable/?ntrain=2126&by_id=1
-28980|601 | Львів Солотвино | цілий рік щоденно | 23200 | 23065 | 0 | 601 | http://www.uz.gov.ua/passengers/timetable/?ntrain=28980&by_id=1
-49143|743  | Дарниця, Київ Львів | цілий рік щоденно | 22080 | 23200 | 0 | ІНТЕРСІТІ+ | http://www.uz.gov.ua/passengers/timetable/?ntrain=49143&by_id=1
-50791|51 | Львів Вроцлав | 12/03-10/06/2016: березень, червень - по парних; квітень, травень - по непарних | 23200 | 2160 | 0 | 51 | http://www.uz.gov.ua/passengers/timetable/?ntrain=50791&by_id=1
-52394|35 безпересадковий вагон | Львів Варшава | 13/03-9/06/2016: березень, червень - по непарних; квітень, травень - по парних | 23200 | 2189 | 0 | 35 безпересадковий вагон | http://www.uz.gov.ua/passengers/timetable/?ntrain=52394&by_id=1
-53278|143 | Київ Івано-Франківськ | 5-20/04/2016 щоденно | 22000 | 23000 | 0 | 143 | http://www.uz.gov.ua/passengers/timetable/?ntrain=53278&by_id=1
-53291|668 | Ковель Чернівці | с 14/12/2015 по парних, при двох непарних 28,30,2 | 23020 | 23500 | 0 | 668 | http://www.uz.gov.ua/passengers/timetable/?ntrain=53291&by_id=1
-53304|143 | Івано-Франківськ Київ | 5-21/04/2016 щоденно | 23000 | 22000 | 0 | 143 | http://www.uz.gov.ua/passengers/timetable/?ntrain=53304&by_id=1
-53363|218 | Рахів Київ | 30/04, 3,7,9/05/2016 | 23270 | 22000 | 0 | 218 | http://www.uz.gov.ua/passengers/timetable/?ntrain=53363&by_id=1
-53370|608 | Львів Чернівці | з 12/01/2016 щоденно | 23200 | 23500 | 0 | 608 | http://www.uz.gov.ua/passengers/timetable/?ntrain=53370&by_id=1
-53546|608 | Чернівці Львів | цілий рік щоденно | 23500 | 23200 | 0 | 608 | http://www.uz.gov.ua/passengers/timetable/?ntrain=53546&by_id=1
-53586|217 | Київ Рахів | 29/04, 2,6,8/05/2016 | 22000 | 23270 | 0 | 217 | http://www.uz.gov.ua/passengers/timetable/?ntrain=53586&by_id=1
-53783|6300 | Вроцлав Львів | 16/05-11/06/2016: травень - по парних; червень - по непарних | 2160 | 23200 | 0 | 6300 | http://www.uz.gov.ua/passengers/timetable/?ntrain=53783&by_id=1
-53799|741  | Дарниця, Київ Львів, Трускавець | з 27/03/2016 щоденно | 22080 | 23240 | 0 | ІНТЕРСІТІ+ | http://www.uz.gov.ua/passengers/timetable/?ntrain=53799&by_id=1
-53800|742  | Трускавець, Львів Київ, Дарниця | цілий рік щоденно | 23240 | 22080 | 0 | ІНТЕРСІТІ+ | http://www.uz.gov.ua/passengers/timetable/?ntrain=53800&by_id=1
+ID|NUM| MARSHRUT| RASPIS| ST1| ST2| V_PUTI| FIRM_NAME| WAGON| ROUTE_LINK
+------------------------------------------------------------------------------ 
+54|13 | Київ Ужгород | цілий рік щоденно | 22000 | 20095 | 16:00 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=54&by_id=1
+149|784  | Київ Шостка | цілий рік щоденно, крім 4-28/04/2016 | 22000 | 22016 | 4:11 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=149&by_id=1
+163|79  | Дніпропетровськ Київ | цілий рік щоденно | 22700 | 22000 | 8:32 | "ДНІПРО" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=163&by_id=1
+221|72  | Київ Запоріжжя | цілий рік щоденно | 22000 | 22800 | 11:08 | "ЗАПОРІЖЖЯ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=221&by_id=1
+290|763  | Дарниця, Київ Одеса | цілий рік щоденно, крім 29,30,31/03, 4-8,11-15,18-20/04/2016 | 22080 | 23600 | 7:21 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=290&by_id=1
+375|764  | Одеса Київ, Дарниця | цілий рік щоденно, крім 29,30,31/03, 4-8,11-15,18-20,23-28/04/2016 | 23600 | 22080 | 7:26 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=375&by_id=1
+384|80  | Київ Дніпропетровськ | цілий рік щоденно | 22000 | 22700 | 7:52 | "ДНІПРО" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=384&by_id=1
+397|358  | Рахів Київ | цілий рік щоденно, крім 5-21/04, 17,18,19/05/2016 | 23270 | 22000 | 17:56 | "ГУЦУЛЬЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=397&by_id=1
+1155|855 | Київ Рівне | цілий рік щоденно | 22000 | 23400 | 7:42 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1155&by_id=1
+1196|817 | Ворожба Фастів | цілий рік щоденно | 22050 | 22150 | 6:28 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1196&by_id=1
+1222|818 | Київ Ворожба | цілий рік щоденно | 3723 | 22050 | 5:01 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1222&by_id=1
+1228|865 | Гребінка Київ | з 13/12/2015 по суботах та неділях | 22550 | 739 | 2:25 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1228&by_id=1
+1328|219 | Івано-Франківськ Київ | 3,30/04, 3,7,9/05/2016 | 23000 | 22000 | 12:23 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1328&by_id=1
+1403|712  | Київ Костянтинівка | цілий рік щоденно | 22000 | 24140 | 6:22 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1403&by_id=1
+1438|282 | Київ Новоолексіївка | 29/04, 2/05/2016 | 22000 | 22790 | 15:17 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1438&by_id=1
+1439|282 | Новоолексіївка Київ | 30/04, 3/05/2016 | 22790 | 22000 | 13:45 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1439&by_id=1
+1449|113 | Харків Мукачеве | з 24/01/2016 по парних, при двох непарних 28,30,31,2,4 | 22100 | 23070 | 17:58 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1449&by_id=1
+1451|115 | Харків Івано-Франківськ | з 25/01/2016 по непарних, при двох непарних 27,29,1 | 22100 | 23000 | 16:10 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1451&by_id=1
+1505|283 | Херсон Барановичі | 16/06-16/09/2016 по парних, при двох непарних 30,1,4 | 23530 | 21010 | 25:44 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1505&by_id=1
+1506|13 | Ужгород Київ | з 27/03/2016 щоденно | 20095 | 22000 | 15:32 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1506&by_id=1
+1507|55 | Москва Жмеринка | з 27/03/2016 по непарних, при двох непарних 29,1,3 | 20007 | 22270 | 17:41 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1507&by_id=1
+1508|767  | Київ Ковель | з 27/03/2016 щоденно | 22000 | 23020 | 8:32 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1508&by_id=1
+1509|235 | Харків Ужгород | 29/03-29/04, 13-27/05/2016 по вівторках та п`ятницях; 2,6,8,9/05/2016 | 22100 | 20095 | 25:39 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1509&by_id=1
+1516|770  | Кам'янець-Подільський Київ | з 28/03/2016 щоденно, крім 6-21/04/2016 | 22260 | 22000 | 7:37 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1516&by_id=1
+1518|99 | Київ Ужгород | з 27/03/2016 щоденно | 22000 | 20095 | 14:33 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1518&by_id=1
+1520|98 | Ковель Київ | з 27/03/2016 щоденно | 23020 | 22000 | 9:41 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1520&by_id=1
+1523|54  | Київ С.петербург | з 27/03/2016 по непарних, при двох непарних 27,29,1 | 22000 | 20103 | 22:25 | "ЛИБІДЬ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1523&by_id=1
+1524|64  | Київ Харків | з 27/03/2016 щоденно | 22000 | 22100 | 8:05 | "ОБЕРІГ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1524&by_id=1
+1525|84  | Маріуполь Київ | з 27/03/2016 щоденно | 24400 | 22000 | 18:48 | "АЗОВ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1525&by_id=1
+1528|235 | Ужгород Харків | 27/03-6/04, 24,27/04, 15-29/05/2016 по середах та неділях; 30/04, 3,7,9,10/05/2016 | 20095 | 22100 | 27:17 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1528&by_id=1
+1535|74 | Львів Москва | з 27/03/2016 щоденно, крім 4-28/04/2016 | 23200 | 20007 | 47:17 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1535&by_id=1
+1541|86  | Київ Мінськ | з 27/03/2016 щоденно; будьте уважні, двері в вагони зачиняються о 22:28, потім митний і паспортний контроль! | 22000 | 21000 | 9:45 | "БЕЛЫЙ АИСТ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1541&by_id=1
+1545|134 | Київ Лисичанськ | з 27/03/2016 щоденно | 22000 | 24060 | 16:00 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1545&by_id=1
+1549|76  | Київ Кривий Ріг | з 27/03/2016 щоденно (крім 4-22/04/2016) | 22000 | 22900 | 8:40 | "КРИВОРІЖЖЯ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1549&by_id=1
+1551|55 | Хмельницький Москва | з 28/03/2016 по парних (крім 4-28/04/2016), при двох непарних 28,30,2 | 22300 | 20007 | 19:49 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1551&by_id=1
+1552|269 | Київ Івано-Франківськ | 1,22,28,29,30/04, 6/05/2016 | 22000 | 23000 | 12:50 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1552&by_id=1
+1555|782  | Київ Кременчук | з 27/03/2016 щоденно, крім вівторків; 3,10/05/2016 | 22000 | 22610 | 5:33 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1555&by_id=1
+1557|102 | Херсон Київ | з 27/03/2016 щоденно | 23530 | 22000 | 12:23 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1557&by_id=1
+1561|12  | Київ Новоолексіївка | з 27/03/2016 щоденно | 22000 | 22790 | 12:37 | "СЛАВУТИЧ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1561&by_id=1
+1562|111  | Харків Львів | 27/03-3/04/2016 щоденно | 22100 | 23200 | 19:58 | "СЛОБОЖАНЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1562&by_id=1
+1563|780  | Київ Суми | з 27/03/2016 щоденно | 22000 | 22450 | 4:13 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1563&by_id=1
+1564|114 | Мукачеве Харків | з 27/03/2016 по непарних, при двох непарних 29,31,1,3,5 | 23070 | 22100 | 18:07 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1564&by_id=1
+1571|774  | Кременчук Київ | з 27/03/2016 щоденно, крім вівторків; 3,10/05/2016 | 22610 | 22000 | 5:13 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1571&by_id=1
+1573|148 | Київ Одеса | 27/03-17/04/2016, 2/06-21/09/2016 щоденно; 18/04-1/06/2016, з 23/09/2016 по понеділках, середах, п"ятницях | 22000 | 23600 | 12:53 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1573&by_id=1
+1574|90 | Жмеринка Москва | з 28/03/2016 по парних (крім 4-28/04/2016), при двох непарних 28,30,2 | 22270 | 20007 | 18:29 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1574&by_id=1
+1575|148 | Одеса Київ | 27/03-16/04/2016, 1/06-20/09/2016 щоденно; 17/04-31/05/2016, з 22/09/2016 по неділях, вівторках,четвергах | 23600 | 22000 | 12:59 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1575&by_id=1
+1576|55 | Москва Хмельницький | з 27/03/2016 по непарних, при двох непарних 29,31,3 | 20007 | 22300 | 19:43 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1576&by_id=1
+1577|134 | Лисичанськ Київ | 27/03-7/04/2016 щоденно | 24060 | 22000 | 15:43 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1577&by_id=1
+1581|72  | Запоріжжя Київ | з 27/03/2016 щоденно | 22800 | 22000 | 10:53 | "ЗАПОРІЖЖЯ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1581&by_id=1
+1582|93 | Мінськ Одеса | 30/03-30/05 (крім 14,18/04/2016), 2/10-10/12/2016 по 2,6,10,14,18,22,26,30 числах кожного місяця; 2/06-30/09/2016 по парних, при двох непарних 28,30,2 | 21000 | 23600 | 22:17 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1582&by_id=1
+1584|102 | Київ Херсон | з 27/03/2016 щоденно | 22000 | 23530 | 12:11 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1584&by_id=1
+1585|772  | Хмельницький Київ | з 27/03/2016 щоденно | 22300 | 22000 | 5:13 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1585&by_id=1
+1586|23  | Москва Одеса | з 27/03/2016 щоденно, крім 4-28/04/2016 | 20007 | 23600 | 22:48 | "ОДЕССА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1586&by_id=1
+1590|77 | Москва Ковель | з 27/03/2016 щоденно (крім 6/06/2016) | 20007 | 23020 | 23:43 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1590&by_id=1
+1594|775  | Харків Київ | з 27/03/2016 щоденно | 22100 | 22000 | 8:05 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1594&by_id=1
+1596|782  | Київ Полтава | з 27/03/2016 щоденно, крім вівторків; 3,10/05/2016 | 22000 | 22590 | 5:33 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1596&by_id=1
+1597|209 | Київ Миколаїв | 28/05-19/09/2016 щоденно | 22000 | 23536 | 14:22 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1597&by_id=1
+1600|210 | Миколаїв Київ | 27/05-18/09/2016 щоденно | 23536 | 22000 | 14:27 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1600&by_id=1
+1601|5  | Москва Київ | з 27/03/2016 щоденно | 20007 | 22000 | 12:31 | "УКРАЇНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1601&by_id=1
+1604|67 | Київ Варшава | 27/03-10/06/2016 щоденно | 22000 | 2191 | 17:31 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1604&by_id=1
+1606|239 | Ужгород Київ | 3,9/05/2016 | 20095 | 22000 | 15:35 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1606&by_id=1
+1607|223 | Київ Одеса | 30/04, 3,7,9/05/2016 | 22000 | 23600 | 9:50 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1607&by_id=1
+1608|108 | Київ Караганди | 31/03-28/04/2016 по четвергах | 22000 | 23950 | 76:40 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1608&by_id=1
+1610|124 | Костянтинівка Київ | з 27/03/2016 щоденно | 24140 | 22000 | 14:43 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1610&by_id=1
+1613|12  | Новоолексіївка Київ | з 27/03/2016 щоденно | 22790 | 22000 | 13:24 | "СЛАВУТИЧ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1613&by_id=1
+1621|92  | Львів Київ | 27/03-29/10/2016 щоденно | 23200 | 22000 | 7:39 | "ЛЬВІВ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1621&by_id=1
+1622|81  | Ужгород Київ | з 27/03/2016 щоденно, крім 5-21/04/2016 | 20095 | 22000 | 15:53 | "ДЕСНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1622&by_id=1
+1625|192 | Львів Київ | 29,30/04, 3,7,9/05/2016 | 23200 | 22000 | 8:36 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1625&by_id=1
+1626|63  | Харків Київ | з 27/03/2016 щоденно | 22100 | 22000 | 8:16 | "ОБЕРІГ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1626&by_id=1
+1628|86  | Мінськ Київ | з 27/03/2016 щоденно | 21000 | 22000 | 10:10 | "БЕЛЫЙ АИСТ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1628&by_id=1
+1633|771  | Київ Хмельницький | з 27/03/2016 щоденно, крім 5-20/04/2016 | 22000 | 22300 | 5:12 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1633&by_id=1
+1634|207 | Київ Ужгород | 28,29,30/04, 6/05/2016 | 22000 | 20095 | 16:10 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1634&by_id=1
+1635|142 | Львів Київ | з 30/10/2016 щоденно | 23200 | 22000 | 12:34 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1635&by_id=1
+1636|778  | Шостка Київ | з 27/03/2016 щоденно | 22016 | 22000 | 3:55 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1636&by_id=1
+1640|207 | Ужгород Київ | 29,30/04, 3,9/05/2016 | 20095 | 22000 | 16:54 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1640&by_id=1
+1647|755  | Хмельницький Київ | з 27/03/2016 щоденно | 22300 | 22000 | 6:23 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1647&by_id=1
+1650|81  | Київ Ужгород | з 27/03/2016 щоденно, крім 5-21/04/2016 | 22000 | 20095 | 15:36 | "ДЕСНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1650&by_id=1
+1652|107 | Караганди Київ | 28/03-25/04/2016 по понеділках | 23950 | 22000 | 77:22 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1652&by_id=1
+1654|53  | С.петербург Київ | з 28/03/2016 по парних, при двох непарних 28,30,2,4 | 20103 | 22000 | 22:32 | "ЛИБІДЬ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1654&by_id=1
+1655|755  | Київ Хмельницький | з 27/03/2016 щоденно | 22000 | 22300 | 5:47 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1655&by_id=1
+1657|121  | Київ Миколаїв | з 27/03/2016 щоденно | 22000 | 23536 | 9:21 | "МИКОЛАЇВ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1657&by_id=1
+1660|180 | Київ Дніпропетровськ | 30/04, 3,7,9/05/2016 | 22000 | 22700 | 8:59 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1660&by_id=1
+1669|1201 | Варшава Київ | 26/03-11/06/2016 щоденно | 2191 | 22000 | 16:18 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1669&by_id=1
+1670|769  | Київ Кам'янець-Подільсь | з 27/03/2016 щоденно | 22000 | 22260 | 7:16 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1670&by_id=1
+1673|781  | Полтава Київ | з 27/03/2016 щоденно, крім вівторків; 3,10/05/2016 | 22590 | 22000 | 5:27 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1673&by_id=1
+1674|191 | Київ Львів | 29,30/04, 3,7,9/05/2016 | 22000 | 23200 | 8:20 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1674&by_id=1
+1677|24  | Одеса Москва | з 27/03/2016 щоденно, крім 4-28/04/2016 | 23600 | 20007 | 23:36 | "ОДЕССА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1677&by_id=1
+1679|73 | Москва Львів | з 27/03/2016 щоденно, крім 4-20/04/2016 | 20007 | 23200 | 24:18 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1679&by_id=1
+1680|269 | Івано-Франківськ Київ | 29,30/04, 3,9/05/2016 | 23000 | 22000 | 13:28 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1680&by_id=1
+1682|76  | Кривий Ріг Київ | з 27/03/2016 щоденно (крім 4-22/04/2016) | 22900 | 22000 | 8:16 | "КРИВОРІЖЖЯ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1682&by_id=1
+1685|99 | Ужгород Київ | з 27/03/2016 щоденно | 20095 | 22000 | 14:47 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1685&by_id=1
+1687|122  | Миколаїв Київ | з 27/03/2016 щоденно | 23536 | 22000 | 10:01 | "МИКОЛАЇВ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1687&by_id=1
+1691|778  | Київ Шостка | з 27/03/2016 щоденно, крім 4-28/04/2016 | 22000 | 22016 | 4:09 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1691&by_id=1
+1694|779  | Суми Київ | з 27/03/2016 щоденно, крім 5-29/04/2016 | 22450 | 22000 | 4:13 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1694&by_id=1
+1695|298 | Київ Миколаїв | 29,30/04, 4,6,10,11/05/2016 | 22000 | 23536 | 13:27 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1695&by_id=1
+1698|112  | Львів Харків | 27/03-3/04/2016 щоденно | 23200 | 22100 | 19:57 | "СЛОБОЖАНЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1698&by_id=1
+1700|298 | Миколаїв Київ | 28,29/04, 3,5,9,10/05/2016 | 23536 | 22000 | 13:54 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1700&by_id=1
+1701|124 | Київ Костянтинівка | з 27/03/2016 щоденно | 22000 | 24140 | 14:59 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1701&by_id=1
+1702|43 | Київ Івано-Франківськ | з 27/03/2016 щоденно | 22000 | 23000 | 10:54 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1702&by_id=1
+1703|179 | Дніпропетровськ Київ | 30/04, 3,7,9/05/2016 | 22700 | 22000 | 10:35 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1703&by_id=1
+1706|768  | Ковель Київ | з 27/03/2016 щоденно | 23020 | 22000 | 8:18 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1706&by_id=1
+1708|126 | Київ Костянтинівка | 27/03-21/04/2016 щоденно | 22000 | 24140 | 12:11 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1708&by_id=1
+1716|758  | Могилів-Подільський Київ | з 28/03/2016 по понеділках, четвергах, суботах, крім 7-21/04/2016 | 22280 | 22000 | 6:18 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1716&by_id=1
+1717|6  | Київ Москва | 27/03-3/04/2016, з 29/04/2016 щоденно | 22000 | 20007 | 13:13 | "УКРАЇНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1717&by_id=1
+1722|91  | Київ Львів | 27/03-29/10/2016 щоденно | 22000 | 23200 | 7:25 | "ЛЬВІВ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1722&by_id=1
+1723|141 | Київ Львів | з 30/10/2016 щоденно | 22000 | 23200 | 12:56 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1723&by_id=1
+1727|769  | Київ Могилів-Подільський | з 27/03/2016 по середах, п`ятницях, неділях | 22000 | 22280 | 6:21 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1727&by_id=1
+1733|49  | Київ Трускавець | з 27/03/2016 щоденно, крім 5-21/04/2016 | 22000 | 23240 | 11:44 | "КОБЗАР" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1733&by_id=1
+1735|50  | Трускавець Київ | з 27/03/2016 щоденно, крім 5-21/04/2016 | 23240 | 22000 | 11:35 | "КОБЗАР" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1735&by_id=1
+1736|115 | Івано-Франківськ Харків | з 28/03/2016 по парних, при двох непарних 28,30,2 | 23000 | 22100 | 16:28 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1736&by_id=1
+1738|776  | Київ Харків | з 28/03/2016 щоденно | 22000 | 22100 | 8:05 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1738&by_id=1
+1741|43 | Івано-Франківськ Київ | з 27/03/2016 щоденно | 23000 | 22000 | 10:55 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1741&by_id=1
+1742|78 | Ковель Москва | з 27/03/2016 щоденно, крім 4-28/04/2016, 7/06/2016 | 23020 | 20007 | 24:24 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1742&by_id=1
+1743|97 | Київ Ковель | з 27/03/2016 щоденно | 22000 | 23020 | 9:49 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1743&by_id=1
+1745|224 | Одеса Київ | 30/04, 3,7,9/05/2016 | 23600 | 22000 | 9:40 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1745&by_id=1
+1751|284 | Барановичі Херсон | 15/06-15/09/2016 по непарних , при двох непарних 29,31,3 | 21010 | 23530 | 25:42 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1751&by_id=1
+1753|94 | Одеса Мінськ | 27/03-31/05 (крім 11,19/04/2016), 3/10-11/12/2016 по 3,7,11,15,19,23,27,31(1) числах кожного місяця; 3/06-1/10/2016 по непарних, при двох непарних 29,31,3 | 23600 | 21000 | 21:50 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1753&by_id=1
+1755|84  | Київ Маріуполь | з 27/03/2016 щоденно | 22000 | 24400 | 18:20 | "АЗОВ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1755&by_id=1
+1762|239 | Київ Ужгород | 29/04, 6/05/2016 | 22000 | 20095 | 15:08 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1762&by_id=1
+1782|723  | Харків Київ | з 27/03/2016 щоденно | 22100 | 22000 | 4:38 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1782&by_id=1
+1787|745  | Київ Львів | 28,29/04, 2,3,6,8,9/05/2016 | 22000 | 23200 | 5:18 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1787&by_id=1
+1788|747  | Дарниця, Київ Тернопіль | з 27/03/2016 щоденно (крім 7-20/04/2016) ; відмінено 5,6/04/2016 | 22080 | 23300 | 6:13 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1788&by_id=1
+1789|746  | Львів Київ | 28,29/04, 2,3,6,8,9/05/2016 | 23200 | 22000 | 6:20 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1789&by_id=1
+1790|748  | Тернопіль Київ, Дарниця | з 27/03/2016 щоденно (крім 7-20/04/2016) ; відмінено 5,6/04/2016 | 23300 | 22080 | 6:08 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1790&by_id=1
+1791|724  | Київ Харків | з 27/03/2016 щоденно | 22000 | 22100 | 4:36 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1791&by_id=1
+1794|117  | Київ Чернівці | з 27/03/2016 щоденно, крім 5-20/04/2016 | 22000 | 23500 | 11:05 | "БУКОВИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1794&by_id=1
+1796|118  | Чернівці Київ | з 27/03/2016 щоденно, крім 5-20/04/2016 | 23500 | 22000 | 12:08 | "БУКОВИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1796&by_id=1
+1805|120  | Запоріжжя, Кривий Ріг Київ | з 27/03/2016 щоденно (крім 4-22/04/2016) | 22800 | 22000 | 16:57 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1805&by_id=1
+1806|76  | Київ Кривий Ріг, Запоріжжя | з 27/03/2016 щоденно (крім 4-22/04/2016) | 22000 | 22800 | 17:51 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1806&by_id=1
+1811|76  | Київ Кіровоград | з 27/03/2016 щоденно; відмінено 4-22/04/2016 | 22000 | 23410 | 7:10 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1811&by_id=1
+1812|962  | Кіровоград Київ | з 26/03/2016 щоденно; відмінено 5-23/04/2016 | 23410 | 22000 | 6:02 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1812&by_id=1
+1815|53  | С.петербург Дніпропетровськ | 28/03-30/05/2016 по парних , при двох непарних 28,30,2,4 | 20103 | 22700 | 36:57 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1815&by_id=1
+1816|11  | Дніпропетровськ С.петербург | 27/03-29/05/2016 по непарних, при двох непарних 27,29,1 | 22700 | 20103 | 33:47 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1816&by_id=1
+1827|73  | Москва Івано-Франківськ | з 27/03/2016 щоденно, крім 4-20/04/2016 | 20007 | 23000 | 26:50 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1827&by_id=1
+1828|607  | Івано-Франківськ Москва | з 27/03/2016 щоденно, крім 4-28/04/2016 | 23000 | 20007 | 31:14 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1828&by_id=1
+1829|73  | Москва Чернівці | з 27/03/2016 щоденно, крім 4-20/04/2016 | 20007 | 23500 | 31:07 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1829&by_id=1
+1830|608  | Чернівці Москва | з 27/03/2016 щоденно, крім 4-28/04/2016 | 23500 | 20007 | 34:09 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1830&by_id=1
+1834|283 | Одеса Барановичі | 29/03-29/05, 5/10-9/12/2016 по 5,9,13,17,21,25,29 числах кожного місяця, крім 13,17/04/2016 | 23600 | 21010 | 25:07 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1834&by_id=1
+1837|771  | Київ Прага | 27/03-8/12/2016 щоденно, крім 5-21/04/2016 | 22000 | 2120 | 33:27 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1837&by_id=1
+1839|771  | Київ Братислава | 27/03-7/12/2016 щоденно, крім четвергів і п"ятниць та 5-21/04/2016, 27/08/2016 | 22000 | 2176 | 31:13 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1839&by_id=1
+1840|801  | Братислава Київ | 29/03-9/12/2016 щоденно, крім субот і неділь та 5-21/04/2016, 29/08/2016 | 2176 | 22000 | 30:54 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1840&by_id=1
+1841|443  | Прага Київ | 26/03-10/12/2016 щоденно, крім 5-21/04/2016 | 2120 | 22000 | 31:34 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1841&by_id=1
+1844|81  | Київ Будапешт | 27/03-8/12/2016 щоденно, крім 5-21/04/2016 | 22000 | 8030 | 23:15 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1844&by_id=1
+1845|34  | Будапешт Київ | 27/03-10/12/2016 щоденно, крім 5-21/04/2016 | 8030 | 22000 | 23:20 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1845&by_id=1
+1848|284 | Барановичі Одеса | 4/04-28/05, 4/10-8/12/2016 по 4,8,12,16,20,24,28 числах кожного місяця, крім 12,20/04/2016 | 21010 | 23600 | 25:05 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1848&by_id=1
+1851|778  | Шостка Хмельницький | з 27/03/2016 щоденно | 22016 | 22300 | 9:44 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1851&by_id=1
+1852|772  | Хмельницький Шостка | з 27/03/2016 щоденно | 22300 | 22016 | 11:11 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1852&by_id=1
+1858|108  | Київ Кустанай | 31/03-28/04/2016 по четвергах | 22000 | 28700 | 2:47 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1858&by_id=1
+1859|43  | Кустанай Київ | 28/03-25/04/2016 по понеділках | 28700 | 22000 | 68:32 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1859&by_id=1
+1866|357  | Київ Рахів | з 27/03/2016 щоденно, крім 5-21/04, 16,17,18/05/2016 | 22000 | 23270 | 18:18 | "ГУЦУЛЬЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1866&by_id=1
+1886|823 | Київ Шепетівка | з 1/04/2016 по п'ятницях | 22000 | 22220 | 4:30 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1886&by_id=1
+1887|813 | Зернове Фастів | з 28/03/2016 щоденно, крім п'ятниць, неділь та 5-29/04/2016 | 20810 | 22150 | 6:58 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1887&by_id=1
+1888|882 | Славутич Фастів | з 27/03/2016 по неділях | 47242 | 22150 | 5:55 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1888&by_id=1
+1889|831 | Київ Гречани | з 27/03/2016 по суботах та неділях, крім 9,10,16,17/04/2016 | 739 | 22229 | 7:50 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1889&by_id=1
+1892|816 | Шостка Фастів | з 28/03/2016 по понеділках | 22016 | 22150 | 6:59 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1892&by_id=1
+1894|827 | Київ Рахни | з 27/03/2016 щоденно | 22000 | 22258 | 5:17 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1894&by_id=1
+1896|861 | Київ Жмеринка | з 27/03/2016 по п`ятницях, суботах, неділях | 22000 | 22270 | 4:18 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1896&by_id=1
+1897|830 | Шостка Київ | з 28/03/2016 щоденно, крім п`ятниць, субот та неділь | 22016 | 3723 | 5:01 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1897&by_id=1
+1898|819 | Київ Шепетівка | з 1/04/2016 по п'ятницях | 22000 | 22220 | 5:14 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1898&by_id=1
+1900|862 | Жмеринка Київ | з 27/03/2016 по п`ятницях, суботах, неділях | 22270 | 22000 | 4:28 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1900&by_id=1
+1904|841 | Київ Шепетівка | з 27/03/2016 по суботах та неділях | 22000 | 22220 | 5:06 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1904&by_id=1
+1907|848 | Рівне Київ | з 27/03/2016 щоденно | 23400 | 22000 | 6:32 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1907&by_id=1
+1912|842 | Шепетівка Київ | з 27/03/2016 по суботах та неділях | 22220 | 22000 | 5:16 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1912&by_id=1
+1913|828 | Жмеринка Київ | з 27/03/2016 щоденно | 22270 | 22000 | 5:02 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1913&by_id=1
+1916|830 | Шостка Київ | з 27/03/2016 по п`ятницях, суботах та неділях | 22016 | 3723 | 4:28 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1916&by_id=1
+1917|830 | Фастів Шостка | з 27/03/2016 щоденно (крім 4-29/04/2016) | 22150 | 22016 | 5:53 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1917&by_id=1
+1918|880 | Київ Славутич | з 27/03/2016 по неділях | 3723 | 47242 | 4:22 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1918&by_id=1
+1919|813 | Зернове Київ | з 27/03/2016 по п'ятницях та неділях, крім 5-29/04/2016 | 20810 | 3723 | 5:15 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1919&by_id=1
+1920|847 | Київ Рівне | з 27/03/2016 щоденно | 22000 | 23400 | 7:08 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1920&by_id=1
+1922|846 | Київ Неданчичі | з 27/03/2016 щоденно | 3723 | 22068 | 4:22 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1922&by_id=1
+1926|816 | Фастів Шостка | з 27/03/2016 по неділях (крім 10,17,24/04/2016) | 22150 | 22016 | 6:28 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1926&by_id=1
+1928|814 | Фастів Зернове | з 27/03/2016 щоденно, крім 4-28/04/2016 | 22150 | 20810 | 6:40 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1928&by_id=1
+1929|836 | Коростень Київ | 27/03/2016-29/05/2016 та з 4/09/2016 по неділях | 22110 | 22000 | 2:09 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1929&by_id=1
+1930|831 | Київ Гречани | з 28/03/2016 щоденно, крім субот, неділь та 5-20/04/2016 | 22000 | 22229 | 7:50 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1930&by_id=1
+1931|844 | Неданчичі Київ | з 27/03/2016 щоденно | 22068 | 3723 | 4:37 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1931&by_id=1
+1933|860 | Шепетівка Київ | з 27/03/2016 щоденно | 22220 | 22000 | 5:35 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1933&by_id=1
+1935|832 | Гречани Київ | з 27/03/2016 щоденно | 22229 | 22000 | 7:15 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1935&by_id=1
+1948|142 | Львів Київ | 27/03-29/10/2016 щоденно | 23200 | 22000 | 12:34 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1948&by_id=1
+1949|141 | Київ Львів | 27/03-29/10/2016 щоденно | 22000 | 23200 | 12:56 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1949&by_id=1
+1954|744  | Львів Київ, Дарниця | з 27/03/2016 щоденно | 23200 | 22080 | 5:22 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1954&by_id=1
+1956|736  | Запоріжжя Київ | 29/04/2016 | 22800 | 22000 | 7:12 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1956&by_id=1
+1961|341 | Кишинеу Москва | з 27/03/2016 щоденно, крім 3-27/04/2016 | 23100 | 20007 | 31:46 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1961&by_id=1
+1962|65 | Москва Кишинеу | з 28/03/2016 по парних, при двох непарних 28,30,2,4 | 20007 | 23100 | 27:16 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1962&by_id=1
+1963|66 | Кишинеу Москва | з 27/03/2016 по непарних (крім 3-27/04/2016), при двох непарних 29,31,3,5 | 23100 | 20007 | 29:09 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1963&by_id=1
+1966|341 | Москва Кишинеу | з 27/03/2016 щоденно | 20007 | 23100 | 31:56 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1966&by_id=1
+1968|47 | Кишинеу Москва | з 27/03/2016 щоденно, крім 3-28/04/2016 | 23100 | 20007 | 29:22 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1968&by_id=1
+1969|47 | Москва Кишинеу | з 27/03/2016 щоденно | 20007 | 23100 | 28:16 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1969&by_id=1
+1972|111  | Харків Львів | 21/04-29/10/2016 щоденно | 22100 | 23200 | 19:22 | "СЛОБОЖАНЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1972&by_id=1
+1973|112  | Львів Харків | 4-7/04, 9/04-29/10/2016 щоденно | 23200 | 22100 | 19:43 | "СЛОБОЖАНЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1973&by_id=1
+1974|117 безпересадковий вагон  | Київ Бухарест | з 1/04/2016 по п"ятницях | 22000 | 2109 | 26:45 | "БУКОВИНА" | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1974&by_id=1
+1975|380 безпересадковий вагон  | Бухарест Київ | з 27/03/2016 по неділях | 2109 | 22000 | 25:48 | "БУКОВИНА" | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=1975&by_id=1
+1980|785  | Харків Київ | 27/03, 1,3/04/2016 | 22100 | 22000 | 8:09 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1980&by_id=1
+1981|786  | Київ Харків | 1,3,24,29/04/2016 | 22000 | 22100 | 7:29 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1981&by_id=1
+1992|816 | Конотоп Київ-Волинський | з 27/03/2016 по неділях | 22040 | 22298 | 4:13 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1992&by_id=1
+1993|816 | Київ-Волинський Конотоп | з 28/03/2016 по понеділках, вівторках, середах та четвергах | 22298 | 22040 | 4:14 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1993&by_id=1
+1994|816 | Фастів Конотоп | з 2/04/2016 по суботах | 22150 | 22040 | 5:00 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1994&by_id=1
+1995|816 | Конотоп Фастів | з 29/03/2016 по вівторках, середах, четвергах та п'ятницях | 22040 | 22150 | 5:35 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1995&by_id=1
+1996|816 | Київ-Волинський Шостка | з 1/04/2016 по п'ятницях (крім 8,15,22/04/2016) | 22298 | 22016 | 5:42 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1996&by_id=1
+1997|816 | Шостка Київ-Волинський | з 2/04/2016 по суботах | 22016 | 22298 | 5:37 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=1997&by_id=1
+2003|219 | Київ Івано-Франківськ | 29/04, 2,6,8/05/2016 | 22000 | 23000 | 13:00 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2003&by_id=1
+2013|6  | Київ Москва | 4-28/04/2016 щоденно | 22000 | 20007 | 13:13 | "УКРАЇНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2013&by_id=1
+2014|24  | Одеса Москва | 4-28/04/2016 щоденно | 23600 | 20007 | 23:36 | "ОДЕССА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2014&by_id=1
+2015|23  | Москва Одеса | 4-22/04/2016 щоденно | 20007 | 23600 | 23:08 | "ОДЕССА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2015&by_id=1
+2019|779  | Суми Київ | 5-29/04/2016 щоденно | 22450 | 22000 | 4:28 | "СТОЛИЧНИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2019&by_id=1
+2020|66 | Кишинеу Москва | 3-27/04/2016 по непарних | 23100 | 20007 | 29:09 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2020&by_id=1
+2021|47 | Кишинеу Москва | 3-28/04/2016 щоденно | 23100 | 20007 | 29:22 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2021&by_id=1
+2022|55 | Хмельницький Москва | 4-28/04/2016 по парних | 22300 | 20007 | 19:49 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2022&by_id=1
+2023|90 | Жмеринка Москва | 4-28/04/2016 по парних | 22270 | 20007 | 18:29 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2023&by_id=1
+2024|78 | Ковель Москва | 4-28/04/2016 щоденно | 23020 | 20007 | 24:24 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2024&by_id=1
+2025|74 | Львів Москва | 4,22,23,24,25,26,27,28/04/2016 | 23200 | 20007 | 24:17 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2025&by_id=1
+2026|341 | Кишинеу Москва | 3-27/04/2016 щоденно | 23100 | 20007 | 31:46 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2026&by_id=1
+2027|778  | Київ Шостка | 4-28/04/2016 щоденно | 22000 | 22016 | 4:17 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2027&by_id=1
+2028|784  | Київ Шостка | 4-28/04/2016 щоденно | 22000 | 22016 | 4:19 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2028&by_id=1
+2030|763  | Дарниця, Київ Одеса | 29,30,31/03/2016 | 22080 | 23600 | 7:29 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2030&by_id=1
+2031|764  | Одеса Київ, Дарниця | 29,30,31/03/2016 | 23600 | 22080 | 7:50 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2031&by_id=1
+2036|94 | Одеса Мінськ | 11/04/2016 | 23600 | 21000 | 23:37 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2036&by_id=1
+2037|93 | Мінськ Одеса | 14/04/2016 | 21000 | 23600 | 23:46 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2037&by_id=1
+2038|283 | Одеса Барановичі | 13/04/2016 | 23600 | 21010 | 26:01 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2038&by_id=1
+2039|284 | Барановичі Одеса | 12/04/2016 | 21010 | 23600 | 26:34 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2039&by_id=1
+2042|784  | Шостка Київ | 27/03-8/04/2016 щоденно | 22016 | 22000 | 4:23 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2042&by_id=1
+2043|866 | Киев-Вол. Гребінка | з 28/03/2016 по суботах та неділях | 22298 | 22550 | 2:48 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2043&by_id=1
+2051|81  | Київ Ужгород | 5-21/04/2016 щоденно | 22000 | 20095 | 14:58 | "ДЕСНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2051&by_id=1
+2052|81  | Ужгород Київ | 5-21/04/2016 щоденно | 20095 | 22000 | 15:18 | "ДЕСНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2052&by_id=1
+2053|81  | Київ Будапешт | 5-21/04/2016 щоденно | 22000 | 8030 | 23:15 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2053&by_id=1
+2054|771  | Київ Братислава | 5-21/04/2016 щоденно | 22000 | 2176 | 31:13 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2054&by_id=1
+2056|34  | Будапешт Київ | 5-21/04/2016 щоденно | 8030 | 22000 | 23:20 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2056&by_id=1
+2057|771  | Київ Прага | 5-21/04/2016 щоденно | 22000 | 2120 | 33:27 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2057&by_id=1
+2058|443  | Прага Київ | 5-21/04/2016 щоденно | 2120 | 22000 | 31:34 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2058&by_id=1
+2059|801  | Братислава Київ | 5-21/04/2016 щоденно | 2176 | 22000 | 30:54 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2059&by_id=1
+2060|74 | Львів Москва | 5-21/04/2016 щоденно | 23200 | 20007 | 24:12 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2060&by_id=1
+2061|608  | Чернівці Москва | 4,22,23,24,25,26,27,28/04/2016 | 23500 | 20007 | 34:09 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2061&by_id=1
+2062|607  | Івано-Франківськ Москва | 4,22,23,24,25,26,27,28/04/2016 | 23000 | 20007 | 31:14 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2062&by_id=1
+2063|608  | Чернівці Москва | 5-21/04/2016 щоденно | 23500 | 20007 | 34:09 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2063&by_id=1
+2064|607  | Івано-Франківськ Москва | 5-21/04/2016 щоденно | 23000 | 20007 | 31:14 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2064&by_id=1
+2065|73 | Москва Львів | 4-20/04/2016 щоденно | 20007 | 23200 | 21:34 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2065&by_id=1
+2066|73  | Москва Івано-Франківськ | 4-20/04/2016 щоденно | 20007 | 23000 | 26:50 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2066&by_id=1
+2067|73  | Москва Чернівці | 4-20/04/2016 щоденно | 20007 | 23500 | 31:07 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2067&by_id=1
+2068|50  | Трускавець Київ | 5-21/04/2016 щоденно | 23240 | 22000 | 11:35 | "КОБЗАР" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2068&by_id=1
+2069|49  | Київ Трускавець | 5-21/04/2016 щоденно | 22000 | 23240 | 11:44 | "КОБЗАР" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2069&by_id=1
+2070|357  | Київ Рахів | 5-21/04/2016 щоденно | 22000 | 23270 | 17:21 | "ГУЦУЛЬЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2070&by_id=1
+2071|358  | Рахів Київ | 5-21/04/2016 щоденно | 23270 | 22000 | 17:00 | "ГУЦУЛЬЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2071&by_id=1
+2072|143 | Івано-Франківськ Київ | цілий рік щоденно, крім 5-21/04/2016 | 23000 | 22000 | 12:50 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2072&by_id=1
+2073|143 | Київ Івано-Франківськ | цілий рік щоденно, крім 5-20/04/2016 | 22000 | 23000 | 12:25 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2073&by_id=1
+2074|111  | Харків Львів | 4,5/04/2016 | 22100 | 23200 | 17:43 | "СЛОБОЖАНЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2074&by_id=1
+2075|112  | Львів Харків | 8/04/2016 | 23200 | 22100 | 17:30 | "СЛОБОЖАНЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2075&by_id=1
+2090|76  | Київ Кривий Ріг | 4-22/04/2016 щоденно | 22000 | 22900 | 8:05 | "КРИВОРІЖЖЯ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2090&by_id=1
+2091|76  | Кривий Ріг Київ | 4-22/04/2016 щоденно | 22900 | 22000 | 7:07 | "КРИВОРІЖЖЯ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2091&by_id=1
+2093|76  | Київ Кривий Ріг, Запоріжжя | 4-22/04/2016 щоденно | 22000 | 22800 | 17:51 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2093&by_id=1
+2094|120  | Запоріжжя, Кривий Ріг Київ | 4-22/04/2016 щоденно | 22800 | 22000 | 16:57 |   | true | http://www.uz.gov.ua/passengers/timetable/?ntrain=2094&by_id=1
+2098|748  | Тернопіль Київ, Дарниця | 8/04/2016 | 23300 | 22080 | 6:15 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2098&by_id=1
+2099|748  | Тернопіль Київ, Дарниця | 7/04/2016, 9-20/04/2016 щоденно | 23300 | 22080 | 6:15 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2099&by_id=1
+2100|118  | Чернівці Київ | 5-20/04/2016 щоденно | 23500 | 22000 | 12:08 | "БУКОВИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2100&by_id=1
+2102|117  | Київ Чернівці | 5-20/04/2016 щоденно | 22000 | 23500 | 11:05 | "БУКОВИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2102&by_id=1
+2109|111  | Харків Львів | 6-20/04/2016 щоденно | 22100 | 23200 | 19:44 | "СЛОБОЖАНЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2109&by_id=1
+2110|747  | Дарниця, Київ Тернопіль | 7-20/04/2016 щоденно | 22080 | 23300 | 6:31 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2110&by_id=1
+2111|140 | Кам'янець-Подільський Київ | з 15/12/2015 по непарних (крім 5-19/04/2016), при двох непарних 31,3,5 | 22260 | 22000 | 8:33 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2111&by_id=1
+2112|770  | Кам'янець-Подільський Київ | 6-21/04/2016 щоденно | 22260 | 22000 | 7:43 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2112&by_id=1
+2113|758  | Могилів-Подільський Київ | 7-21/04/2016 по понеділках, четвергах, суботах | 22280 | 22000 | 6:24 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2113&by_id=1
+2114|771  | Київ Хмельницький | 5-20/04/2016 щоденно | 22000 | 22300 | 5:12 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2114&by_id=1
+2115|831 | Київ Гречани | 9,10,16,17/04/2016 | 739 | 22229 | 9:07 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2115&by_id=1
+2116|831 | Київ Гречани | 5-20/04/2016 щоденно, крім субот та неділь | 22000 | 22229 | 9:07 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2116&by_id=1
+2130|23  | Москва Одеса | 23-28/04/2016 щоденно | 20007 | 23600 | 23:08 | "ОДЕССА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2130&by_id=1
+2131|764  | Одеса Київ, Дарниця | 23-28/04/2016 щоденно | 23600 | 22080 | 7:36 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2131&by_id=1
+2135|106  | Одеса Київ | з 1/04/2016 щоденно | 23600 | 22000 | 9:20 | "ЧОРНОМОРЕЦЬ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2135&by_id=1
+2136|105  | Київ Одеса | з 2/04/2016 щоденно | 22000 | 23600 | 9:15 | "ЧОРНОМОРЕЦЬ" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2136&by_id=1
+2137|764  | Одеса Київ, Дарниця | 4-8,11-15,18-20/04/2016 щоденно | 23600 | 22080 | 7:30 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2137&by_id=1
+2138|763  | Дарниця, Київ Одеса | 4-8,11-15,18-20/04/2016 щоденно | 22080 | 23600 | 7:26 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2138&by_id=1
+2140|93 | Мінськ Одеса | 18/04/2016 | 21000 | 23600 | 22:32 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2140&by_id=1
+2141|284 | Барановичі Одеса | 20/04/2016 | 21010 | 23600 | 25:05 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2141&by_id=1
+2142|94 | Одеса Мінськ | 19/04/2016 | 23600 | 21000 | 22:09 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2142&by_id=1
+2143|283 | Одеса Барановичі | 17/04/2016 | 23600 | 21010 | 25:07 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2143&by_id=1
+2146|785  | Харків Київ | 8/04/2016 | 22100 | 22000 | 8:14 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2146&by_id=1
+2147|786  | Київ Харків | 8,10,15,17,22/04/2016 | 22000 | 22100 | 7:52 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2147&by_id=1
+2148|785  | Харків Київ | 10,17,22,24/04/2016 | 22100 | 22000 | 8:09 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2148&by_id=1
+2149|785  | Харків Київ | 15/04/2016 | 22100 | 22000 | 8:14 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2149&by_id=1
+2150|785  | Харків Київ | 29/04/2016 | 22100 | 22000 | 8:14 | ІНТЕРСІТІ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2150&by_id=1
+2151|736  | Київ Запоріжжя | 29/04/2016 | 22000 | 22800 | 7:08 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2151&by_id=1
+2152|126 | Костянтинівка Київ | 4-21/04/2016 щоденно | 24140 | 22000 | 12:27 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2152&by_id=1
+2153|126 | Костянтинівка Київ | з 22/04/2016 щоденно | 24140 | 22000 | 12:27 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2153&by_id=1
+2154|126 | Київ Костянтинівка | з 22/04/2016 щоденно | 22000 | 24140 | 12:15 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2154&by_id=1
+2157|77 | Москва Ковель | 6/06/2016 | 20007 | 23020 | 22:51 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2157&by_id=1
+2158|78 | Ковель Москва | 7/06/2016 | 23020 | 20007 | 23:17 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2158&by_id=1
+2159|269 | Київ Івано-Франківськ | 8,15/04/2016 | 22000 | 23000 | 12:50 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2159&by_id=1
+2160|218 | Івано-Франківськ Київ | 24/04/2016 | 23000 | 22000 | 10:02 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2160&by_id=1
+2161|218 | Івано-Франківськ Київ | 10,17/04/2016 | 23000 | 22000 | 10:11 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2161&by_id=1
+2166|813 | Зернове Фастів | 5-29/04/2016 щоденно, крім п'ятниць та неділь | 20810 | 22150 | 6:58 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2166&by_id=1
+2167|813 | Зернове Київ | 5-29/04/2016 по п'ятницях та неділях | 20810 | 3723 | 5:33 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2167&by_id=1
+2168|816 | Фастів Шостка | 10,17,24/04/2016 | 22150 | 22016 | 6:34 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2168&by_id=1
+2169|816 | Київ-Волинський Шостка | 8,15,22/04/2016 | 22298 | 22016 | 5:48 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2169&by_id=1
+2170|830 | Фастів Шостка | 6,8,9,12,13,14,15,16,17,19,22,23,24,25,26,28,29/04/2016 | 22150 | 22016 | 6:00 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2170&by_id=1
+2171|814 | Фастів Зернове | 4-28/04/2016 щоденно | 22150 | 20810 | 6:48 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2171&by_id=1
+2172|830 | Фастів Шостка | 4,5,7,10,11,18,20,21,27/04/2016 | 22150 | 22016 | 6:05 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2172&by_id=1
+2173|784  | Шостка Київ | з 9/04/2016 щоденно | 22016 | 22000 | 4:21 | "ПОДІЛЬСЬКИЙ ЕКСПРЕС" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2173&by_id=1
+2174|134 | Лисичанськ Київ | з 8/04/2016 щоденно | 24060 | 22000 | 15:43 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2174&by_id=1
+2175|235 | Ужгород Харків | 10-20/04/2016 по середах та неділях | 20095 | 22100 | 27:17 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2175&by_id=1
+2176|357  | Київ Ворохта | 16,17,18/05/2016 | 22000 | 23217 | 16:23 | "ГУЦУЛЬЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2176&by_id=1
+2177|358  | Ворохта Київ | 17,18,19/05/2016 | 23217 | 22000 | 16:02 | "ГУЦУЛЬЩИНА" | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=2177&by_id=1
+36850|722  | Київ Харків | цілий рік щоденно | 22000 | 22100 | 4:35 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=36850&by_id=1
+36880|734  | Київ Красноармійськ | цілий рік щоденно | 22000 | 24050 | 8:08 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=36880&by_id=1
+36882|732  | Київ Запоріжжя | цілий рік щоденно | 22000 | 22800 | 7:07 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=36882&by_id=1
+49123|721  | Харків Київ | цілий рік щоденно | 22100 | 22000 | 4:40 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=49123&by_id=1
+49126|726  | Київ Харків | цілий рік щоденно | 22000 | 22100 | 4:37 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=49126&by_id=1
+49127|725  | Харків Київ | цілий рік щоденно | 22100 | 22000 | 4:39 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=49127&by_id=1
+49129|732  | Запоріжжя Київ | цілий рік щоденно | 22800 | 22000 | 7:12 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=49129&by_id=1
+49143|743  | Дарниця, Київ Львів | цілий рік щоденно | 22080 | 23200 | 5:21 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=49143&by_id=1
+53136|712  | Костянтинівка Київ | цілий рік щоденно | 24140 | 22000 | 6:29 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=53136&by_id=1
+53278|143 | Київ Івано-Франківськ | 5-20/04/2016 щоденно | 22000 | 23000 | 11:37 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=53278&by_id=1
+53304|143 | Івано-Франківськ Київ | 5-21/04/2016 щоденно | 23000 | 22000 | 12:50 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=53304&by_id=1
+53363|218 | Рахів Київ | 30/04, 3,7,9/05/2016 | 23270 | 22000 | 15:27 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=53363&by_id=1
+53367|140 | Кам'янець-Подільський Київ | 5-19/04/2016 по непарних | 22260 | 22000 | 8:42 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=53367&by_id=1
+53449|139 | Київ Кам'янець-Подільський | з 14/12/2015 по парних, при двох непарних 30,2,4 | 22000 | 22260 | 8:11 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=53449&by_id=1
+53586|217 | Київ Рахів | 29/04, 2,6,8/05/2016 | 22000 | 23270 | 17:48 |   | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=53586&by_id=1
+53799|741  | Дарниця, Київ Львів, Трускавець | з 27/03/2016 щоденно | 22080 | 23240 | 7:24 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=53799&by_id=1
+53800|742  | Трускавець, Львів Київ, Дарниця | цілий рік щоденно | 23240 | 22080 | 7:12 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=53800&by_id=1
+54141|733  | Красноармійськ Київ | цілий рік щоденно | 24050 | 22000 | 8:09 | ІНТЕРСІТІ+ | false | http://www.uz.gov.ua/passengers/timetable/?ntrain=54141&by_id=1
