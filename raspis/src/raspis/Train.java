@@ -21,8 +21,8 @@ public class Train {
 	private String firmName;
 	private boolean isWagon;
 
-	private static final String sqlInsert = "Insert into train_tab (id, train_Id, train_Route_Link,train_Num,train_Title, train_Raspis, st1, st2, train_Dur, firm_name,is_Wagon)" +
-			" values (train_seq.nextval, ?, ?, ?,?,?,?,?,?,?,?)";
+	private static final String sqlInsert = "Insert into trains1 (ID, NUM_TRAIN, NUM_EXPRESS,ST1,ST2, MNAME_U,MNAME_R,FNAME,PERIOD_U,PERIOD_R, MOVE_TIME,MOVE_STAND,PERIOD_B,PRECEP)" +
+			" values (?, ?, ?,?,?,?,?,?,?,?,?,?,?,?)";
 
 
 	public List<RouteItem> trainRoute = new ArrayList<>();
