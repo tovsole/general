@@ -18,7 +18,7 @@ public class mainFrame extends JFrame {
 	private int height = 400;
 	private List<String> linkList = new ArrayList<>();
 	private Set<Train> trainList = new HashSet<>();
-	private Properties mainProps = new Properties();
+	public Properties mainProps = new Properties();
 	private final String configFileName = "config.properties";
 
 
@@ -86,7 +86,7 @@ public class mainFrame extends JFrame {
 		//for (int ii=1 ; ii< linkList.size();ii++)  // for every link (station) from file
 		for (int ii=0 ; ii< 1; ii++)  // for every link (station) from file
 		{
-			trainList.addAll(prs.parseStationPage(linkList.get(ii).toString()));
+			trainList.addAll(prs.parseStationPage(linkList.get(ii)));
 		}
 
 		for (Train train : trainList){
@@ -177,6 +177,7 @@ public class mainFrame extends JFrame {
 			Database db = new Database("jbdc:oracle:thin:"+mainProps.getProperty("db"), mainProps.getProperty("user"), mainProps.getProperty("pass"));
 
 			db.saveTrainListToDb( trainList);
+			db.saveTrainSqlSriptToFile(mainProps.getProperty("trainsSqlScriptPath"), mainProps.getProperty("routesSqlScriptPath"));
 			System.out.println("Saving results to DB");
 		}
 

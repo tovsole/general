@@ -19,22 +19,49 @@ public class Train {
 	private String firstStation;
 	private String lastStation;
 	private String firmName;
-	private boolean isWagon;
+	private int isWagon;
 
-	private static final String sqlInsert = "Insert into trains1 (ID, NUM_TRAIN, NUM_EXPRESS,ST1,ST2, MNAME_U,MNAME_R,FNAME,PERIOD_U,PERIOD_R, MOVE_TIME,MOVE_STAND,PERIOD_B,PRECEP)" +
+	private static final String sqlInsert = "Insert into trains (ID, NUM_TRAIN, NUM_EXPRESS,ST1,ST2, MNAME_U,MNAME_R,FNAME,PERIOD_U,PERIOD_R, MOVE_TIME,MOVE_STAND,PERIOD_B,PRECEP)" +
 			" values (?, ?, ?,?,?,?,?,?,?,?,?,?,?,?)";
 
+	public static int timeToHalfMinutes(String time){
+		int result=0;
+        if (!time.isEmpty() ) {
+			result= (Integer.parseInt(time.substring(0, time.indexOf(":"))) * 120) +
+					(Integer.parseInt(time.substring(time.indexOf(":") + 1, time.length())) * 2);
+		}
+		return result;
+	}
+
+
+	public String getPreparedSqlInsert() {
+		return "Insert into trains (ID, NUM_TRAIN, NUM_EXPRESS,ST1,ST2, MNAME_U,MNAME_R,FNAME,PERIOD_U,PERIOD_R, MOVE_TIME,MOVE_STAND,PERIOD_B,PRECEP)" +
+				" values ("+getTrainId()+","
+				+getTrainNum("SHORT")+","
+				+"null"+","
+				+getFirstStation() +","
+				+getLastStation()+","
+				+"'"+getTrainTitleSql()+"',"
+				+"'"+getTrainTitleSql()+"',"
+				+"'"+getFirmName()+"',"
+				+"'"+getTrainRaspisSql()+"',"
+				+"'"+getTrainRaspisSql()+"',"
+				+String.valueOf(getTrainDurInHalfMinutes())+","
+				+"null"+","
+				+"null"+","
+				+String.valueOf(getIsWagon())+");";
+	}
 
 	public List<RouteItem> trainRoute = new ArrayList<>();
 
 
-	public boolean getIsWagon() {
+	public int getIsWagon() {
 		return isWagon;
 	}
 
 	private void setIsWagon() {
 		if (getTrainNum("FULL").indexOf("безпересадковий") >0) {
-			this.isWagon = true;
+			this.isWagon = 1;
 		}
 	}
 
@@ -139,6 +166,9 @@ public class Train {
 		this.trainDur = columns.get(columns.size()-1).text();
 	}
 
+	public int getTrainDurInHalfMinutes () {
+		return timeToHalfMinutes(this.trainDur);
+	}
 
 	public String getTrainId() {
 		return this.trainId;

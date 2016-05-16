@@ -17,6 +17,28 @@ public class RouteItem {
     private String arrTime;
     private String depTime;
 
+    private static final String sqlInsert = "Insert into routes (ID, TRAIN_ID, NUM,ST,ARR_TIME, DEP_TIME,OZN_TECH,DIST,ARR_TIME_ACT,DEP_TIME_ACT)" +
+            " values (seq_routes.nextval, ?, ?,?,?,?,?,?,?,?)";
+
+    public static String getSqlInsert(){
+        return sqlInsert;
+    }
+
+    public String getPreparedSqlInsert(String trainId ) {
+        return "Insert into routes (ID, TRAIN_ID, NUM,ST,ARR_TIME, DEP_TIME,OZN_TECH,DIST,ARR_TIME_ACT,DEP_TIME_ACT)" +
+                " values (seq_routes.nextval,"
+                + trainId+","
+                +getNumItem()+","
+                +getStationId()+","
+                +Train.timeToHalfMinutes(getArrTime())+","
+                +Train.timeToHalfMinutes(getDepTime())+","
+                +"0"+","
+                +"null"+","
+                +Train.timeToHalfMinutes(getArrTime())/2+","
+                +Train.timeToHalfMinutes(getDepTime())/2+");";
+
+    }
+
     public int getNumItem() {
         return numItem;
     }
