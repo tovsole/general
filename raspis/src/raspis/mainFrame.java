@@ -84,7 +84,7 @@ public class mainFrame extends JFrame {
 		Parser prs = new Parser();
 
 		//for (int ii=1 ; ii< linkList.size();ii++)  // for every link (station) from file
-		for (int ii=0 ; ii< 1; ii++)  // for every link (station) from file
+		for (int ii=0 ; ii< 2; ii++)  // for every link (station) from file
 		{
 			trainList.addAll(prs.parseStationPage(linkList.get(ii)));
 		}

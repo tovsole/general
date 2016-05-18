@@ -15,7 +15,7 @@ import static java.lang.Class.*;
  * Created by otovstiuk on 16.03.2016.
  */
 public class Database {
-    private Connection defConnection ;
+    private Connection dbConnection ;
     private ArrayList<String> trainsSqlScript = new ArrayList<>();
     private ArrayList<String> routeItemsSqlScript = new ArrayList<>();
 
@@ -28,8 +28,9 @@ public class Database {
         }
 
         try {
-            defConnection = DriverManager.getConnection(server, user, pass);
-            defConnection.setAutoCommit(false);
+            dbConnection = DriverManager.getConnection(server, user, pass);
+            dbConnection.setAutoCommit(false);
+
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -47,12 +48,12 @@ public class Database {
         PreparedStatement stmtRouteItem = null;
 
         try {
-            Statement stmtDel = defConnection.createStatement();
+            Statement stmtDel = dbConnection.createStatement();
             stmtDel.executeUpdate("delete from trains");
             stmtDel.executeUpdate("delete from routes");
 
-            stmtTrain = defConnection.prepareStatement(Train.getSqlInsert());
-            stmtRouteItem = defConnection.prepareStatement(RouteItem.getSqlInsert());
+            stmtTrain = dbConnection.prepareStatement(Train.getSqlInsert());
+            stmtRouteItem = dbConnection.prepareStatement(RouteItem.getSqlInsert());
 
 
             for (Train train : trainList) {
@@ -89,10 +90,10 @@ public class Database {
                     routeItemsSqlScript.add(item.getPreparedSqlInsert(train.getTrainId()));
                 }
             }
-            defConnection.commit();
+            dbConnection.commit();
             stmtTrain.close();
             stmtRouteItem.close();
-            defConnection.close();
+            dbConnection.close();
         }
         catch (SQLException e) {
                // defConnection.rollback();
