@@ -21,7 +21,7 @@ public class Parser {
 
         System.out.println("Starting parsing new page - " + pageLink);
 
-        Document doc = Jsoup.connect(pageLink).timeout(10000).get();
+        Document doc = Jsoup.connect(pageLink).timeout(20000).get();
         Element table = doc.getElementById("cpn-timetable");
         Element tbody = table.select("tbody").first();
         ArrayList<Element> rows = tbody.getElementsByTag("tr");
