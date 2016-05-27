@@ -37,7 +37,7 @@ public class Train {
 				+"'"+getFirmName()+"',"
 				+"'"+getTrainRaspisSql()+"',"
 				+"'"+getTrainRaspisSql()+"',"
-				+String.valueOf(getTrainDurInHalfMinutes())+","
+				+String.valueOf(Utils.timeToHalfMinutes(getTrainDur()))+","
 				+"null"+","
 				+"null"+","
 				+String.valueOf(getIsWagon())+");";
@@ -157,9 +157,6 @@ public class Train {
 		this.trainDur = columns.get(columns.size()-1).text();
 	}
 
-	public int getTrainDurInHalfMinutes () {
-		return Utils.timeToHalfMinutes(this.trainDur);
-	}
 
 	public String getTrainId() {
 		return this.trainId;

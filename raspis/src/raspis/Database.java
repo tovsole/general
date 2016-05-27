@@ -43,6 +43,7 @@ public class Database {
         routeItemsSqlScript.clear();
 
         Translator raspisTrans = new Translator(Translator.Dictionary.RASPIS);
+        Translator stationsTrans = new Translator(Translator.Dictionary.STATIONS);
 
         PreparedStatement stmtTrain = null;
         PreparedStatement stmtRouteItem = null;
@@ -60,11 +61,11 @@ public class Database {
                 stmtTrain.setString(4,train.getFirstStation ());
                 stmtTrain.setString(5,train.getLastStation() );
                 stmtTrain.setString(6,train.getTrainTitleSql().toUpperCase());
-                stmtTrain.setString(7,train.getTrainTitleSql().toUpperCase());
+                stmtTrain.setString(7, stationsTrans.toRus(train.getTrainTitleSql().toUpperCase()));
                 stmtTrain.setString(8,train.getFirmName().toUpperCase());
                 stmtTrain.setString(9,train.getTrainRaspisSql().toUpperCase());
                 stmtTrain.setString(10,raspisTrans.toRus(train.getTrainRaspisSql()));
-                stmtTrain.setInt(11,train.getTrainDurInHalfMinutes());
+                stmtTrain.setInt(11,Utils.timeToHalfMinutes(train.getTrainDur()));
                 stmtTrain.setString(12,null);
                 stmtTrain.setString(13,null);
                 stmtTrain.setString(14,String.valueOf(train.getIsWagon()));
