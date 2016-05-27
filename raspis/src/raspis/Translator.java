@@ -10,18 +10,19 @@ import java.util.HashMap;
  */
 public class Translator {
 
-    private static final String dictionaryFile = "data/dictionary.txt";
     private HashMap<String, String> dictMap = new HashMap<String, String>();
 
-    public Translator() {
+    public enum Dictionary  {RASPIS,STATIONS }
+
+    public Translator(Dictionary dictName) {
         super();
-        loadDictionary();
+        loadDictionary(dictName);
     }
 
-    public void loadDictionary() {
+    public void loadDictionary(Dictionary dictName) {
         String line;
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(dictionaryFile));
+            BufferedReader reader = new BufferedReader(new FileReader(Utils.mainProps.getProperty(dictName.toString())));
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(":", 2);
                 if (parts.length >= 2) {

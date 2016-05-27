@@ -42,19 +42,16 @@ public class Database {
         trainsSqlScript.clear();
         routeItemsSqlScript.clear();
 
-        Translator trns = new Translator();
+        Translator raspisTrans = new Translator(Translator.Dictionary.RASPIS);
 
         PreparedStatement stmtTrain = null;
         PreparedStatement stmtRouteItem = null;
 
-        try {
-            Statement stmtDel = dbConnection.createStatement();
-            stmtDel.executeUpdate("delete from trains");
-            stmtDel.executeUpdate("delete from routes");
 
+        try {
+            clearTables();
             stmtTrain = dbConnection.prepareStatement(Train.getSqlInsert());
             stmtRouteItem = dbConnection.prepareStatement(RouteItem.getSqlInsert());
-
 
             for (Train train : trainList) {
                 stmtTrain.setString(1,train.getTrainId());
@@ -66,7 +63,7 @@ public class Database {
                 stmtTrain.setString(7,train.getTrainTitleSql().toUpperCase());
                 stmtTrain.setString(8,train.getFirmName().toUpperCase());
                 stmtTrain.setString(9,train.getTrainRaspisSql().toUpperCase());
-                stmtTrain.setString(10,trns.toRus(train.getTrainRaspisSql()));
+                stmtTrain.setString(10,raspisTrans.toRus(train.getTrainRaspisSql()));
                 stmtTrain.setInt(11,train.getTrainDurInHalfMinutes());
                 stmtTrain.setString(12,null);
                 stmtTrain.setString(13,null);
@@ -79,17 +76,20 @@ public class Database {
                     stmtRouteItem.setString(1,train.getTrainId());
                     stmtRouteItem.setInt(2,item.getNumItem());
                     stmtRouteItem.setString(3,item.getStationId());
-                    stmtRouteItem.setInt(4,Train.timeToHalfMinutes(item.getArrTime()));
-                    stmtRouteItem.setInt(5,Train.timeToHalfMinutes(item.getDepTime()));
+                    stmtRouteItem.setInt(4,Utils.timeToHalfMinutes(item.getArrTime()));
+                    stmtRouteItem.setInt(5,Utils.timeToHalfMinutes(item.getDepTime()));
                     stmtRouteItem.setInt(6,0);
                     stmtRouteItem.setString(7,null);
-                    stmtRouteItem.setInt(8,Train.timeToHalfMinutes(item.getArrTime())/2);
-                    stmtRouteItem.setInt(9,Train.timeToHalfMinutes(item.getDepTime())/2);
+                    stmtRouteItem.setInt(8,Utils.timeToHalfMinutes(item.getArrTime())/2);
+                    stmtRouteItem.setInt(9,Utils.timeToHalfMinutes(item.getDepTime())/2);
                     //System.out.println(item.getPreparedSqlInsert(train.getTrainId()));
                     i   = stmtRouteItem.executeUpdate();
                     routeItemsSqlScript.add(item.getPreparedSqlInsert(train.getTrainId()));
                 }
             }
+
+            parsePeriodB();
+
             dbConnection.commit();
             stmtTrain.close();
             stmtRouteItem.close();
@@ -116,6 +116,42 @@ public class Database {
         }
     }
 
+    public void parsePeriodB(){
+        CallableStatement stmtParsePeriod =null;
+
+            String plsql ="declare\n" +
+                    "str varchar2(1000);\n" +
+                    "begin\n" +
+                    "  for ii in (select * from trains order by id)\n" +
+                    "  loop  \n" +
+                    "     str := trainparser_sk.strtoschedule(ii.id);  \n" +
+                    "     update trains \n" +
+                    "       set period_b= str\n" +
+                    "       where id=ii.id; \n" +
+                    "  end loop; \n" +
+                    "end;";
+        try {
+            stmtParsePeriod=dbConnection.prepareCall(plsql);
+            stmtParsePeriod.execute(plsql);
+            stmtParsePeriod.close();
+        }
+        catch(SQLException ex){
+            ex.printStackTrace();
+        }
+
+    }
+
+    public void clearTables(){
+        try {
+            Statement stmtDel = dbConnection.createStatement();
+            stmtDel.executeUpdate("delete from trains");
+            stmtDel.executeUpdate("delete from routes");
+            stmtDel.close();
+        }
+        catch(SQLException ex){
+            ex.printStackTrace();
+        }
+    }
 
 
 }

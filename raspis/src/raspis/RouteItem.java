@@ -30,12 +30,12 @@ public class RouteItem {
                 + trainId+","
                 +getNumItem()+","
                 +getStationId()+","
-                +Train.timeToHalfMinutes(getArrTime())+","
-                +Train.timeToHalfMinutes(getDepTime())+","
+                +Utils.timeToHalfMinutes(getArrTime())+","
+                +Utils.timeToHalfMinutes(getDepTime())+","
                 +"0"+","
                 +"null"+","
-                +Train.timeToHalfMinutes(getArrTime())/2+","
-                +Train.timeToHalfMinutes(getDepTime())/2+");";
+                +Utils.timeToHalfMinutes(getArrTime())/2+","
+                +Utils.timeToHalfMinutes(getDepTime())/2+");";
 
     }
 

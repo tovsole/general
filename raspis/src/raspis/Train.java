@@ -24,15 +24,6 @@ public class Train {
 	private static final String sqlInsert = "Insert into trains (ID, NUM_TRAIN, NUM_EXPRESS,ST1,ST2, MNAME_U,MNAME_R,FNAME,PERIOD_U,PERIOD_R, MOVE_TIME,MOVE_STAND,PERIOD_B,PRECEP)" +
 			" values (?, ?, ?,?,?,?,?,?,?,?,?,?,?,?)";
 
-	public static int timeToHalfMinutes(String time){
-		int result=0;
-        if (!time.isEmpty() ) {
-			result= (Integer.parseInt(time.substring(0, time.indexOf(":"))) * 120) +
-					(Integer.parseInt(time.substring(time.indexOf(":") + 1, time.length())) * 2);
-		}
-		return result;
-	}
-
 
 	public String getPreparedSqlInsert() {
 		return "Insert into trains (ID, NUM_TRAIN, NUM_EXPRESS,ST1,ST2, MNAME_U,MNAME_R,FNAME,PERIOD_U,PERIOD_R, MOVE_TIME,MOVE_STAND,PERIOD_B,PRECEP)" +
@@ -167,7 +158,7 @@ public class Train {
 	}
 
 	public int getTrainDurInHalfMinutes () {
-		return timeToHalfMinutes(this.trainDur);
+		return Utils.timeToHalfMinutes(this.trainDur);
 	}
 
 	public String getTrainId() {
@@ -201,6 +192,7 @@ public class Train {
 	public String getTrainTitleSql() {
 		return this.trainTitle.replace("'", "''");
 	}
+
 
 	public String getTrainRaspis() {
 		return this.trainRaspis;

@@ -18,8 +18,8 @@ public class mainFrame extends JFrame {
 	private int height = 400;
 	private List<String> linkList = new ArrayList<>();
 	private Set<Train> trainList = new HashSet<>();
-	public Properties mainProps = new Properties();
-	private final String configFileName = "config.properties";
+//	public Properties mainProps = new Properties();
+//  private final String configFileName = "config.properties";
 
 
 	public mainFrame() {
@@ -61,25 +61,15 @@ public class mainFrame extends JFrame {
 		panel1.add(btn3);
 		panel1.add(btn4);
 
-		//Loading project properties
-		FileInputStream in = null;
-		try {
-			in = new FileInputStream(configFileName);
-			mainProps.load(in);
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (in != null)
-				try {
-					in.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+		if (Utils.mainProps.isEmpty()) {
+			Utils.loadProps();
 		}
+
 	}
 
 	public void getTrainList() throws Exception {
-		linkList = Files.readAllLines(Paths.get(mainProps.getProperty("linkFile")));
+
+		linkList = Files.readAllLines(Paths.get(Utils.mainProps.getProperty("linkFile")));
 		System.out.println("Links have been read from file");
 		Parser prs = new Parser();
 
@@ -109,7 +99,7 @@ public class mainFrame extends JFrame {
 		}
 
 		try {
-			Files.write(Paths.get(mainProps.getProperty("trainFilePath")), tmpList, Charset.defaultCharset());
+			Files.write(Paths.get(Utils.mainProps.getProperty("trainFilePath")), tmpList, Charset.defaultCharset());
 			System.out.println("Trains saved to file");
 		} catch (Exception e1) {
 			e1.printStackTrace();
@@ -123,7 +113,7 @@ public class mainFrame extends JFrame {
 			}
 		}
 		try {
-			Files.write(Paths.get(mainProps.getProperty("routeFilePath")), tmpList, Charset.defaultCharset());
+			Files.write(Paths.get(Utils.mainProps.getProperty("routeFilePath")), tmpList, Charset.defaultCharset());
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
@@ -174,10 +164,10 @@ public class mainFrame extends JFrame {
 	{
 		public void actionPerformed (ActionEvent e)
 		{
-			Database db = new Database("jbdc:oracle:thin:"+mainProps.getProperty("db"), mainProps.getProperty("user"), mainProps.getProperty("pass"));
+			Database db = new Database("jbdc:oracle:thin:"+Utils.mainProps.getProperty("db"), Utils.mainProps.getProperty("user"), Utils.mainProps.getProperty("pass"));
 
 			db.saveTrainListToDb( trainList);
-			db.saveTrainSqlSriptToFile(mainProps.getProperty("trainsSqlScriptPath"), mainProps.getProperty("routesSqlScriptPath"));
+			db.saveTrainSqlSriptToFile(Utils.mainProps.getProperty("trainsSqlScriptPath"), Utils.mainProps.getProperty("routesSqlScriptPath"));
 			System.out.println("Saving results to DB");
 		}
 
