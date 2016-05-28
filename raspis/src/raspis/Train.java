@@ -25,23 +25,6 @@ public class Train {
 			" values (?, ?, ?,?,?,?,?,?,?,?,?,?,?,?)";
 
 
-	public String getPreparedSqlInsert() {
-		return "Insert into trains (ID, NUM_TRAIN, NUM_EXPRESS,ST1,ST2, MNAME_U,MNAME_R,FNAME,PERIOD_U,PERIOD_R, MOVE_TIME,MOVE_STAND,PERIOD_B,PRECEP)" +
-				" values ("+getTrainId()+","
-				+getTrainNum("SHORT")+","
-				+"null"+","
-				+getFirstStation() +","
-				+getLastStation()+","
-				+"'"+getTrainTitleSql()+"',"
-				+"'"+getTrainTitleSql()+"',"
-				+"'"+getFirmName()+"',"
-				+"'"+getTrainRaspisSql()+"',"
-				+"'"+getTrainRaspisSql()+"',"
-				+String.valueOf(getTrainDurInHalfMinutes())+","
-				+"null"+","
-				+"null"+","
-				+String.valueOf(getIsWagon())+");";
-	}
 
 	public List<RouteItem> trainRoute = new ArrayList<>();
 
@@ -157,9 +140,6 @@ public class Train {
 		this.trainDur = columns.get(columns.size()-1).text();
 	}
 
-	public int getTrainDurInHalfMinutes () {
-		return Utils.timeToHalfMinutes(this.trainDur);
-	}
 
 	public String getTrainId() {
 		return this.trainId;
