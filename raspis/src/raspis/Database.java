@@ -1,5 +1,7 @@
 package raspis;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -16,8 +18,6 @@ import static java.lang.Class.*;
  */
 public class Database {
     private Connection dbConnection ;
-    private ArrayList<String> trainsSqlScript = new ArrayList<>();
-    private ArrayList<String> routeItemsSqlScript = new ArrayList<>();
 
     public Database(String server, String user, String pass) {
         try {
@@ -39,8 +39,6 @@ public class Database {
 
 
     public void saveTrainListToDb(Set<Train> trainList)  {
-        trainsSqlScript.clear();
-        routeItemsSqlScript.clear();
 
         Translator raspisTrans = new Translator(Translator.Dictionary.RASPIS);
         Translator stationsTrans = new Translator(Translator.Dictionary.STATIONS);
@@ -57,7 +55,7 @@ public class Database {
             for (Train train : trainList) {
                 stmtTrain.setString(1,train.getTrainId());
                 stmtTrain.setString(2,train.getTrainNum("SHORT"));
-                stmtTrain.setString(3,null);
+                stmtTrain.setString(3,train.getTrainNum("SHORT"));
                 stmtTrain.setString(4,train.getFirstStation ());
                 stmtTrain.setString(5,train.getLastStation() );
                 stmtTrain.setString(6,train.getTrainTitleSql().toUpperCase());
@@ -71,7 +69,6 @@ public class Database {
                 stmtTrain.setString(14,String.valueOf(train.getIsWagon()));
 
                 int i = stmtTrain.executeUpdate();
-                trainsSqlScript.add(train.getPreparedSqlInsert());
 
                 for (RouteItem item : train.trainRoute){
                     stmtRouteItem.setString(1,train.getTrainId());
@@ -83,9 +80,7 @@ public class Database {
                     stmtRouteItem.setString(7,null);
                     stmtRouteItem.setInt(8,Utils.timeToHalfMinutes(item.getArrTime())/2);
                     stmtRouteItem.setInt(9,Utils.timeToHalfMinutes(item.getDepTime())/2);
-                    //System.out.println(item.getPreparedSqlInsert(train.getTrainId()));
                     i   = stmtRouteItem.executeUpdate();
-                    routeItemsSqlScript.add(item.getPreparedSqlInsert(train.getTrainId()));
                 }
             }
 
@@ -95,6 +90,7 @@ public class Database {
             stmtTrain.close();
             stmtRouteItem.close();
             dbConnection.close();
+            System.out.println("Saved results to DB");
         }
         catch (SQLException e) {
                // defConnection.rollback();
@@ -102,20 +98,6 @@ public class Database {
         }
     }
 
-    public void saveTrainSqlSriptToFile (String trainsScriptFileName, String routesScriptFileName){
-        //saving sql script inserting all trains to db  to file
-        try {
-            Files.write(Paths.get(trainsScriptFileName), trainsSqlScript, Charset.defaultCharset());
-            System.out.println("Trains sql script saved to file");
-
-            //saving sql script inserting all routes to db  to file
-            Files.write(Paths.get(routesScriptFileName), routeItemsSqlScript, Charset.defaultCharset());
-            System.out.println("Routes sql script saved to file");
-
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
-    }
 
     public void parsePeriodB(){
         CallableStatement stmtParsePeriod =null;
@@ -154,7 +136,44 @@ public class Database {
         }
     }
 
+    public void getTrainsFromDb(){
 
+        try {
+            Statement stmtTrainsQuery = dbConnection.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
+            String sql = "Select * from trains order by id";
+            ResultSet rsTrains = stmtTrainsQuery.executeQuery(sql);
+
+            BufferedWriter outFile = new BufferedWriter(new FileWriter(Utils.mainProps.getProperty("TrainsFilePath")));
+
+            while (rsTrains.next()) {
+                outFile.write(rsTrains.getString("ID")+" | "+rsTrains.getString("NUM_TRAIN")+" | "+rsTrains.getString("NUM_EXPRESS")+" | "+rsTrains.getString("ST1")+" | "+rsTrains.getString("ST2")+" | "+rsTrains.getString("MNAME_U")+" | "+rsTrains.getString("MNAME_R")+" | "+rsTrains.getString("FNAME")+" | "+rsTrains.getString("PERIOD_U")+" | "+rsTrains.getString("PERIOD_R")+" | "+rsTrains.getString("MOVE_TIME")+" | "+rsTrains.getString("MOVE_STAND")+" | "+rsTrains.getString("COMMENT")+" | "+rsTrains.getString("PERIOD_B")+" | "+rsTrains.getString("PRECEP"));
+                outFile.newLine();
+            }
+
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+
+        try {
+            Statement stmtRoutesQuery = dbConnection.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
+            String sql = "Select * from routes order by train_id";
+            ResultSet rsRoutes = stmtRoutesQuery.executeQuery(sql);
+
+            BufferedWriter outFile = new BufferedWriter(new FileWriter(Utils.mainProps.getProperty("RoutesFilePath")));
+
+            while (rsRoutes.next()) {
+                outFile.write(rsRoutes.getString("TRAIN_ID")+" | "+rsRoutes.getString("NUM")+" | "+rsRoutes.getString("ST")+" | "+rsRoutes.getString("ARR_TIME")+" | "+rsRoutes.getString("DEP_TIME")+" | | ");
+                outFile.newLine();
+            }
+
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        System.out.println("Saved results from DB");
+
+    }
 }
 
 

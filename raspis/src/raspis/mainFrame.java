@@ -18,8 +18,6 @@ public class mainFrame extends JFrame {
 	private int height = 400;
 	private List<String> linkList = new ArrayList<>();
 	private Set<Train> trainList = new HashSet<>();
-//	public Properties mainProps = new Properties();
-//  private final String configFileName = "config.properties";
 
 
 	public mainFrame() {
@@ -49,12 +47,12 @@ public class mainFrame extends JFrame {
 		JButton btn1 = new JButton("Get rasp");
 		JButton btn2 = new JButton("Exit");
 		JButton btn3 = new JButton("Print train List");
-		JButton btn4 = new JButton("Save to db");
+		JButton btn4 = new JButton("Get from db");
 
 		btn1.addActionListener(new HtmlAction());
 		btn2.addActionListener(new ExitAction());
 		btn3.addActionListener(new PrintTrainsAction());
-		btn4.addActionListener(new SavetoDbAction());
+		btn4.addActionListener(new GetFromDbAction());
 
 		panel1.add(btn1);
 		panel1.add(btn2);
@@ -68,13 +66,13 @@ public class mainFrame extends JFrame {
 	}
 
 	public void getTrainList() throws Exception {
-
+		trainList.clear();
 		linkList = Files.readAllLines(Paths.get(Utils.mainProps.getProperty("linkFile")));
 		System.out.println("Links have been read from file");
 		Parser prs = new Parser();
 
 		//for (int ii=1 ; ii< linkList.size();ii++)  // for every link (station) from file
-		for (int ii=0 ; ii< 2; ii++)  // for every link (station) from file
+		for (int ii=0 ; ii< 1; ii++)  // for every link (station) from file
 		{
 			trainList.addAll(prs.parseStationPage(linkList.get(ii)));
 		}
@@ -83,7 +81,10 @@ public class mainFrame extends JFrame {
 			prs.parseTrainRoute(train);
 		}
 
-		saveTrainListToFile();
+		//saveTrainListToFile();
+		Database db = new Database("jbdc:oracle:thin:"+Utils.mainProps.getProperty("db"), Utils.mainProps.getProperty("user"), Utils.mainProps.getProperty("pass"));
+		db.saveTrainListToDb( trainList);
+
 
 	}
 
@@ -153,22 +154,19 @@ public class mainFrame extends JFrame {
 	}
 	private class PrintTrainsAction implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
-			saveTrainListToFile();
-			System.out.println("Saved");
+			JOptionPane.showConfirmDialog(null,"Nothing here");
 		}
 
 
 	}
 
-	private class SavetoDbAction implements ActionListener
+	private class GetFromDbAction implements ActionListener
 	{
 		public void actionPerformed (ActionEvent e)
 		{
+			//getTrainListfromDBtoFile();
 			Database db = new Database("jbdc:oracle:thin:"+Utils.mainProps.getProperty("db"), Utils.mainProps.getProperty("user"), Utils.mainProps.getProperty("pass"));
-
-			db.saveTrainListToDb( trainList);
-			db.saveTrainSqlSriptToFile(Utils.mainProps.getProperty("trainsSqlScriptPath"), Utils.mainProps.getProperty("routesSqlScriptPath"));
-			System.out.println("Saving results to DB");
+			db.getTrainsFromDb();
 		}
 
 

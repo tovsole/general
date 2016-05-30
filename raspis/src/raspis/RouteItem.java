@@ -24,20 +24,6 @@ public class RouteItem {
         return sqlInsert;
     }
 
-    public String getPreparedSqlInsert(String trainId ) {
-        return "Insert into routes (ID, TRAIN_ID, NUM,ST,ARR_TIME, DEP_TIME,OZN_TECH,DIST,ARR_TIME_ACT,DEP_TIME_ACT)" +
-                " values (seq_routes.nextval,"
-                + trainId+","
-                +getNumItem()+","
-                +getStationId()+","
-                +Utils.timeToHalfMinutes(getArrTime())+","
-                +Utils.timeToHalfMinutes(getDepTime())+","
-                +"0"+","
-                +"null"+","
-                +Utils.timeToHalfMinutes(getArrTime())/2+","
-                +Utils.timeToHalfMinutes(getDepTime())/2+");";
-
-    }
 
     public int getNumItem() {
         return numItem;
