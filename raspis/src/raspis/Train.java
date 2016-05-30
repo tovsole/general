@@ -155,7 +155,7 @@ public class Train {
 			if (str.indexOf("(") > 0) {
 				str= str.substring(0, str.indexOf("("));
 			}
-			else if (str.indexOf("безпересадковий") >0) {
+			if (str.indexOf("безпересадковий") >0) {
 				str = str.substring(0,str.indexOf("безпересадковий"));
 			}
 
