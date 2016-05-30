@@ -140,7 +140,7 @@ public class Train {
 		this.trainDur = columns.get(columns.size()-1).text();
 	}
 
-
+	
 	public String getTrainId() {
 		return this.trainId;
 	}

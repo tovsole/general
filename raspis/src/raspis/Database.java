@@ -1,5 +1,7 @@
 package raspis;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -88,6 +90,7 @@ public class Database {
             stmtTrain.close();
             stmtRouteItem.close();
             dbConnection.close();
+            System.out.println("Saved results to DB");
         }
         catch (SQLException e) {
                // defConnection.rollback();
@@ -133,7 +136,44 @@ public class Database {
         }
     }
 
+    public void getTrainsFromDb(){
 
+        try {
+            Statement stmtTrainsQuery = dbConnection.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
+            String sql = "Select * from trains order by id";
+            ResultSet rsTrains = stmtTrainsQuery.executeQuery(sql);
+
+            BufferedWriter outFile = new BufferedWriter(new FileWriter(Utils.mainProps.getProperty("TrainsFilePath")));
+
+            while (rsTrains.next()) {
+                outFile.write(rsTrains.getString("ID")+" | "+rsTrains.getString("NUM_TRAIN")+" | "+rsTrains.getString("NUM_EXPRESS")+" | "+rsTrains.getString("ST1")+" | "+rsTrains.getString("ST2")+" | "+rsTrains.getString("MNAME_U")+" | "+rsTrains.getString("MNAME_R")+" | "+rsTrains.getString("FNAME")+" | "+rsTrains.getString("PERIOD_U")+" | "+rsTrains.getString("PERIOD_R")+" | "+rsTrains.getString("MOVE_TIME")+" | "+rsTrains.getString("MOVE_STAND")+" | "+rsTrains.getString("COMMENT")+" | "+rsTrains.getString("PERIOD_B")+" | "+rsTrains.getString("PRECEP"));
+                outFile.newLine();
+            }
+
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+
+        try {
+            Statement stmtRoutesQuery = dbConnection.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
+            String sql = "Select * from routes order by train_id";
+            ResultSet rsRoutes = stmtRoutesQuery.executeQuery(sql);
+
+            BufferedWriter outFile = new BufferedWriter(new FileWriter(Utils.mainProps.getProperty("RoutesFilePath")));
+
+            while (rsRoutes.next()) {
+                outFile.write(rsRoutes.getString("TRAIN_ID")+" | "+rsRoutes.getString("NUM")+" | "+rsRoutes.getString("ST")+" | "+rsRoutes.getString("ARR_TIME")+" | "+rsRoutes.getString("DEP_TIME")+" | | ");
+                outFile.newLine();
+            }
+
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        System.out.println("Saved results from DB");
+
+    }
 }
 
 
