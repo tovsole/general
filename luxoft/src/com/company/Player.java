@@ -24,8 +24,8 @@ public class Player {
 
     private static final String SQL = "insert into Players (Country, Name, Bio, Photodone, Specialplayer, Position, Num, Caps, Goalsforcountry, Club, League, Dateofbirth, Ratingmatch1, Ratingmatch2, Ratingmatch3) " +
                                       " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
-    public String getSQL(){
-        return this.SQL;
+    public static String getSQL(){
+        return SQL;
     }
 
     public String getCountry() {

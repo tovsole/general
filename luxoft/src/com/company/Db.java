@@ -8,10 +8,9 @@ import java.util.List;
  */
 public class Db {
 
-    public class Db {
         private Connection dbConnection ;
 
-        public Database(String connectString) {
+        public Db(String connectString) {
             try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
             } catch (ClassNotFoundException e) {
@@ -40,7 +39,7 @@ public class Db {
             }
      }
 
-        public void saveTrainListToDb(List<Player> playerList)  {
+        public void savePlaerListToDb(List<Player> playerList)  {
 
             PreparedStatement stmt = null;
 
