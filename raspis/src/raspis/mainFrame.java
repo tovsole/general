@@ -3,8 +3,6 @@ package raspis;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -71,8 +69,8 @@ public class mainFrame extends JFrame {
 		System.out.println("Links have been read from file");
 		Parser prs = new Parser();
 
-		//for (int ii=1 ; ii< linkList.size();ii++)  // for every link (station) from file
-		for (int ii=0 ; ii< 1; ii++)  // for every link (station) from file
+		for (int ii=1 ; ii< linkList.size();ii++)  // for every link (station) from file
+		//for (int ii=0 ; ii< 1; ii++)  // for every link (station) from file
 		{
 			trainList.addAll(prs.parseStationPage(linkList.get(ii)));
 		}
