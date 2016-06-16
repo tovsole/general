@@ -54,15 +54,15 @@ public class Db {
                     stmt.setString(4,String.valueOf(player.getPhotoDone()));
                     stmt.setString(5,player.getSpecialPlayer ());
                     stmt.setString(6,player.getPosition() );
-                    stmt.setInt(7,player.getNumber());
+                    stmt.setString(7,player.getNumber());
                     stmt.setInt(8,player.getCaps());
                     stmt.setInt(9,player.getGoalsForCountry());
                     stmt.setString(10,player.getClub());
                     stmt.setString(11,player.getLeague());
                     stmt.setString(12,player.getDateOfBirth());
-                    stmt.setInt(13,player.getRatingMatch1());
-                    stmt.setInt(14,player.getRatingMatch1());
-                    stmt.setInt(15,player.getRatingMatch1());
+                    stmt.setString(13,player.getRatingMatch1());
+                    stmt.setString(14,player.getRatingMatch1());
+                    stmt.setString(15,player.getRatingMatch1());
 
                     stmt.execute();
                 }

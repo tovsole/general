@@ -6,6 +6,8 @@ import java.util.Arrays;
 
 public class Main {
 
+    public ArrayList<Player>  playerList = new ArrayList<>();
+
     public static void main(String[] args) throws Exception {
 
         String jsonPath = "C:\\input";
@@ -23,7 +25,11 @@ public class Main {
         ArrayList<String> fileNamesList = new ArrayList<String>(Arrays.asList(files.list()));
 
         for (String listItem :fileNamesList) {
-            System.out.println(listItem.toString());
+            //System.out.println(listItem.toString());
+            JParser parser = new JParser();
+            parser.parseFile(listItem);
         }
+
+
     }
 }
