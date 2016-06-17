@@ -1,5 +1,8 @@
 package com.company;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by otovstiuk on 14.06.2016.
  */
@@ -147,6 +150,27 @@ public class Player {
     public void setRatingMatch3(String ratingMatch3) {
         this.ratingMatch3 = ratingMatch3;
     }
+
+    public Player (String country, JSONObject obj) throws JSONException{
+        super();
+        setCountry(country);
+        setName(obj.getString("name"));
+        setBio(obj.getString("bio"));
+        setPhotoDone(obj.getString("photo done?"));
+        setSpecialPlayer(obj.getString("special player? (eg. key player, promising talent, etc)"));
+        setPosition(obj.getString("position"));
+        setNumber(obj.getString("number"));
+        setCaps(obj.getInt("caps"));
+        setGoalsForCountry(obj.getInt("goals for country"));
+        setClub(obj.getString("club"));
+        setLeague(obj.getString("league"));
+        setDateOfBirth(obj.getString("date of birth"));
+        setRatingMatch1(obj.getString("rating_match1"));
+        setRatingMatch2(obj.getString("rating_match2"));
+        setRatingMatch3(obj.getString("rating_match3"));
+
+    }
+
 
     @Override
     public String toString(){

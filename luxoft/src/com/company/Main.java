@@ -5,23 +5,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
-
+    public static String pathToJson = "C:\\input";
     public ArrayList<Player>  playerList = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
 
-        String jsonPath = "C:\\input";
+        //String pathToJson = "C:\\input";
 
         if  (args.length==1) {
-            jsonPath = args[0];
+            pathToJson = args[0];
         }
         else if (args.length>1) {
             throw new Exception("Incorrect number of arguments");
         }
 
-        System.out.println(jsonPath);
+        System.out.println(pathToJson);
 
-        File files = new File(jsonPath);
+        File files = new File(pathToJson);
         ArrayList<String> fileNamesList = new ArrayList<String>(Arrays.asList(files.list()));
 
         for (String listItem :fileNamesList) {
