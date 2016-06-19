@@ -59,7 +59,7 @@ public class Db {
                     stmt.setInt(9,player.getGoalsForCountry());
                     stmt.setString(10,player.getClub());
                     stmt.setString(11,player.getLeague());
-                    stmt.setString(12,player.getDateOfBirth());
+                    stmt.setDate(12,new java.sql.Date(player.getDateOfBirth().getTime()));
                     stmt.setString(13,player.getRatingMatch1());
                     stmt.setString(14,player.getRatingMatch1());
                     stmt.setString(15,player.getRatingMatch1());

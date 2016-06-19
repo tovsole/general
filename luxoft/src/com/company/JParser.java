@@ -15,11 +15,11 @@ import java.nio.file.Paths;
 
 public class JParser  {
 
-    static String readFile(String path, Charset encoding)
+    static String readFiletoString(String path)
             throws IOException
     {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
-        return new String(encoded, encoding);
+        return new String(encoded, Charset.defaultCharset());
     }
 
 
@@ -28,9 +28,8 @@ public class JParser  {
 
         String country = fileName.substring(0, fileName.indexOf("-")).toUpperCase();
 
-        JSONObject obj = new JSONObject(readFile(fileName,Charset.defaultCharset())).getJSONObject("sheets");
+        JSONArray arr = new JSONObject(readFiletoString(fileName)).getJSONObject("sheets").getJSONArray("Players");
 
-        JSONArray arr = obj.getJSONArray("Players");
         for (int i = 0; i < arr.length(); i++) {
 
             //playerList.add();

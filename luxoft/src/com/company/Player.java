@@ -3,6 +3,10 @@ package com.company;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by otovstiuk on 14.06.2016.
  */
@@ -19,11 +23,13 @@ public class Player {
     private  Integer goalsForCountry;
     private  String  club;
     private  String  league;
-    private  String  dateOfBirth;
+    private  Date    dateOfBirth;
     //        "": "",
     private  String ratingMatch1;
     private  String ratingMatch2;
     private  String ratingMatch3;
+
+    private  static final SimpleDateFormat formatter =new SimpleDateFormat("dd/MM/yyyy");
 
     private static final String SQL = "insert into Players (Country, Name, Bio, Photodone, Specialplayer, Position, Num, Caps, Goalsforcountry, Club, League, Dateofbirth, Ratingmatch1, Ratingmatch2, Ratingmatch3) " +
                                       " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
@@ -119,11 +125,11 @@ public class Player {
         this.league = league;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -151,8 +157,9 @@ public class Player {
         this.ratingMatch3 = ratingMatch3;
     }
 
-    public Player (String country, JSONObject obj) throws JSONException{
+    public Player (String country, JSONObject obj) throws JSONException, ParseException {
         super();
+
         setCountry(country);
         setName(obj.getString("name"));
         setBio(obj.getString("bio"));
@@ -164,7 +171,7 @@ public class Player {
         setGoalsForCountry(obj.getInt("goals for country"));
         setClub(obj.getString("club"));
         setLeague(obj.getString("league"));
-        setDateOfBirth(obj.getString("date of birth"));
+        setDateOfBirth(formatter.parse(obj.getString("date of birth")));
         setRatingMatch1(obj.getString("rating_match1"));
         setRatingMatch2(obj.getString("rating_match2"));
         setRatingMatch3(obj.getString("rating_match3"));
@@ -174,10 +181,31 @@ public class Player {
 
     @Override
     public String toString(){
+
+        String separator = "|";
         return
-        getCountry()+" | "+
-        getName() +" | "+  getBio() +" | "+ getPhotoDone() +" | "+  getSpecialPlayer()+" | "+  getPosition() +" | "+ getNumber() +" | "+ getCaps() +" | "+ getGoalsForCountry() +" | "+ getClub() +" | "+
-        getLeague() +" | "+  getDateOfBirth() +" | "+ getRatingMatch1() +" | "+ getRatingMatch2() +" | " + getRatingMatch3();
+        new StringBuilder()
+                .append(getCountry()).append(separator)
+                .append(getName()).append(separator)
+                .append(getBio()).append(separator)
+                .append(getBio()).append(separator)
+                .append(getPhotoDone()).append(separator)
+                .append(getSpecialPlayer()).append(separator)
+                .append(getPosition()).append(separator)
+                .append(getNumber()).append(separator)
+                .append(getCaps()).append(separator)
+                .append(getGoalsForCountry()).append(separator)
+                .append(getClub()).append(separator)
+                .append(getLeague()).append(separator)
+                .append(getDateOfBirth()).append(separator)
+                .append(getRatingMatch1()).append(separator)
+                .append(getRatingMatch2()).append(separator)
+                .append(getRatingMatch3()).append(separator)
+                .toString();
+
+       // getCountry()+" | "+
+       // getName() +" | "+  getBio() +" | "+ getPhotoDone() +" | "+  getSpecialPlayer()+" | "+  getPosition() +" | "+ getNumber() +" | "+ getCaps() +" | "+ getGoalsForCountry() +" | "+ getClub() +" | "+
+       // getLeague() +" | "+  getDateOfBirth() +" | "+ getRatingMatch1() +" | "+ getRatingMatch2() +" | " + getRatingMatch3();
 
     }
 

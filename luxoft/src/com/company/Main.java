@@ -27,7 +27,7 @@ public class Main {
         for (String listItem :fileNamesList) {
             //System.out.println(listItem.toString());
             JParser parser = new JParser();
-            parser.parseFile(listItem);
+            parser.parseFile(pathToJson+"\\"+listItem);
         }
 
 
