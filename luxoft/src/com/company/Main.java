@@ -44,9 +44,11 @@ public class Main {
         }
         System.out.println("Collection filtered ...");
 
+
         //Sorting list from yangest to oldest player
         Collections.sort(playerList, Player.compareByAge.reversed());
         System.out.println("Collection sorted ...");
+        Long readTime = System.currentTimeMillis();
 
         //Output result list
         //for (Player p : playerList){
@@ -58,6 +60,8 @@ public class Main {
         Db db = new Db("jbdc:oracle:thin:@localhost:1521:localdb","uz","uz");
         db.createTable();
         db.savePlayerListToDb(playerList);
-        System.out.println(System.currentTimeMillis()-startTime);
+        System.out.println("TOTAL EXECUTION TIME = "+(System.currentTimeMillis()-startTime)+" ms");
+        System.out.println("READING TIME = "+(readTime-startTime)+" ms");
+        System.out.println("PERSISTING TIME = "+(System.currentTimeMillis()-readTime)+" ms");
     }
 }
