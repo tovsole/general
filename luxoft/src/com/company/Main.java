@@ -3,12 +3,13 @@ package com.company;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.*;
 
 public class Main {
     public  static final SimpleDateFormat dtformatter =new SimpleDateFormat("dd/MM/yyyy");
     //public static final String dbConnectString = "uz/uz@localhost:1521:localdb";
-    public static List<Player> playerList = new ArrayList<>();
-
+    //public static List<Player> playerList = new CopyOnWriteArrayList<>();
+    public static List<Player> playerList = Collections.synchronizedList(new ArrayList<>());
     public static void main(String[] args) throws Exception {
         Long startTime = System.currentTimeMillis();
 
@@ -29,11 +30,15 @@ public class Main {
         System.out.println("Files list got ...");
 
         //Parsing all json files to list<Player>
+        ExecutorService executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
         for (String listItem :fileList) {
-            JParser parser = new JParser();
-            parser.parseFile(pathToJson+"\\"+listItem);
+            executor.execute (new JParser(pathToJson+"\\"+listItem));
         }
-        System.out.println("Files  are parsed .... seconds.");
+        executor.shutdown();
+        executor.awaitTermination(60, TimeUnit.SECONDS);
+
+
+        System.out.println("Files  are parsed..."+playerList.size()+" players total");
 
         //Filtering list<Player> - removing players with DOB earlier then 01/01/1992
         for (ListIterator<Player> i = playerList.listIterator(); i.hasNext();) {

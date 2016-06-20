@@ -12,26 +12,34 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
-public class JParser  {
+public class JParser  implements Runnable {
 
-    static String readFiletoString(String path)
-            throws IOException
-    {
-        return new String(Files.readAllBytes(Paths.get(path)), Charset.defaultCharset());
+    private String fileName;
+
+    public JParser(String fileName) {
+        super();
+        this.fileName = fileName;
     }
 
+    // procedure parse JSON file
+    @Override
+    public void run() {
+        List<Player> playerList = new ArrayList<>();
+        String country = fileName.substring(fileName.indexOf("\\\\") + 2, fileName.indexOf("-")).toUpperCase();
+        try {
+            String textFile = new String(Files.readAllBytes(Paths.get(fileName)), Charset.defaultCharset());
+            JSONArray arr = new JSONObject(textFile).getJSONObject("sheets").getJSONArray("Players");
 
-
-    public void parseFile(String fileName) throws Exception {
-
-        String country = fileName.substring(fileName.indexOf("\\\\")+2, fileName.indexOf("-")).toUpperCase();
-
-        JSONArray arr = new JSONObject(readFiletoString(fileName)).getJSONObject("sheets").getJSONArray("Players");
-
-        for (int i = 0; i < arr.length(); i++) {
-            Main.playerList.add(new Player(country,arr.getJSONObject(i)));
+            for (int i = 0; i < arr.length(); i++) {
+                 playerList.add(new Player(country, arr.getJSONObject(i)));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
 
+        Main.playerList.addAll(playerList);
     }
 }

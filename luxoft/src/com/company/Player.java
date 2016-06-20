@@ -32,6 +32,8 @@ public class Player {
     private  String ratingMatch2;
     private  String ratingMatch3;
 
+    private SimpleDateFormat dtformatter =new SimpleDateFormat("dd/MM/yyyy");
+
     private static final String SQL = "insert into euro2016 (Country, Name, Bio, Photodone, Specialplayer, Position, Num, Caps, Goalsforcountry, Club, League, Dateofbirth, Ratingmatch1, Ratingmatch2, Ratingmatch3) " +
                                       " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
     public static String getSQL(){
@@ -178,7 +180,7 @@ public class Player {
         setGoalsForCountry(obj.getInt("goals for country"));
         setClub(obj.getString("club"));
         setLeague(obj.getString("league"));
-        setDateOfBirth(Main.dtformatter.parse(obj.getString("date of birth")));
+        setDateOfBirth(dtformatter.parse(obj.getString("date of birth")));
         setRatingMatch1(obj.getString("rating_match1"));
         setRatingMatch2(obj.getString("rating_match2"));
         setRatingMatch3(obj.getString("rating_match3"));
