@@ -18,24 +18,20 @@ public class JParser  {
     static String readFiletoString(String path)
             throws IOException
     {
-        byte[] encoded = Files.readAllBytes(Paths.get(path));
-        return new String(encoded, Charset.defaultCharset());
+        return new String(Files.readAllBytes(Paths.get(path)), Charset.defaultCharset());
     }
 
 
 
     public void parseFile(String fileName) throws Exception {
 
-        String country = fileName.substring(0, fileName.indexOf("-")).toUpperCase();
+        String country = fileName.substring(fileName.indexOf("\\\\")+2, fileName.indexOf("-")).toUpperCase();
 
         JSONArray arr = new JSONObject(readFiletoString(fileName)).getJSONObject("sheets").getJSONArray("Players");
 
         for (int i = 0; i < arr.length(); i++) {
-
-            //playerList.add();
-            System.out.println(new Player(country,arr.getJSONObject(i)));
+            Main.playerList.add(new Player(country,arr.getJSONObject(i)));
         }
-
 
     }
 }

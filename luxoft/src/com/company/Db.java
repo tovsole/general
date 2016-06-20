@@ -10,7 +10,7 @@ public class Db {
 
         private Connection dbConnection ;
 
-        public Db(String connectString) {
+        public Db(String server,String usr, String pass) {
             try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
             } catch (ClassNotFoundException e) {
@@ -19,32 +19,63 @@ public class Db {
             }
 
             try {
-                dbConnection = DriverManager.getConnection(connectString);
+                dbConnection = DriverManager.getConnection(server, usr,pass);
                 dbConnection.setAutoCommit(false);
-
+                System.out.println("Connected to database ...");
             }
             catch (SQLException e) {
                 e.printStackTrace();
             }
         }
 
-    public void clearTable(){
-            try {
-                Statement stmtDel = dbConnection.createStatement();
-                stmtDel.executeUpdate("delete from players");
-                stmtDel.close();
+    public void createTable() throws SQLException {
+        //if table exists - drop it
+        try {
+           Statement stmt = dbConnection.createStatement();
+           stmt.execute("drop table euro2016");
+           stmt.close();
+           System.out.println("Table euro2016 dropped ...");
+        }
+        catch(SQLSyntaxErrorException ex){
+            //if table euro2016 does not exist - just ignore this error
+            if (ex.getErrorCode()!=942){
+                throw ex;
             }
-            catch(SQLException ex){
-                ex.printStackTrace();
-            }
+        }
+
+        try {
+            Statement stmt = dbConnection.createStatement();
+            stmt.execute("create table euro2016 (\n" +
+                    "  country varchar2(250),\n" +
+                    "  name varchar2(250),\n" +
+                    "  bio varchar2(4000),\n" +
+                    "  photoDone varchar2(5),\n" +
+                    "  specialPlayer varchar2(250),\n" +
+                    "  position  varchar2(50),\n" +
+                    "  num  number,\n" +
+                    "  caps number,\n" +
+                    "  goalsForCountry number,\n" +
+                    "  club  varchar2(250),\n" +
+                    "  league  varchar2(250),\n" +
+                    "  dateOfBirth date,\n" +
+                    "  ratingMatch1 number,\n" +
+                    "  ratingMatch2 number,\n" +
+                    "  ratingMatch3 number\n" +
+                    ") ");
+            stmt.close();
+            System.out.println("Table euro2016 created ...");
+        }
+        catch(SQLException ex){
+            //ex.printStackTrace();
+            throw ex;
+        }
      }
 
-        public void savePlaerListToDb(List<Player> playerList)  {
+        public void savePlayerListToDb(List<Player> playerList)  {
 
             PreparedStatement stmt = null;
 
             try {
-                clearTable();
                 stmt = dbConnection.prepareStatement(Player.getSQL());
 
                 for (Player player : playerList) {
@@ -70,10 +101,9 @@ public class Db {
                 dbConnection.commit();
                 stmt.close();
                 dbConnection.close();
-                System.out.println("Saved results to DB");
+                System.out.println("Data inserted into table euro2016... ");
             }
             catch (SQLException e) {
-                // defConnection.rollback();
                 e.printStackTrace();
             }
         }

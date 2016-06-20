@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -12,10 +13,12 @@ import java.util.Date;
  */
 public class Player {
 
+    //private enum Positions {Goalkeeper, Defender, Midfielder, Forward};
+
     private  String country;
     private  String name;
     private  String bio;
-    private  String photoDone;
+    private  Boolean photoDone;
     private  String  specialPlayer;
     private  String  position;
     private  String number;
@@ -29,9 +32,7 @@ public class Player {
     private  String ratingMatch2;
     private  String ratingMatch3;
 
-    private  static final SimpleDateFormat formatter =new SimpleDateFormat("dd/MM/yyyy");
-
-    private static final String SQL = "insert into Players (Country, Name, Bio, Photodone, Specialplayer, Position, Num, Caps, Goalsforcountry, Club, League, Dateofbirth, Ratingmatch1, Ratingmatch2, Ratingmatch3) " +
+    private static final String SQL = "insert into euro2016 (Country, Name, Bio, Photodone, Specialplayer, Position, Num, Caps, Goalsforcountry, Club, League, Dateofbirth, Ratingmatch1, Ratingmatch2, Ratingmatch3) " +
                                       " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
     public static String getSQL(){
         return SQL;
@@ -62,11 +63,17 @@ public class Player {
     }
 
     public String getPhotoDone() {
-        return photoDone;
+        return String.valueOf(photoDone);
+    }
+
+    public void setPhotoDone(Boolean photoDone) {
+        this.photoDone = photoDone;
     }
 
     public void setPhotoDone(String photoDone) {
-        this.photoDone = photoDone;
+        this.photoDone = photoDone.equalsIgnoreCase("true") ||
+                         photoDone.equalsIgnoreCase("yes") ||
+                         photoDone.equalsIgnoreCase("y");
     }
 
     public String getSpecialPlayer() {
@@ -171,7 +178,7 @@ public class Player {
         setGoalsForCountry(obj.getInt("goals for country"));
         setClub(obj.getString("club"));
         setLeague(obj.getString("league"));
-        setDateOfBirth(formatter.parse(obj.getString("date of birth")));
+        setDateOfBirth(Main.dtformatter.parse(obj.getString("date of birth")));
         setRatingMatch1(obj.getString("rating_match1"));
         setRatingMatch2(obj.getString("rating_match2"));
         setRatingMatch3(obj.getString("rating_match3"));
@@ -187,8 +194,7 @@ public class Player {
         new StringBuilder()
                 .append(getCountry()).append(separator)
                 .append(getName()).append(separator)
-                .append(getBio()).append(separator)
-                .append(getBio()).append(separator)
+                //.append(getBio()).append(separator)
                 .append(getPhotoDone()).append(separator)
                 .append(getSpecialPlayer()).append(separator)
                 .append(getPosition()).append(separator)
@@ -202,11 +208,12 @@ public class Player {
                 .append(getRatingMatch2()).append(separator)
                 .append(getRatingMatch3()).append(separator)
                 .toString();
-
-       // getCountry()+" | "+
-       // getName() +" | "+  getBio() +" | "+ getPhotoDone() +" | "+  getSpecialPlayer()+" | "+  getPosition() +" | "+ getNumber() +" | "+ getCaps() +" | "+ getGoalsForCountry() +" | "+ getClub() +" | "+
-       // getLeague() +" | "+  getDateOfBirth() +" | "+ getRatingMatch1() +" | "+ getRatingMatch2() +" | " + getRatingMatch3();
-
     }
+
+    public static Comparator<Player> compareByAge = new Comparator<Player>() {
+        public int compare(Player player1, Player player2) {
+            return player1.getDateOfBirth().compareTo(player2.getDateOfBirth());
+        }
+    };
 
 }
