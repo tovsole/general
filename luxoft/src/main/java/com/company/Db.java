@@ -66,7 +66,7 @@ public class Db {
             System.out.println("Table euro2016 created ...");
         }
         catch(SQLException ex){
-            //ex.printStackTrace();
+            ex.printStackTrace();
             throw ex;
         }
      }
