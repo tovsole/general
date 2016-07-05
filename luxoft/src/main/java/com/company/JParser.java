@@ -7,8 +7,6 @@ package com.company;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import java.io.FileReader;
-import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -24,22 +22,23 @@ public class JParser  implements Runnable {
         this.fileName = fileName;
     }
 
-    // procedure parse JSON file
+    // procedure to parse JSON file
     @Override
     public void run() {
-        List<Player> playerList = new ArrayList<>();
-        String country = fileName.substring(fileName.indexOf("\\\\") + 2, fileName.indexOf("-")).toUpperCase();
+        List<Player> tmpPlayerList = new ArrayList<>();
+        String country = fileName.substring(fileName.lastIndexOf("\\") + 1, fileName.indexOf("-")).toUpperCase();
+
         try {
-            String textFile = new String(Files.readAllBytes(Paths.get(fileName)), Charset.defaultCharset());
-            JSONArray arr = new JSONObject(textFile).getJSONObject("sheets").getJSONArray("Players");
+            String text = new String(Files.readAllBytes(Paths.get(fileName)), Charset.defaultCharset());
+            JSONArray arr = new JSONObject(text).getJSONObject("sheets").getJSONArray("Players");
 
             for (int i = 0; i < arr.length(); i++) {
-                 playerList.add(new Player(country, arr.getJSONObject(i)));
+                tmpPlayerList.add(new Player(country, arr.getJSONObject(i)));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
 
-        Main.playerList.addAll(playerList);
+        Main.playerList.addAll(tmpPlayerList);
     }
 }

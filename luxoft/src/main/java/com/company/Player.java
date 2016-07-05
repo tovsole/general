@@ -2,7 +2,6 @@ package com.company;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
@@ -27,7 +26,6 @@ public class Player {
     private  String  club;
     private  String  league;
     private  Date    dateOfBirth;
-    //        "": "",
     private  String ratingMatch1;
     private  String ratingMatch2;
     private  String ratingMatch3;
@@ -166,24 +164,25 @@ public class Player {
         this.ratingMatch3 = ratingMatch3;
     }
 
-    public Player (String country, JSONObject obj) throws JSONException, ParseException {
+    //Creating Player object and fill its fields
+    public Player (String country, JSONObject json) throws JSONException, ParseException {
         super();
 
         setCountry(country);
-        setName(obj.getString("name"));
-        setBio(obj.getString("bio"));
-        setPhotoDone(obj.getString("photo done?"));
-        setSpecialPlayer(obj.getString("special player? (eg. key player, promising talent, etc)"));
-        setPosition(obj.getString("position"));
-        setNumber(obj.getString("number"));
-        setCaps(obj.getInt("caps"));
-        setGoalsForCountry(obj.getInt("goals for country"));
-        setClub(obj.getString("club"));
-        setLeague(obj.getString("league"));
-        setDateOfBirth(dtformatter.parse(obj.getString("date of birth")));
-        setRatingMatch1(obj.getString("rating_match1"));
-        setRatingMatch2(obj.getString("rating_match2"));
-        setRatingMatch3(obj.getString("rating_match3"));
+        setName(json.getString("name"));
+        setBio(json.getString("bio"));
+        setPhotoDone(json.getString("photo done?"));
+        setSpecialPlayer(json.getString("special player? (eg. key player, promising talent, etc)"));
+        setPosition(json.getString("position"));
+        setNumber(json.getString("number"));
+        setCaps(json.getInt("caps"));
+        setGoalsForCountry(json.getInt("goals for country"));
+        setClub(json.getString("club"));
+        setLeague(json.getString("league"));
+        setDateOfBirth(dtformatter.parse(json.getString("date of birth")));
+        setRatingMatch1(json.getString("rating_match1"));
+        setRatingMatch2(json.getString("rating_match2"));
+        setRatingMatch3(json.getString("rating_match3"));
 
     }
 
@@ -196,7 +195,7 @@ public class Player {
         new StringBuilder()
                 .append(getCountry()).append(separator)
                 .append(getName()).append(separator)
-                //.append(getBio()).append(separator)
+                .append(getBio()).append(separator)
                 .append(getPhotoDone()).append(separator)
                 .append(getSpecialPlayer()).append(separator)
                 .append(getPosition()).append(separator)
@@ -212,7 +211,8 @@ public class Player {
                 .toString();
     }
 
-    public static Comparator<Player> compareByAge = new Comparator<Player>() {
+
+    public static Comparator<Player> compareByDateOfBirth = new Comparator<Player>() {
         public int compare(Player player1, Player player2) {
             return player1.getDateOfBirth().compareTo(player2.getDateOfBirth());
         }

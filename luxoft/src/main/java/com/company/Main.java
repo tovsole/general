@@ -6,11 +6,16 @@ import java.util.*;
 import java.util.concurrent.*;
 
 public class Main {
+
     public  static final SimpleDateFormat dtformatter =new SimpleDateFormat("dd/MM/yyyy");
-    //public static final String dbConnectString = "uz/uz@localhost:1521:localdb";
-    //public static List<Player> playerList = new CopyOnWriteArrayList<>();
+    private static final String dbServer = "jbdc:oracle:thin:@localhost:1521:uat";
+    private static final String dbUser = "uz";
+    private static final String dbPass = "uz";
     public static List<Player> playerList = Collections.synchronizedList(new ArrayList<>());
+
+
     public static void main(String[] args) throws Exception {
+
         Long startTime = System.currentTimeMillis();
 
         //Getting path to json files
@@ -25,12 +30,11 @@ public class Main {
         System.out.println("Path to JSON files is "+pathToJson);
 
         //Creating list of json files
-        File files = new File(pathToJson);
-        ArrayList<String> fileList = new ArrayList<String>(Arrays.asList(files.list()));
-        System.out.println("Files list got ...");
+        ArrayList<String> fileList = new ArrayList<>(Arrays.asList(new File(pathToJson).list()));
+        System.out.println("Got files list.");
 
         //Parsing all json files to list<Player>
-        ExecutorService executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
+        ExecutorService executor = Executors.newFixedThreadPool(5);
         for (String listItem :fileList) {
             executor.execute (new JParser(pathToJson+"\\"+listItem));
         }
@@ -38,7 +42,7 @@ public class Main {
         executor.awaitTermination(60, TimeUnit.SECONDS);
 
 
-        System.out.println("Files  are parsed..."+playerList.size()+" players total");
+        System.out.println("Files  are parsed - "+playerList.size()+" players total");
 
         //Filtering list<Player> - removing players with DOB earlier then 01/01/1992
         for (ListIterator<Player> i = playerList.listIterator(); i.hasNext();) {
@@ -50,21 +54,19 @@ public class Main {
         System.out.println("Collection filtered ...");
 
 
-        //Sorting list from yangest to oldest player
-        Collections.sort(playerList, Player.compareByAge.reversed());
+        //Sorting list from yongest to oldest player
+        Collections.sort(playerList, Player.compareByDateOfBirth.reversed());
         System.out.println("Collection sorted ...");
         Long readTime = System.currentTimeMillis();
 
-        //Output result list
-        //for (Player p : playerList){
-        //    System.out.println(p.toString());
-        //}
 
-        //Saving resultlist to DB Oracle
-        //Assuming that table EURO2016 does not exist in database
-        Db db = new Db("jbdc:oracle:thin:@localhost:1521:localdb","uz","uz");
+        //Saving resultlist to DB Oracle. Assuming that table EURO2016 does not exist in database
+        Db db = new Db(dbServer,dbUser,dbPass);
         db.createTable();
         db.savePlayerListToDb(playerList);
+
+
+        //Summary  about program execution
         System.out.println("TOTAL EXECUTION TIME = "+(System.currentTimeMillis()-startTime)+" ms");
         System.out.println("READING TIME = "+(readTime-startTime)+" ms");
         System.out.println("PERSISTING TIME = "+(System.currentTimeMillis()-readTime)+" ms");

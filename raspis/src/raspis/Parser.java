@@ -17,9 +17,8 @@ public class Parser {
     public List<Train> parseStationPage(String pageLink) throws Exception {
 
         List<Train> resultTrains = new ArrayList<>();
-        Train tmpTrain = null;
 
-        System.out.println("Starting parsing new page - " + pageLink);
+        System.out.println("Starting parsing - " + pageLink);
 
         Document doc = Jsoup.connect(pageLink).timeout(20000).get();
         Element table = doc.getElementById("cpn-timetable");
@@ -28,9 +27,7 @@ public class Parser {
 
         for (Element row : rows) // for every row of page
         {
-            tmpTrain = new Train(row);
-            //parseRoute(tmpTrain);
-            resultTrains.add(tmpTrain);
+            resultTrains.add(new Train(row));
         }
         return resultTrains;
     }
