@@ -127,8 +127,9 @@ public class Database {
     public void clearTables(){
         try {
             Statement stmtDel = dbConnection.createStatement();
-            stmtDel.executeUpdate("delete from trains");
-            stmtDel.executeUpdate("delete from routes");
+            stmtDel.execute("delete from trains");
+            stmtDel.execute("delete from routes");
+            //stmtDel.execute("delete from stations");
             stmtDel.close();
         }
         catch(SQLException ex){
@@ -139,40 +140,69 @@ public class Database {
     public void getTrainsFromDb(){
 
         try {
-            Statement stmtTrainsQuery = dbConnection.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
+            Statement stmt = dbConnection.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
             String sql = "Select * from trains order by id";
-            ResultSet rsTrains = stmtTrainsQuery.executeQuery(sql);
+            ResultSet rsTrains = stmt.executeQuery(sql);
             //System.out.println(rsTrains.getFetchSize());
-            BufferedWriter outFile = new BufferedWriter(new FileWriter(Utils.mainProps.getProperty("TrainsFilePath")));
+            //BufferedWriter outFile = new BufferedWriter(new FileWriter(Utils.mainProps.getProperty("TrainsFilePath")));
             ArrayList<String> tmpList = new ArrayList<>();
+
             while (rsTrains.next()) {
                 //outFile.write(rsTrains.getString("ID")+" | "+rsTrains.getString("NUM_TRAIN")+" | "+rsTrains.getString("NUM_EXPRESS")+" | "+rsTrains.getString("ST1")+" | "+rsTrains.getString("ST2")+" | "+rsTrains.getString("MNAME_U")+" | "+rsTrains.getString("MNAME_R")+" | "+rsTrains.getString("FNAME")+" | "+rsTrains.getString("PERIOD_U")+" | "+rsTrains.getString("PERIOD_R")+" | "+rsTrains.getString("MOVE_TIME")+" | "+rsTrains.getString("MOVE_STAND")+" | "+rsTrains.getString("COMMENT")+" | "+rsTrains.getString("PERIOD_B")+" | "+rsTrains.getString("PRECEP"));
                 //outFile.newLine();
                 tmpList.add(rsTrains.getString("ID")+" | "+rsTrains.getString("NUM_TRAIN")+" | "+rsTrains.getString("NUM_EXPRESS")+" | "+rsTrains.getString("ST1")+" | "+rsTrains.getString("ST2")+" | "+rsTrains.getString("MNAME_U")+" | "+rsTrains.getString("MNAME_R")+" | "+rsTrains.getString("FNAME")+" | "+rsTrains.getString("PERIOD_U")+" | "+rsTrains.getString("PERIOD_R")+" | "+rsTrains.getString("MOVE_TIME")+" | "+rsTrains.getString("MOVE_STAND")+" | "+rsTrains.getString("COMMENT")+" | "+rsTrains.getString("PERIOD_B")+" | "+rsTrains.getString("PRECEP"));
             }
-            Files.write(Paths.get("data/ts.txt"), tmpList, Charset.defaultCharset());
+            Files.write(Paths.get(Utils.mainProps.getProperty("TrainsFilePath")), tmpList, Charset.defaultCharset());
         }
         catch(Exception ex){
             ex.printStackTrace();
         }
 
         try {
-            Statement stmtRoutesQuery = dbConnection.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
+            Statement stmt = dbConnection.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
             String sql = "Select * from routes order by train_id";
-            ResultSet rsRoutes = stmtRoutesQuery.executeQuery(sql);
+            ResultSet rsRoutes = stmt.executeQuery(sql);
 
-            BufferedWriter outFile = new BufferedWriter(new FileWriter(Utils.mainProps.getProperty("RoutesFilePath")));
-            ArrayList<String> tmpList2 = new ArrayList<>();
+            //BufferedWriter outFile = new BufferedWriter(new FileWriter(Utils.mainProps.getProperty("RoutesFilePath")));
+            ArrayList<String> tmpList = new ArrayList<>();
             while (rsRoutes.next()) {
                 //outFile.write(rsRoutes.getString("TRAIN_ID")+" | "+rsRoutes.getString("NUM")+" | "+rsRoutes.getString("ST")+" | "+rsRoutes.getString("ARR_TIME")+" | "+rsRoutes.getString("DEP_TIME")+" | | ");
                 //outFile.newLine();
-                tmpList2.add(rsRoutes.getString("TRAIN_ID")+" | "+rsRoutes.getString("NUM")+" | "+rsRoutes.getString("ST")+" | "+rsRoutes.getString("ARR_TIME")+" | "+rsRoutes.getString("DEP_TIME")+" | | ");
+                tmpList.add(rsRoutes.getString("TRAIN_ID")+" | "+rsRoutes.getString("NUM")+" | "+rsRoutes.getString("ST")+" | "+rsRoutes.getString("ARR_TIME")+" | "+rsRoutes.getString("DEP_TIME")+" | | ");
             }
-            Files.write(Paths.get("data/tm.txt"), tmpList2, Charset.defaultCharset());
+            Files.write(Paths.get(Utils.mainProps.getProperty("RoutesFilePath")), tmpList, Charset.defaultCharset());
+
         }
         catch(Exception ex){
             ex.printStackTrace();
         }
+
+        try {
+            Statement stmt = dbConnection.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
+            String sql = "select  ST1, ST2, NAIM, NAIMR, NAIMA, \n" +
+                    "case when t.st1 in (24000,22700,22000,22100,23200,23600,24200,22500,22800,22200,22580,22590,23000,22300,22400,23340,20095,23536,23400,22450,23300,23530,23500,22600,23060,23410,22750)\n" +
+                    "        then \n" +
+                    "          (select count(*)+50 from routes rr where rr.st=t.st1) \n" +
+                    "        else \n" +
+                    "          (select count(*) from routes rr where rr.st=t.st1)\n" +
+                    "        end\n" +
+                    "            as RAT,\n" +
+                    "D1\n" +
+                    "from station_all t\n" +
+                    "where t.st1 in (select distinct st from routes)";
+
+            ResultSet rsStations = stmt.executeQuery(sql);
+
+            ArrayList<String> tmpList = new ArrayList<>();
+            while (rsStations.next()) {
+                tmpList.add(rsStations.getString("ST1")+" | "+rsStations.getString("ST2")+" | "+rsStations.getString("NAIM")+" | "+rsStations.getString("NAIMR")+" | "+rsStations.getString("NAIMA")+" | "+rsStations.getString("RAT")+" | "+rsStations.getString("D1"));
+            }
+            Files.write(Paths.get(Utils.mainProps.getProperty("StationsFilePath")), tmpList, Charset.defaultCharset());
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+
         System.out.println("Saved results from DB");
 
     }
