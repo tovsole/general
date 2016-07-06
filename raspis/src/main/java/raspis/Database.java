@@ -129,7 +129,6 @@ public class Database {
             Statement stmtDel = dbConnection.createStatement();
             stmtDel.execute("delete from trains");
             stmtDel.execute("delete from routes");
-            //stmtDel.execute("delete from stations");
             stmtDel.close();
         }
         catch(SQLException ex){
