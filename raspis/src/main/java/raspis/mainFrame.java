@@ -47,10 +47,48 @@ public class mainFrame extends JFrame {
 		JButton btn3 = new JButton("Print train List");
 		JButton btn4 = new JButton("Get from db");
 
-		btn1.addActionListener(new HtmlAction());
-		btn2.addActionListener(new ExitAction());
-		btn3.addActionListener(new PrintTrainsAction());
-		btn4.addActionListener(new GetFromDbAction());
+
+		btn1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if  (JOptionPane.showConfirmDialog(null, "Are you sure?")==0){
+						try	{
+							getTrainList();
+						}
+						catch (Exception e1){
+							e1.printStackTrace();
+						}
+				}
+			}
+		}
+		);
+
+		btn2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (JOptionPane.showConfirmDialog(null, "Are you sure?","Confirm exit",1)==0)
+				{
+					System.out.println("Exit on users demand");
+					System.exit(0);
+				}
+			}
+		});
+
+
+		btn3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showConfirmDialog(null,"Nothing here");
+			}
+		});
+
+		btn4.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Database db = new Database("jbdc:oracle:thin:"+Utils.mainProps.getProperty("db"), Utils.mainProps.getProperty("user"), Utils.mainProps.getProperty("pass"));
+				db.getTrainsFromDb();
+			}
+		});
 
 		panel1.add(btn1);
 		panel1.add(btn2);
@@ -118,55 +156,11 @@ public class mainFrame extends JFrame {
 		}
 	}
 
-	private class ExitAction implements ActionListener
-	{
-		public void actionPerformed (ActionEvent e)
-		{
-			int i=JOptionPane.showConfirmDialog(null, "Are you sure?","Confirm exit",1);
-			if (i==0) 
-			{		
-			  System.out.println("Exit on users demand");
-			  System.exit(0);
-			}  
-		}
-		
-		
-	}
-	
-	private class HtmlAction implements ActionListener
-	{
-		public void actionPerformed (ActionEvent e)
-		{
-			if      (JOptionPane.showConfirmDialog(null, "Are you sure?")==0)
-			{ 
-				try
-				{
-					getTrainList();
-				}
-				catch (Exception e1)
-				{
-					e1.printStackTrace();
-				}
-			}	  			
-		}
-	}
-	private class PrintTrainsAction implements ActionListener {
-		public void actionPerformed(ActionEvent event) {
-			JOptionPane.showConfirmDialog(null,"Nothing here");
-		}
 
 
-	}
-
-	private class GetFromDbAction implements ActionListener
-	{
-		public void actionPerformed (ActionEvent e)
-		{
-			//getTrainListfromDBtoFile();
-			Database db = new Database("jbdc:oracle:thin:"+Utils.mainProps.getProperty("db"), Utils.mainProps.getProperty("user"), Utils.mainProps.getProperty("pass"));
-			db.getTrainsFromDb();
-		}
 
 
-	}
+
+
+
 }

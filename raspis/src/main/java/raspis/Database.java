@@ -181,7 +181,7 @@ public class Database {
             String sql = "select  ST1, ST2, NAIM, NAIMR, NAIMA, \n" +
                     "case when t.st1 in (24000,22700,22000,22100,23200,23600,24200,22500,22800,22200,22580,22590,23000,22300,22400,23340,20095,23536,23400,22450,23300,23530,23500,22600,23060,23410,22750)\n" +
                     "        then \n" +
-                    "          (select count(*)+50 from routes rr where rr.st=t.st1) \n" +
+                    "          (select count(*)+150 from routes rr where rr.st=t.st1) \n" +
                     "        else \n" +
                     "          (select count(*) from routes rr where rr.st=t.st1)\n" +
                     "        end\n" +
